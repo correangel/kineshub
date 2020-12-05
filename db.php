@@ -1,5 +1,5 @@
 <?php
-$enlace = mysqli_connect("127.0.0.1", "root", "", "kineshub");
+$enlace = mysqli_connect("tresolu.com", "tresoluc_gobiern", "1256ard_._", "tresoluc_kineshub");
 
 if (!$enlace) {
     echo "Error: No se pudo conectar a MySQL." . PHP_EOL;

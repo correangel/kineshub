@@ -5,9 +5,7 @@ if(isset($_SESSION['id'])){
 }
 else{
 	include "include/header.php";
-}
-	
-	
+}	
  ?>
 
 	<main>

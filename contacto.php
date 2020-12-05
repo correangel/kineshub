@@ -86,33 +86,40 @@ else{
 					
 					</div>
 					<div class="row">
+					
 						<div class="col-lg-7 col-12">
-							<input class="form-control campo1 w-100  f1" type="text" id="correocontacto" name="correocontacto" placeholder="Email">
-
+						<form id="contacto">
+						<input class="form-control campo1 w-100  f1" type="text" id="correocontacto" name="correo" placeholder="Email">
+							<input type="hidden" name="usuario" value="<?= $_SESSION['usuario'] ?>">
+								<p id="correo_contacto" style="color: red;"></p>
 							<p class="f8 font-weight-bolder mt-3">Motivo de contacto</p>
 							<div class="row">
 								<div class="col-3">
-									<!-- Default checked -->
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" name="contacto" id="consulta" >
-  <label class="custom-control-label f5 pt-1" for="consulta">Consulta</label>
-</div>
+								<div class="custom-control custom-checkbox">
+								<input type="radio" class="custom-control-input" name="tipo" id="consulta"  value="1">
+								<label class="custom-control-label f5 pt-1" for="consulta">Consulta</label>
 								</div>
+								</div>
+
 								<div class="col-3">
-									<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" name="contacto" id="Solicitud" >
-  <label class="custom-control-label f5 pt-1" for="Solicitud">Solicitud</label>
-</div>
+								<div class="custom-control custom-checkbox">
+								<input type="radio" class="custom-control-input" name="tipo" id="solicitar"  value="2">
+								<label class="custom-control-label f5 pt-1" for="solicitar">Solicitud</label>
 								</div>
+								</div>
+
 								<div class="col-6">
 									<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input" name="contacto" id="denunciar" checked>
-  <label class="custom-control-label f5 pt-1 " for="denunciar">Denunciar anuncio</label>
-</div>
+								<input type="radio" class="custom-control-input" name="tipo" id="denunciar" value="3">
+								<label class="custom-control-label f5 pt-1 " for="denunciar">Denunciar anuncio</label>
 								</div>
+								</div>
+
+								
 							</div><div class="form-group mt-4">
 
-  <textarea class="form-control" id="textareacontacto" placeholder="Texto" rows="10"></textarea>
+  <textarea class="form-control" id="textareacontacto" name="texto" placeholder="Texto" rows="10" onkeyup="validar_cantidad()" onkeydown="validar_cantidad()"></textarea>
+  <span id="mensaje_contacto" style="color:red;"></span>
 
   <div class="md-form md-outline input-with-post-icon">
   	<i class="fas fa-upload grey-text  input-prefix"></i>
@@ -120,7 +127,7 @@ else{
   	  <input class="form-control mt-2 campo1 w-100  f1" type="text" id="link" name="link" placeholder="Url del aununcio">
   </div>
 
-
+</form>
 
 </div>
 
@@ -133,11 +140,11 @@ else{
   				<p><strong>Derechos:</strong> Puedes acceder, rectificar y suprimir tus datos personales dirigiéndote a Contactokineshub@kines.com</p>
   				<p><strong>Info. Adicional:</strong> Puede consultar nuestra Política de Privacidad completa <a href="#" class="color3">aquí</a> </p>
   				<div>
-  					   <div class="g-recaptcha" data-sitekey="6Ld5e7UUAAAAAE6BgTztqlAK2UgXCpZeGo_VTy0S"></div>
+  					  <!-- <div class="g-recaptcha" data-sitekey="6Ld5e7UUAAAAAE6BgTztqlAK2UgXCpZeGo_VTy0S"></div> -->
   					   <p class="font-weight-bolder mt-3">Al pulsar Enviar entiendo y acepto los Textos legales.</p>
   					   <div class="row d-flex justify-content-center">
   					   	<div class="col-lg-4 col-12">
-  					   		<button class="btn boton20 w-100">Enviar</button>
+  					   		<button class="btn boton20 w-100" id="enviar" disabled onclick="contactar()">Enviar</button>
   					   	</div>
   					   </div>
   				</div>
@@ -149,7 +156,60 @@ else{
 	</div>
 
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+<script>
 
+	function validar_cantidad(){
+		var mensaje = $("#textareacontacto").val();
+		mensaje2 = mensaje.split('').length;
+		if(mensaje2 < 180){
+			minimo = 180 - mensaje2;
+			$("#mensaje_contacto").html("Su mensaje debe contener minimo " + minimo);
+			$("#enviar").prop('disabled', true);
+		}
+		else{
+			$("#mensaje_contacto").html("");
+			$("#enviar").prop('disabled', false);
+		}
+	}
+  function contactar(){
+    var correo = $("#correocontacto").val().length;
+    var mensaje = $("#textareacontacto").val().length;
+    userdevdata = 2;
+    if(correo == ''){
+      $("#correo_contacto").html("Debes incluir un correo donde nos podamos contactar contigo.");
+	  $("#correocontacto").focus();
+    }
+    else{ userdevdata = userdevdata-1; console.log(userdevdata)  }
+    if(mensaje == ''){
+      $("#mensaje_contacto").html("Teclee por favor su mensaje.");
+    }
+    else{ userdevdata = userdevdata-1; console.log(userdevdata) }
+
+    if(userdevdata == 0){
+      var parametros=$( "#contacto" ).serialize();
+                       $.ajax({
+                              data:  parametros, 
+                              url:   'http://localhost/api/public/json/insert_contacto.php', 
+                              type:  'POST',
+                              success:  function (response) 
+                                          {
+                                            if (response==1) 
+                                            {
+                                              swal("Mensaje enviado correctamente, nos pondremos en contacto con usted."); 
+                                              setTimeout("location.href='kine.php'", 5000);
+                                            }
+
+                                            else{
+												swal("Error al intentar enviar su solicitud intente nuevamente. O espere un momento");
+											}
+                                           
+                                          }
+                              
+                          });
+    }
+  }
+	</script>
 
  		<?php 
 	include "modal.php";

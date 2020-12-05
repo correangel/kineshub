@@ -1,5 +1,15 @@
 <?php 
-	include "include/header.php";
+ session_start(); 
+ if(isset($_SESSION['id'])){
+	 if($_SESSION['tipo'] == 1){
+		 header("Location: user.php");
+	 }
+	 
+	include "include/header2.php";
+ }
+else{
+	header("Location: index.php");
+}
  ?>
 
 <main>
