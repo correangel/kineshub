@@ -369,7 +369,8 @@
                                             {
                                               swal("Usuario Registrado, verifique su correo.");  
                                               $("#registrok").modal("hide");
-                                              $("#frm_add_user")[0].reset()
+                                              $("#frm_add_user")[0].reset();
+                                              setTimeout("location.href='index.php'", 5000);
                                             }
                                             if (response==2) 
                                             {
@@ -432,7 +433,7 @@
                                             {
                                               swal("Inicio de sesion correcto, redirigiendo.");  
                                               url = "http://localhost/kineshub/";
-                                              $(location).attr('href',url);
+                                              setTimeout("location.href='http://localhost/kineshub/'", 5000);
                                             }
 
                                             if (response==5) 
