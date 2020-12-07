@@ -17,7 +17,21 @@
     background-color: #3af9b2d4!important;
     border-color: #3af9b2d4!important;
 }
-
+.custom-control-label:before{
+background-color:#fff!important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+background-color:#FF1730!important;
+border-color: #FF1730!important;
+}
+.custom-control-input:not(:disabled):active~.custom-control-label::before {
+    color: #fff;
+    background-color: #fff!important;
+    border-color: #fff!important;
+}
+.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+    border-color: #fff!important;
+}
 </style>
 	<div class="container-fluid">
 					<!-- movil  -->
@@ -222,10 +236,10 @@
 							
 							</div>
 							</div>
-							<!-- Default checked -->
-<div class="custom-control custom-checkbox">
-  <input type="checkbox" class="custom-control-input " id="aceptocondiciones">
-  <label class="custom-control-label" for="aceptocondiciones">Si, este teléfono es exclusivamente mío</label>
+	
+<div class="custom-control form-control-lg custom-checkbox">
+<input type="checkbox" class="custom-control-input" id="aceptocondiciones">
+<label class="custom-control-label f8" for="aceptocondiciones">Si, este teléfono es exclusivamente mío</label>
 </div>
 						</div>
 					</div>
@@ -239,38 +253,40 @@
 									<div class="col-6 "><p class="f7 font-weight-bolder mt-3">Tarifas</p></div>
 							<div class="col-6 ">
 								<div class="text-right ">
-										<p class="d-inline-block pr-2 color8 f4 ">Añadir tarifa</p><img src="img/Grupo 400.svg" width="30" alt="">
+									<a href="#"><p class="d-inline-block pr-2 color8 f4 ">Añadir tarifa</p><img src="img/Grupo 400.svg" width="30" alt=""></a>	
 								</div>
 							
 							</div>
 							</div>
 							<div class="row">
 								<div class="col-lg-8 col-6">
-									<div class="fondocolor5">
-											<p class="font-weight-normal py-1 pl-3">1 hora</p>
+									<div class="">
+										<input type="text" class="font-weight-normal fondocolor5 publicidad1 w-100 py-1 pl-3" placeholder="1 hora" disabled>
+											
 									</div>
 
 								
 								</div>
 								<div class="col-lg-4 col-6">
-									<div class="fondocolor6">
-										<p class="font-weight-normal py-1 pl-3">S/250</p>
+									<div class="">
+										<input type="text" class="font-weight-normal fondocolor6 w-100 publicidad2 py-1 pl-3" placeholder="S/ 250" disabled>
+										
 									</div>
 									
 								</div>
 							</div>
 
-	<div class="row">
+	<div class="row mt-2">
 								<div class="col-lg-8 col-6">
-										<div class="fondocolor5">
-											<p class="font-weight-normal py-1 pl-3">Tiempo</p>
+										<div class="">
+											<input type="text" class=" fondocolor5 font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Tiempo" >
 									</div>
 
 								
 								</div>
 								<div class="col-lg-4 col-6">
-									<div class="fondocolor6">
-										<p class="font-weight-normal py-1 pl-3">Costo</p>
+									<div class="">
+										<input type="text" class="fondocolor6  font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Costo" >
 									</div>
 								</div>
 							</div>
@@ -285,41 +301,49 @@
 					<div class="row">
 						<div class="col-lg-11 col-12">
 							<div class="row d-flex align-items-center">
-									<div class="col-6 "><p class="f7 font-weight-bolder mt-3">Horarios</p></div>
+									<div class="col-6 ">
+
+										<p class="f7 font-weight-bolder mt-3">Horarios</p>
+
+									</div>
 							<div class="col-6 ">
 								<div class="text-right ">
-										<p class="d-inline-block pr-2 color8 f4 ">Añadir horario</p><img src="img/Grupo 400.svg" width="30" alt="">
+										<a href="#"><p class="d-inline-block pr-2 color8 f4 ">Añadir horario</p><img src="img/Grupo 400.svg" width="30" alt=""></a>
 								</div>
 							
 							</div>
 							</div>
 							<div class="row">
 								<div class="col-lg-8 col-6">
-									<div class="fondocolor5">
-											<p class="font-weight-normal py-1 pl-3">Lunes</p>
+									<div class="">
+										<input type="text" class="font-weight-normal fondocolor5 publicidad1 w-100 py-1 pl-3" placeholder="Lunes" disabled>
+											
 									</div>
 
 								
 								</div>
 								<div class="col-lg-4 col-6">
-									<div class="fondocolor6">
-										<p class="font-weight-normal py-1 pl-3">10:00am a 3:00pm</p>
+									<div class="">
+										<input type="text" class="font-weight-normal fondocolor6 w-100 publicidad2 py-1 pl-3" placeholder="10:00am a 3:00pm" disabled>
+										
 									</div>
 									
 								</div>
 							</div>
 
-	<div class="row">
+	<div class="row mt-2">
 								<div class="col-lg-8 col-6">
-										<div class="fondocolor5">
-											<p class="font-weight-normal py-1 pl-3">Dia</p>
+										<div class="">
+											<input type="text" class=" fondocolor5 font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Día" >
+
 									</div>
 
 								
 								</div>
 								<div class="col-lg-4 col-6">
-									<div class="fondocolor6">
-										<p class="font-weight-normal py-1 pl-3">Costo</p>
+									<div class="">
+										<input type="text" class=" fondocolor6 font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Costo" >
+										
 									</div>
 								</div>
 							</div>
@@ -336,7 +360,7 @@
 									<div class="col-6 "><p class="f7 font-weight-bolder mt-3">Galeria</p></div>
 							<div class="col-6 ">
 								<div class="text-right ">
-										<p class="d-inline-block pr-2 color8 f4 ">Añadir fotos</p><img src="img/Grupo 400.svg" width="30" alt="">
+									<a href="#"><p class="d-inline-block pr-2 color8 f4 ">Añadir fotos</p><img src="img/Grupo 400.svg" width="30" alt=""></a>	
 								</div>
 							
 							</div>
@@ -383,86 +407,86 @@
 						<div class="col-lg-11 col-12">
 							<div class="row">
 								<div class="col-sm col-6">
-								<p class="marco1y f5 py-2 text-center px-2">Atención a mujeres</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">Atención a mujeres</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Atención a parejas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Atención a parejas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Altas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Altas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Bajas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Bajas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Cabello negro</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Cabello negro</p>
 								</div>
 								<div class="col-sm col-6  d-block d-md-none">
-								<p class="marco1y f5 py-2 text-center px-2">Rubias</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">Rubias</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm col-6 d-none d-md-block">
-								<p class="marco1y f5 py-2 text-center px-2">Rubias</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">Rubias</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Peli rojas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Peli rojas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Depiladas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Depiladas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Sin depilar</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Sin depilar</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Discapacitados</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Discapacitados</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm col-6 mb-3 mb-md-0">
 								
-								    <select class="browser-default custom-select f5 marco1y py-2" style="height: 34px;">
-            <option selected>Etnia</option>
+								    <select class="browser-default custom-select f5 marco1y pl-lg-5 py-2" style="height: 34px;">
+            <option selected class="">Etnia</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>
 								</div>
 								<div class="col-sm col-6 mb-3 mb-md-0">
-									   <select class="browser-default custom-select f5 marco1y py-2" style="height: 34px;">
+									   <select class="browser-default custom-select f5 marco1y pl-lg-5 py-2" style="height: 34px;">
             <option selected>País</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
           </select>								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Independientes</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Independientes</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Pago por tarjeta</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Pago por tarjeta</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">De agencia</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">De agencia</p>
 								</div>
 								<div class="col-sm col-6 d-block d-md-none">
-								<p class="marco1y f5 py-2 text-center px-2">Pechos naturales</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">Pechos naturales</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm col- d-none d-md-block">
-								<p class="marco1y f5 py-2 text-center px-2">Pechos naturales</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">Pechos naturales</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Delgadas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Delgadas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Gorditas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Gorditas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Tetonas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Tetonas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">WhatsApp</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">WhatsApp</p>
 								</div>
 							</div>
 						</div>
@@ -487,22 +511,22 @@
 						<div class="col-lg-11 col-12">
 							<div class="row">
 								<div class="col-6 col-sm">
-								<p class="marco1y f5 py-2 text-center px-2">Actriz porno</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">Actriz porno</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Besos boca</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Besos boca</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Eyaculación cuerpo</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Eyaculación cuerpo</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Eyaculación facial</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Eyaculación facial</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Fantasías y disfraces</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Fantasías y disfraces</p>
 								</div>
 								<div class="col-6 col-sm d-block d-md-none">
-								<select class="browser-default custom-select f5 marco1y py-2" style="height: 34px;">
+								<select class="browser-default custom-select f5 marco1y filtro1 py-2" style="height: 34px;">
             <option selected>Frances</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -512,7 +536,7 @@
 							</div>
 							<div class="row">
 								<div class="col-6 col-sm d-none d-md-block ">
-								<select class="browser-default custom-select f5 marco1y py-2" style="height: 34px;">
+								<select class="browser-default custom-select f5 marco1y filtro1 py-2" style="height: 34px;">
             <option selected>Frances</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -520,16 +544,16 @@
           </select>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Masajes eroticos</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Masajes eroticos</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Sexo anal</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Sexo anal</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Trato de novia</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Trato de novia</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Trio</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Trio</p>
 								</div>
 							</div>
 						
@@ -555,39 +579,39 @@
 						<div class="col-lg-11 col-12">
 							<div class="row">
 								<div class="col-6 col-sm">
-								<p class="marco1y f5 py-2 text-center px-2">Beso blanco</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">Beso blanco</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Beso negro</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Beso negro</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Copro</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Copro</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Fetichismo</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Fetichismo</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Garganta profunda</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Garganta profunda</p>
 								</div>
 								<div class="col-6 col-sm d-block d-md-none">
-									<p class="marco1y f5 py-2 text-center px-2">Lluvia dorada</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Lluvia dorada</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-6 col-sm d-none d-md-block">
-									<p class="marco1y f5 py-2 text-center px-2">Lluvia dorada</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Lluvia dorada</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Sado duro</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Sado duro</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Sado suave</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Sado suave</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Squirting</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Squirting</p>
 								</div>
 								<div class="col-6 col-sm">
-									<p class="marco1y f5 py-2 text-center px-2">Strap on</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Strap on</p>
 								</div>
 							</div>
 						
@@ -613,36 +637,36 @@
 						<div class="col-lg-11 col-12">
 							<div class="row">
 								<div class="col-sm col-6">
-								<p class="marco1y f5 py-2 text-center px-2">A domicilio</p>
+								<p class="marco1y filtro1 f5 py-2 text-center px-2">A domicilio</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Cena romantica</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Cena romantica</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Club intercambio</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Club intercambio</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Departamento propio</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Departamento propio</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Despedida de solteros</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Despedida de solteros</p>
 								</div>
 								<div class="col-sm col-6 d-block d-md-none">
-									<p class="marco1y f5 py-2 text-center px-2">En un club</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">En un club</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-sm col-6 d-none d-md-block">
-									<p class="marco1y f5 py-2 text-center px-2">En un club</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">En un club</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">En un hotel/Motel</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">En un hotel/Motel</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Eventos y fiestas</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Eventos y fiestas</p>
 								</div>
 								<div class="col-sm col-6">
-									<p class="marco1y f5 py-2 text-center px-2">Viajes</p>
+									<p class="marco1y filtro1 f5 py-2 text-center px-2">Viajes</p>
 								</div>
 								<div class="col-sm col-6">
 									
