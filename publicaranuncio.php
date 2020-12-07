@@ -1,5 +1,14 @@
 <?php 
+session_start();
+if(isset($_SESSION['id'])){
+	include "include/header2.php";
+}
+else{
 	include "include/header.php";
+}
+
+require_once 'db.php';
+mysqli_set_charset($enlace,"utf8");
  ?>
 
 <main>
@@ -91,30 +100,33 @@ border-color: #FF1730!important;
 					
 					<div class="row">
 						<div class="col-lg-6 col-12">
-							<p class="f7 font-weight-bolder mt-3">Distrito</p>
-           <select class="browser-default custom-select campo3">
-            <option selected>Selecciona un Distrito</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-6 col-12">
-							<p class="f7 font-weight-bolder mt-3">Ciudad</p>
-							<input class="form-control form-control-lg campo3" type="text" placeholder="Escribe tu ciudad o barrio" id="ciudadp">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-6 col-12">
 							<p class="f7 font-weight-bolder mt-3">Departamento</p>
-           <select class="browser-default custom-select campo3">
-            <option selected>Selecciona un Departamento</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
+							<select class="browser-default custom-select campo3" id="dep" onchange="select_dep()">
+							<option selected>Selecciona un Departamento</option>
+							<?php
+								$sql_dep = mysqli_query($enlace, "SELECT * FROM departamentos");
+								while($row_dep = mysqli_fetch_array($sql_dep)){
+							?>
+								<option value="<?= $row_dep['id'] ?>"><?= $row_dep['departamento'] ?></option>
+							<?php } ?>
+							</select>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-12" id="provincias">
+							<p class="f7 font-weight-bolder mt-3">Provincias</p>
+							<select class="browser-default custom-select campo3">
+								<option selected>Selecciona un Provincia</option>
+							</select>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-lg-6 col-12" id="distritos">
+							<p class="f7 font-weight-bolder mt-3">Distritos</p>
+							<select class="browser-default custom-select campo3">
+								<option selected>Selecciona un Distrito</option>
+							</select>
 						</div>
 					</div>
 						  
@@ -699,7 +711,35 @@ border-color: #FF1730!important;
 	</div>
 	
 </main>
+<script>
+	function select_dep(){
+		var parametro = $("#dep").val();
 
+		$.ajax({ 
+            url:   'http://localhost/api/public/json/mostrar_provincias.php?departamento=' + parametro, 
+            type:  'GET',
+            success:  function (response) 
+				{
+						$("#provincias").html(response);						
+				}
+                              
+        });
+	}
+
+	function select_pro(){
+		var parametro = $("#pro").val();
+
+		$.ajax({ 
+            url:   'http://localhost/api/public/json/mostrar_distritos.php?provincia=' + parametro, 
+            type:  'GET',
+            success:  function (response) 
+				{
+						$("#distritos").html(response);						
+				}
+                              
+        });
+	}
+</script>
 
  		<?php 
 	include "modal.php";

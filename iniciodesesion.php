@@ -42,14 +42,15 @@
 		<div class="mt-5">
 			<a href="olvidemicontraseña.php" class="text-dark"><p class="text-center font-weight-bold f1">
 				<u>Olvidé mi contraseña</u>
-			</p></a>
+			</p></a>	
+
 		</div>
 		<div class="fixed-bottom text-center">
-			<p class="grey-text f3">@Kineshub 2020</p>
+			<p class="grey-text f3">@Kineshub 2020. <br> Todos los derechos reservados.</p>
 		</div>
 	</main>
 
 	<?php 
 	include "include/footer.php";
-	
+	include "modal.php";
  ?>

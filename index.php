@@ -719,6 +719,7 @@ else{
 	}
 </script>
 	<?php 
+	include "modal/nube.php";
 	include "cookies.php";
 	include "modal.php";
 	include "include/footer.php";

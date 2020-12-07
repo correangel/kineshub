@@ -19,6 +19,8 @@
   include "modal/registropc.php";
   include "modal/registrousuariopc.php";
   include "modal/ubicacion.php";
+  include "modal/eliminarcuenta.php";
+    include "modal/cambiodecontraseña.php";
 
  ?>
 
