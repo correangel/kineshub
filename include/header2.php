@@ -1,4 +1,16 @@
 <?php
+
+$host= $_SERVER["HTTP_HOST"];
+$url= $_SERVER["REQUEST_URI"];
+$url_actual = "http://" . $host . $url;
+
+if($url_actual == "http://localhost/kineshub/publicaranuncio.php"){
+  
+}
+else{
+  session_start();
+  $_SESSION['id_anuncio'] = "";
+}
 session_start();
 ?>
 <!DOCTYPE html>

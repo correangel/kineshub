@@ -9,6 +9,8 @@ else{
 
 require_once 'db.php';
 mysqli_set_charset($enlace,"utf8");
+
+
  ?>
 
 <main>
@@ -140,17 +142,17 @@ border-color: #FF1730!important;
 					<div class="row">
 						<div class="col-lg-6 col-12">
 							<p class="f7 font-weight-bolder mt-3">Telefono</p>
-							<input class="form-control form-control-lg campo3" type="text" placeholder="Agregar numero de telefono" id="movilp">
+							<input class="form-control form-control-lg campo3" type="text" name="telefono" onblur="act_telefono()" placeholder="Agregar numero de telefono" id="movilp">
 						</div>
 					</div>
 					<p class="color6 mt-3 font-weight-bolder">IMPORTANTE</p>
 					<div class="container">
 								<ul>
 						<li>
-							<p class="f16 text-dark "> Asegúrate de agregar correctamente tu numero, para modificarlo deberás contactarte con nosotros obligatoriamente.</p>
+							<p class="text-dark "> Asegúrate de agregar correctamente tu numero, para modificarlo deberás contactarte con nosotros obligatoriamente.</p>
 						</li>
 						<li>
-							<p class="f16 text-dark "> <strong> No esta permitido colocar algún otro numero en el titulo y texto</strong> aparte del colocado aquí, si no el anuncio será eliminado.</p>
+							<p class="text-dark "> <strong> No esta permitido colocar algún otro numero en el titulo y texto</strong> aparte del colocado aquí, si no el anuncio será eliminado.</p>
 						</li>
 					</ul>
 					</div>
@@ -169,29 +171,34 @@ border-color: #FF1730!important;
 					
 					<div class="row">
 						<div class="col-lg-6 col-12">
-							<input class="form-control form-control-lg campo3" type="text" placeholder="Nombre" id="Nombreanuncio">
-							<p class="text-center text-md-right mt-2 color2 f4">Mínimo de 40 caracteres</p>
+							<input class="form-control form-control-lg campo3" type="text" placeholder="Nombre" id="ca_nombre" onblur="act_caracteristica('nombre');" onkeyup="validar_cantidad('nombre', 40, 'nombre')" onkeydown="validar_cantidad('nombre', 40, 'nombre')">
+							<p class="text-center text-md-right mt-2 color2 f4" id="la_nombre">Mínimo de 40 caracteres</p>
 						</div>
 					</div>
 					<div class="row mt-3">
 						<div class="col-lg-11 col-12">
 							<div class="form-group ">
 							  
-							  <textarea class="form-control campo3" id="mensajeanuncio" placeholder="Texto" rows="10"></textarea>
+							  <textarea class="form-control campo3" placeholder="Texto" rows="10" id="ca_texto" onkeyup="validar_cantidad('texto', 250, 'texto')" onkeydown="validar_cantidad('texto', 250, 'texto')" onblur="act_caracteristica('texto');"></textarea>
 							</div>
 							<div>
-								<p class="text-center text-md-right color2 f4 pb-1 mb-3 mb-md-0">Mínimo de 250 caracteres</p>
+								<p class="text-center text-md-right color2 f4 pb-1 mb-3 mb-md-0" id="la_texto">Mínimo de 250 caracteres</p>
 							</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-6 col-12">
 							
-           <select class="browser-default custom-select campo3">
+           <select class="browser-default custom-select campo3" id="ca_edad" onblur="act_caracteristica('edad');">
             <option selected>Selecciona tu edad</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            
+			<?php 
+			
+				for ($i=18; $i < 100; $i++) { ?>
+					<option value="<?= $i ?>"><?= $i ?></option>
+				<?php }
+
+			?>
           </select>
 						</div>
 					</div>
@@ -203,7 +210,7 @@ border-color: #FF1730!important;
 
 <div class="custom-control custom-switch d-inline-block ml-4 ">
 	
-  <input type="checkbox" class="custom-control-input" id="wsp" checked>
+  <input type="checkbox" onchange="act_caracteristica('whatsapp');" class="custom-control-input" id="ca_whatsapp">
   <label class="custom-control-label" for="wsp">Activado</label>
   
 </div></span>
@@ -270,25 +277,8 @@ border-color: #FF1730!important;
 							
 							</div>
 							</div>
-							<div class="row">
-								<div class="col-lg-8 col-6">
-									<div class="">
-										<input type="text" class="font-weight-normal fondocolor5 publicidad1 w-100 py-1 pl-3" placeholder="1 hora" disabled>
-											
-									</div>
-
-								
-								</div>
-								<div class="col-lg-4 col-6">
-									<div class="">
-										<input type="text" class="font-weight-normal fondocolor6 w-100 publicidad2 py-1 pl-3" placeholder="S/ 250" disabled>
-										
-									</div>
-									
-								</div>
-							</div>
-
-	<div class="row mt-2">
+							
+							<div class="row mt-2">
 								<div class="col-lg-8 col-6">
 										<div class="">
 											<input type="text" class=" fondocolor5 font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Tiempo" >
@@ -739,6 +729,50 @@ border-color: #FF1730!important;
                               
         });
 	}
+
+	function update_anun(){
+		var parametro = $("#dis").val();
+
+		$.ajax({ 
+            url:   'http://localhost/api/public/json/guardar_distrito.php?distrito=' + parametro, 
+            type:  'GET',
+            success:  function (response){}           
+        });
+	}
+
+	function act_telefono(){
+		var parametro = $("#movilp").val();
+
+		$.ajax({ 
+            url:   'http://localhost/api/public/json/guardar_telefono.php?telefono=' + parametro, 
+            type:  'GET',
+            success:  function (response){}           
+        });
+	}
+
+	function act_caracteristica(valor){
+		var parametro = $("#ca_"+valor).val();
+
+		$.ajax({ 
+            url:   'http://localhost/api/public/json/act_caracteristica.php?campo=' + valor + '&valor=' + parametro, 
+            type:  'GET',
+            success:  function (response){}           
+        });
+	}
+
+	function validar_cantidad(campo, cantidad, label){
+		var mensaje = $("#ca_"+campo).val();
+		mensaje2 = mensaje.split('').length;
+		if(mensaje2 < cantidad){
+			minimo = cantidad - mensaje2;
+			$("#la_"+label).html("Minimo de " + minimo + " Caracteres");
+		}
+		else{
+			$("#la_"+label).html("");
+			$("#enviar").prop('disabled', false);
+		}
+	}
+
 </script>
 
  		<?php 
