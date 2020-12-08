@@ -43,6 +43,10 @@ border-color: #FF1730!important;
 .custom-control-input:focus:not(:checked)~.custom-control-label::before {
     border-color: #fff!important;
 }
+.custom-file-input:focus~.custom-file-label {
+    border-color: #e34343!important;
+    box-shadow: 0 0 0 0.2rem rgb(222 176 176 / 25%)!important;
+}
 </style>
 	<div class="container-fluid">
 					<!-- movil  -->
@@ -206,19 +210,22 @@ border-color: #FF1730!important;
 						  <div class="mt-4 text-center d-none d-md-block text-md-left">
 						  
 						  	<img src="img/Icon ionic-logo-whatsapp2.svg" alt="" width="25" height="22" > <span class="pt-3">Whatsapp </span><span class="ml-2">Indicar que se pueden contactar por este medio</span>
-						  	<span class=""> <!-- Default checked -->
+						  	<span class=""> 
 
-<div class="custom-control custom-switch d-inline-block ml-4 ">
+
+						  			<div class="custom-control custom-switch d-inline-block ml-4 ">
 	
-  <input type="checkbox" onchange="act_caracteristica('whatsapp');" class="custom-control-input" id="ca_whatsapp">
+  <input type="checkbox"  onchange="act_caracteristica('whatsapp');" class="custom-control-input" id="wsp" >
   <label class="custom-control-label" for="wsp">Activado</label>
   
-</div></span>
+</div>
+
+</span>
 						  </div>
 
 						  <!-- version movil -->
 
-						  <div class="d-block d-md-none">
+						  <div class="d-block d-md-none">.
 						  	<div class="row mt-3">
 						  		<div class="col-6">
 						  				<img src="img/Icon ionic-logo-whatsapp2.svg" alt="" width="25" height="22" > <span class="pt-3">Whatsapp </span>
@@ -272,26 +279,51 @@ border-color: #FF1730!important;
 									<div class="col-6 "><p class="f7 font-weight-bolder mt-3">Tarifas</p></div>
 							<div class="col-6 ">
 								<div class="text-right ">
+
 									<a href="#"><p class="d-inline-block pr-2 color8 f4 ">Añadir tarifa</p><img src="img/Grupo 400.svg" width="30" alt=""></a>	
 								</div>
+								
 							
 							</div>
 							</div>
-							
-							<div class="row mt-2">
-								<div class="col-lg-8 col-6">
+							<div class="row">
+								<div class="col-lg-8 col-5">
+									<div class="">
+										<input type="text" class="font-weight-normal fondocolor5 publicidad1 w-100 py-1 pl-3" placeholder="1 hora" disabled>
+											
+									</div>
+
+								
+								</div>
+								<div class="col-lg-3 col-4 px-1 px-lg-2">
+									<div class="">
+										<input type="text" class="font-weight-normal fondocolor6 w-100 publicidad2 py-1 pl-3" placeholder="S/ 250" disabled>
+										
+									</div>
+									
+								</div>
+									<div class="col-lg-1 col-3">
+									<button class="botonborrar1 btn btn-sm px-3" style="margin-top: 2px;width: 45px;"><i class="fas fa-trash"></i> </button>
+								</div>
+							</div>
+							<div class="row mt-3">
+								<div class="col-lg-8 col-5">
 										<div class="">
 											<input type="text" class=" fondocolor5 font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Tiempo" >
 									</div>
 
 								
 								</div>
-								<div class="col-lg-4 col-6">
+								<div class="col-lg-3 col-4 px-1 px-lg-2">
 									<div class="">
 										<input type="text" class="fondocolor6  font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Costo" >
 									</div>
 								</div>
+								<div class="col-lg-1 col-3 ">
+									<button class="botonborrar btn btn-sm px-3" style="margin-top: 2px;width: 45px;"><i class="far fa-edit"></i></button>
+								</div>
 							</div>
+						
 
 						</div>
 					</div>
@@ -316,7 +348,7 @@ border-color: #FF1730!important;
 							</div>
 							</div>
 							<div class="row">
-								<div class="col-lg-8 col-6">
+								<div class="col-lg-8 col-5">
 									<div class="">
 										<input type="text" class="font-weight-normal fondocolor5 publicidad1 w-100 py-1 pl-3" placeholder="Lunes" disabled>
 											
@@ -324,17 +356,20 @@ border-color: #FF1730!important;
 
 								
 								</div>
-								<div class="col-lg-4 col-6">
+								<div class="col-lg-3 col-4 px-1 px-lg-2">
 									<div class="">
-										<input type="text" class="font-weight-normal fondocolor6 w-100 publicidad2 py-1 pl-3" placeholder="10:00am a 3:00pm" disabled>
+										<input type="text" class="font-weight-normal fondocolor6 w-100 publicidad2 py-1 pl-3"  placeholder="10:00am a 3:00pm" disabled>
 										
 									</div>
 									
 								</div>
+									<div class="col-lg-1 col-3">
+									<button class="botonborrar1 btn btn-sm px-3" style="margin-top: 2px;width: 45px;"><i class="fas fa-trash"></i> </button>
+								</div>
 							</div>
 
 	<div class="row mt-2">
-								<div class="col-lg-8 col-6">
+								<div class="col-lg-8 col-5">
 										<div class="">
 											<input type="text" class=" fondocolor5 font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Día" >
 
@@ -342,13 +377,17 @@ border-color: #FF1730!important;
 
 								
 								</div>
-								<div class="col-lg-4 col-6">
+								<div class="col-lg-3 col-4 px-1 px-lg-2">
 									<div class="">
 										<input type="text" class=" fondocolor6 font-weight-normal w-100 publicidad1 py-1 pl-3" placeholder="Costo" >
 										
 									</div>
 								</div>
+								<div class="col-lg-1 col-3">
+									<button class="botonborrar btn btn-sm px-3" style="margin-top: 2px;width: 45px;"><i class="far fa-edit"></i></button>
+								</div>
 							</div>
+						
 
 						</div>
 					</div>
@@ -387,14 +426,26 @@ border-color: #FF1730!important;
 									<img src="img/Rectangle 3.png" class="w-100 mt-2" alt="">
 								</div>
 							</div>
-							<div class=" d-flex mt-2">
-								<img src="img/Icon awesome-camera.svg" alt=""><p class="d-inline-block pt-3 ml-2">Selecciona las imágenes en el orden que quieres que aparezcan</p>
+							<div class="mt-4 mb-3">
+								<div class="row">
+									<div class="col-lg-8">
+										<div class="custom-file">
+  <input type="file" class="custom-file-input" id="subirfoto" lang="es">
+  <label class="custom-file-label" for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	<img src="img/Icon awesome-camera.svg" class="mr-2" alt=""> Selecciona las imágenes en el orden que quieres que aparezcan</label>
+</div>
+									</div>
+								</div>
+							
 							</div>
 
 
+
 						</div>
+
 					</div>
+
 				</div>
+
 			</div>
 			<div class="card  mt-3">
 				<div class="fondocolor3">
@@ -447,7 +498,7 @@ border-color: #FF1730!important;
 							<div class="row">
 								<div class="col-sm col-6 mb-3 mb-md-0">
 								
-								    <select class="browser-default custom-select f5 marco1y pl-lg-5 py-2" style="height: 34px;">
+								    <select class="browser-default custom-select f5 marco1y pl-5 py-2" style="height: 34px;">
             <option selected class="">Etnia</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -455,7 +506,7 @@ border-color: #FF1730!important;
           </select>
 								</div>
 								<div class="col-sm col-6 mb-3 mb-md-0">
-									   <select class="browser-default custom-select f5 marco1y pl-lg-5 py-2" style="height: 34px;">
+									   <select class="browser-default custom-select f5 marco1y pl-5 py-2" style="height: 34px;">
             <option selected>País</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -528,7 +579,7 @@ border-color: #FF1730!important;
 									<p class="marco1y filtro1 f5 py-2 text-center px-2">Fantasías y disfraces</p>
 								</div>
 								<div class="col-6 col-sm d-block d-md-none">
-								<select class="browser-default custom-select f5 marco1y filtro1 py-2" style="height: 34px;">
+								<select class="browser-default custom-select f5 pl-5 marco1y filtro1 py-2" style="height: 34px;">
             <option selected>Frances</option>
             <option value="1">1</option>
             <option value="2">2</option>

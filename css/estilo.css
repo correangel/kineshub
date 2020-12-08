@@ -760,6 +760,9 @@ transform: rotate(-135deg);
 	color: #fff;
 	border-radius: 3px;
 }
+.botonborrar1:hover{
+	color:  #fff;
+}
 .alert-dismissible {
      padding-right: 0rem!important; 
 }
