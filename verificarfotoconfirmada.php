@@ -2,7 +2,15 @@
 	include "include/header.php";
 	
  ?>
-
+<style>
+	.custom-control-input:focus:not(:checked)~.custom-control-label::before {
+    border-color: #fff!important;
+}
+.custom-file-input:focus~.custom-file-label {
+    border-color: #e34343!important;
+    box-shadow: 0 0 0 0.2rem rgb(222 176 176 / 25%)!important;
+}
+</style>
 <main>
 	<div class="container-fluid">
 				
@@ -53,7 +61,22 @@
 					</div>
 					<div class="row">
 						<p class="font-weight-bold px-0 px-md-3">Te hemos enviado un email con las instrucciones para poder certificarte.</p>
+
+						
 					</div>
+					<div class="row ">
+								<div class="col-lg-10 col-12 px-0 px-lg-3 " style="margin-top: 5px;">	 
+									<div class="custom-file">
+										
+  <input type="file" class="custom-file-input  w-100"  name="image" id="image" lang="es">
+  <label class="custom-file-label" for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
+</div>
+
+</div>
+								<div class="col-lg-2 col-12 mt-2 mt-lg-0 pl-0 pr-lg-2 text-center text-lg-right">
+									<a href="" class="btn botonborrar1 btn-sm">Enviar</a>
+								</div>
+							</div>
 					
 					</div>
 					

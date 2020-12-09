@@ -382,15 +382,15 @@ border-color: #FF1730!important;
 							</div>
 							<div class="mt-12 mb-12" id="cargar_foto" style="display: none;"> 
 								<div class="row">
-									<div class="col-lg-10">
+									<div class="col-lg-9 col-12 " style="margin-top: 5px;">
 										<div class="custom-file">
 										<form method="post" action="#" enctype="multipart/form-data">
   <input type="file" class="custom-file-input"  name="image" id="image" lang="es">
-  <label class="custom-file-label" for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	<img src="img/Icon awesome-camera.svg" class="mr-2" alt=""> Selecciona las imágenes en el orden que quieres que aparezcan</label>
+  <label class="custom-file-label" for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
 </div>
 									</div>
-									<div class="col-lg-2">
-									<input type="button" value="Cargar Foto" onclick='guardar_foto()' class="" style="padding: 5px 10px 5px 10px!important; border: solid 0px; background: #FB6676; border-radius: 5px; color: white;">
+									<div class="col-lg-3 col-12 text-center text-lg-right mt-2 mt-lg-0 ">
+									<input type="button" value="Cargar Foto" onclick='guardar_foto()' class="btn botonborrar1 btn-sm" >
 								
 										</form>
 									</div>

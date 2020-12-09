@@ -21,6 +21,7 @@
   include "modal/ubicacion.php";
   include "modal/eliminarcuenta.php";
     include "modal/cambiodecontraseña.php";
+    include "modal/eliminaranuncio.php";
 
  ?>
 
