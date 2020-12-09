@@ -5,7 +5,8 @@ $url= $_SERVER["REQUEST_URI"];
 $url_actual = "http://" . $host . $url;
 
 if($url_actual == "http://localhost/kineshub/publicaranuncio.php"){
-  
+  session_start();
+  $_SESSION['id_anuncio'] = "";
 }
 else{
   session_start();

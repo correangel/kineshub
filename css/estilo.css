@@ -734,6 +734,12 @@ transform: rotate(-135deg);
 	color: #fff!important;
 }
 
+.filtro1_activo{
+	cursor: pointer;
+	background-color: #FA394A!important;
+	color: #fff!important;
+}
+
    
 .publicidad1{
 	border-color: transparent!important;
