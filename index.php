@@ -700,7 +700,7 @@ else{
       var parametros=$( "#contrasenas_nuevas" ).serialize();
                        $.ajax({
                               data:  parametros, 
-                              url:   'http://localhost/api/public/json/cambiar_contraseña.php', 
+                              url:   '<?= $url_api ?>public/json/cambiar_contraseña.php', 
                               type:  'POST',
                               success:  function (response) 
                                           {

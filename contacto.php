@@ -190,7 +190,7 @@ else{
       var parametros=$( "#contacto" ).serialize();
                        $.ajax({
                               data:  parametros, 
-                              url:   'http://localhost/api/public/json/insert_contacto.php', 
+                              url:   '<?= $url_api ?>public/json/insert_contacto.php', 
                               type:  'POST',
                               success:  function (response) 
                                           {

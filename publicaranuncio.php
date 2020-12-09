@@ -779,7 +779,7 @@ border-color: #FF1730!important;
 		var parametro = $("#dep").val();
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/mostrar_provincias.php?departamento=' + parametro, 
+            url:   '<?= $url_api ?>public/json/mostrar_provincias.php?departamento=' + parametro, 
             type:  'GET',
             success:  function (response) 
 				{
@@ -793,7 +793,7 @@ border-color: #FF1730!important;
 		var parametro = $("#pro").val();
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/mostrar_distritos.php?provincia=' + parametro, 
+            url:   '<?= $url_api ?>public/json/mostrar_distritos.php?provincia=' + parametro, 
             type:  'GET',
             success:  function (response) 
 				{
@@ -807,7 +807,7 @@ border-color: #FF1730!important;
 		var parametro = $("#dis").val();
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/guardar_distrito.php?distrito=' + parametro, 
+            url:   '<?= $url_api ?>public/json/guardar_distrito.php?distrito=' + parametro, 
             type:  'GET',
             success:  function (response){}           
         });
@@ -817,7 +817,7 @@ border-color: #FF1730!important;
 		var parametro = $("#movilp").val();
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/guardar_telefono.php?telefono=' + parametro, 
+            url:   '<?= $url_api ?>public/json/guardar_telefono.php?telefono=' + parametro, 
             type:  'GET',
             success:  function (response){}           
         });
@@ -857,7 +857,7 @@ border-color: #FF1730!important;
 		}
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/act_caracteristica.php?campo=' + valor + '&valor=' + parametro, 
+            url:   '<?= $url_api ?>public/json/act_caracteristica.php?campo=' + valor + '&valor=' + parametro, 
             type:  'GET',
             success:  function (response){}           
         });
@@ -907,7 +907,7 @@ border-color: #FF1730!important;
 		}
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/tarifas.php?tipo=' + tipo + '&valor1=' + tiempo + '&valor2=' + costo, 
+            url:   '<?= $url_api ?>public/json/tarifas.php?tipo=' + tipo + '&valor1=' + tiempo + '&valor2=' + costo, 
             type:  'GET',
             success:  function (response){
 				
@@ -955,7 +955,7 @@ border-color: #FF1730!important;
 			tabla = "horarios";
 		}
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/eliminar_horario.php?id=' + id + '&tabla=' + tabla, 
+            url:   '<?= $url_api ?>public/json/eliminar_horario.php?id=' + id + '&tabla=' + tabla, 
             type:  'GET',
             success:  function (response){
 				if(tabla == 'horarios'){
@@ -1015,7 +1015,7 @@ border-color: #FF1730!important;
 		}
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/caracteristicas.php?campo=' + dato + '&valor=' + parametro, 
+            url:   '<?= $url_api ?>public/json/caracteristicas.php?campo=' + dato + '&valor=' + parametro, 
             type:  'GET',
             success:  function (response){
 				sobreti = $("#sobreti_total").val();
@@ -1044,7 +1044,7 @@ border-color: #FF1730!important;
 		}
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/servicios.php?campo=' + dato + '&valor=' + parametro, 
+            url:   '<?= $url_api ?>public/json/servicios.php?campo=' + dato + '&valor=' + parametro, 
             type:  'GET',
             success:  function (response){
 				servicio = $("#servicio_total").val();
@@ -1074,7 +1074,7 @@ border-color: #FF1730!important;
 
 
 		$.ajax({ 
-            url:   'http://localhost/api/public/json/encuentro.php?campo=' + dato + '&valor=' + parametro, 
+            url:   '<?= $url_api ?>public/json/encuentro.php?campo=' + dato + '&valor=' + parametro, 
             type:  'GET',
             success:  function (response){
 				encuentroht = $("#encuentro_total").val();
@@ -1146,7 +1146,7 @@ border-color: #FF1730!important;
 	
 	if(userdevdata == 0){
 		$.ajax({
-                              url:   'http://localhost/api/public/json/publicar_anuncio.php', 
+                              url:   '<?= $url_api ?>public/json/publicar_anuncio.php', 
                               type:  'GET',
                               success:  function (response) 
                                           {

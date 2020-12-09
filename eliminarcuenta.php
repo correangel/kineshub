@@ -109,7 +109,7 @@ else{
 		var parametros=$( "#eliminar_cuenta" ).serialize();
                        $.ajax({
 						      data: parametros,
-                              url:   'http://localhost/api/public/json/eliminar_cuenta.php', 
+                              url:   '<?= $url_api ?>public/json/eliminar_cuenta.php', 
                               type:  'POST',
                               success:  function (response) 
                                           {

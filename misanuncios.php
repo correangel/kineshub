@@ -76,7 +76,7 @@ else{
 
 		window.addEventListener('load', function(){
 			$.ajax({
-                              url:   'http://localhost/api/public/json/get_misanuncios.php', 
+                              url:   '<?= $url_api ?>public/json/get_misanuncios.php', 
                               type:  'GET',
                               success:  function (response) 
                                           {

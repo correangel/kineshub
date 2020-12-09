@@ -127,7 +127,7 @@ else{
 	var parametros=$( "#nueva_Clave" ).serialize();
                        $.ajax({
                               data:  parametros, 
-                              url:   'http://localhost/api/public/json/cambio_clave.php', 
+                              url:   '<?= $url_api ?>public/json/cambio_clave.php', 
                               type:  'POST',
                               success:  function (response) 
                                           {

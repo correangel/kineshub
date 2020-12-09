@@ -14,6 +14,7 @@ else{
 }
 session_start();
 
+$url_api="http://localhost/api/";
 ?>
 <!DOCTYPE html>
 <html lang="en">

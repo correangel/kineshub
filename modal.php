@@ -285,7 +285,7 @@
       var parametros=$( "#frm_add_user" ).serialize();
                        $.ajax({
                               data:  parametros, 
-                              url:   'http://localhost/api/public/json/insert_user.php', 
+                              url:   '<?= $url_api ?>public/json/insert_user.php', 
                               type:  'POST',
                               beforeSend: function()
                               {
@@ -359,7 +359,7 @@
       var parametros=$( "#frm_add_kine" ).serialize();
                        $.ajax({
                               data:  parametros, 
-                              url:   'http://localhost/api/public/json/insert_user.php', 
+                              url:   '<?= $url_api ?>public/json/insert_user.php', 
                               type:  'POST',
                               beforeSend: function()
                               {
@@ -408,7 +408,7 @@
       var parametros=$( "#frm_login" ).serialize();
                        $.ajax({
                               data:  parametros, 
-                              url:   'http://localhost/api/public/json/login_user.php', 
+                              url:   '<?= $url_api ?>public/json/login_user.php', 
                               type:  'POST',
                               success:  function (response) 
                                           {
