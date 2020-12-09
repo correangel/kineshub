@@ -236,7 +236,7 @@ border-color: #FF1730!important;
 
 						  <!-- version movil -->
 
-						  <div class="d-block d-md-none">.
+						  <div class="d-block d-md-none">
 						  	<div class="row mt-3">
 						  		<div class="col-6">
 						  				<img src="img/Icon ionic-logo-whatsapp2.svg" alt="" width="25" height="22" > <span class="pt-3">Whatsapp </span>
@@ -249,6 +249,7 @@ border-color: #FF1730!important;
   <input type="hidden" value="0" id="wss_valor">
   
 </div>
+	
 						  		</div>
 						  		<div class="container">
 						  			<p class="mt-4">Indicar que se pueden contactar por este medio</p>
