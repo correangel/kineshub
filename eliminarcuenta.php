@@ -54,7 +54,7 @@ else{
 		<div class="col-lg-6 ">
 			
 				<div class="row d-flex justify-content-end align-items-center">
-				<div class="col-lg-4"><p class="font-weight-bold text-center pt-4">Contacto</p></div>
+				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
 					<div class="fondo1">
 						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> Favotiro <span class="ml-3">0</span></p>

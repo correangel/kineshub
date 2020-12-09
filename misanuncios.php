@@ -32,7 +32,7 @@ else{
 		<div class="col-lg-6 ">
 			
 				<div class="row d-flex justify-content-end align-items-center">
-				<div class="col-lg-4"><p class="font-weight-bold text-center pt-4">Contacto</p></div>
+				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
 					<div class="fondo1">
 						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> Favotiro <span class="ml-3">0</span></p>
@@ -47,10 +47,10 @@ else{
 	</div>
 	</div>
 	<div class="mt-3 d-block d-md-none">
-		<img src="img/Grupo 4211.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 3911.svg" class="w-100" style="" alt="">
 	</div>
 	<div class="mt-3 d-none d-md-block">
-		<img src="img/Grupo 394.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 391.svg" class="w-100" style="" alt="">
 	</div>
 
 	<div class="text-center">

@@ -283,18 +283,25 @@ border-radius: 5px;
 	color: #000;
 	background-color: #F0F0F0;
 	    text-transform: capitalize!important;
-	    font-size: 17px;
+	    font-size: 15px;
 	    height: 43px;
 	    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.0), 0 0px 0px 0 rgba(0,0,0,0.0)!important;
+	        /*padding: .84rem 0.84rem;*/
+	        padding-top: .5rem;
+	        padding-bottom: .5rem;
+	        padding-left: 0.84rem;
+	        padding-right: 0.84rem;
+
 }
 .boton12{
 border-radius: 5px;
 	color: #000;
 	background-color: transparent;
 	    text-transform: capitalize!important;
-	    font-size: 17px;
+	    font-size: 15px;
 	    height: 43px;
 	    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.0), 0 0px 0px 0 rgba(0,0,0,0.0)!important;
+	        padding: .84rem 0.84rem;
 }
 .boton13{
 	/*width: 382px;*/
@@ -625,6 +632,9 @@ transform: rotate(-135deg);
     padding: 0.5rem!important;
     
 }
+.misanunciosmarge{
+	padding-left: 35px!important;
+}
 .imgborrar{
 	width: 100%;
 }
@@ -771,4 +781,10 @@ transform: rotate(-135deg);
 }
 .alert-dismissible {
      padding-right: 0rem!important; 
+}
+.misanunciosmarge{
+	padding-left: 10px;
+}
+.fa-heart:hover{
+	color: #FA394A;
 }
