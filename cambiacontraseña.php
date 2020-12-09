@@ -1,5 +1,11 @@
-<?php 
-	include "include/header.php";
+<?php
+ session_start(); 
+ if(isset($_SESSION['id'])){
+	include "include/header2.php";
+ }
+else{
+	header("Location: index.php");
+}
 	
  ?>
 
@@ -68,21 +74,22 @@
 		<div class="row d-flex justify-content-center">
 			<div class="col-lg-7">
 				<div class="card p-lg-5 p-4">
+					<form id="nueva_Clave">
 					<h2 class="color6 font-weight-bold">CAMBIA TU CONTRASEÑA</h2>
 					<h5 class="f12 font-weight-bolder">Completa los recuadros para cambiar tu contraseña por una nueva.</h5>
 					<div class="row">
 						<div class="col-lg-8 col-12">
 								<p class="grey-text mb-1 pb-0 mt-lg-4 mt-2 font-weight-normal f4">Ingresa tu contraseña actual</p>
-					<input class="form-control campo1 w-100  f3" type="password" id="contraseñaactual" name="contraseñaactual" placeholder="Contraseña">
-					<p class="color6 f5 my-2">*Debes ingresar tu contraseña para eliminar esta cuenta.</p>
+					<input class="form-control campo1 w-100  f3" type="password" id="actual" name="actual" placeholder="Contraseña">
+					<p class="color6 f5 my-2">*Ingresa tu clave actual.</p>
 
-					<p class="grey-text mb-1 pb-0 mt-lg-4 mt-4 font-weight-normal f4">Ingresa tu contraseña actual</p>
-					<input class="form-control campo1 w-100  f3" type="password" id="borrarcuenta" name="borrarcuenta" placeholder="Nueva contraseña">
+					<p class="grey-text mb-1 pb-0 mt-lg-4 mt-4 font-weight-normal f4">Ingresa tu nueva contraseña</p>
+					<input class="form-control campo1 w-100  f3" type="password" id="nueva" name="nueva" placeholder="Nueva contraseña">
 
-						<input class="form-control campo1 mt-2 w-100  f3" type="password" id="confirmarcontraseña" name="confirmarcontraseña" placeholder="Confirmar contraseña">
+						<input class="form-control campo1 mt-2 w-100  f3" type="password" id="confirmar" name="confirmar" placeholder="Confirmar contraseña">
 						<p class="color6 f5 my-2">*Debes ingresar tu NUEVA contraseña en AMBOS recuadros.</p>
 						</div>
-
+						
 
 
 
@@ -96,12 +103,13 @@
 
 					<div class="row mt-3">
 						<div class="col-lg-6 col-12">
-							<a href="#" class="btn botonborrar w-100">Regresar</a>
+							<a href="herramientas.php" class="btn botonborrar w-100">Regresar</a>
 						</div>
 						<div class="col-lg-6 col-12">
-							<a href="#" class="btn botonborrar1 w-100">Eliminar cuenta</a>
+							<a href="#" class="btn botonborrar1 w-100" onclick='cambiar_contraseña()'>Cambiar Contraseña</a>
 						</div>
 					</div>
+</form>
 				</div>
 			</div>
 		</div>
@@ -114,7 +122,34 @@
 
 </main>
 
+<script>
+	function cambiar_contraseña(){
+	var parametros=$( "#nueva_Clave" ).serialize();
+                       $.ajax({
+                              data:  parametros, 
+                              url:   'http://localhost/api/public/json/cambio_clave.php', 
+                              type:  'POST',
+                              success:  function (response) 
+                                          {
+                                            if (response==1) 
+                                            {
+                                              swal("Contraseña Actual no coincide con nuesta base de datos.");
+                                            }
 
+											if(response == 2){
+												swal("La nueva contraseña no coincide."); 
+											}
+
+                                            if(response == 3){
+												swal("Contraseña cambiada con exito, redirigiendo");
+												setTimeout("location.href='herramientas.php'", 2000);
+											}
+                                           
+                                          }
+                              
+                          });
+	}
+</script>
  		<?php 
 	include "modal.php";
 	include "include/footer.php";

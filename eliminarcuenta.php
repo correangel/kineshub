@@ -1,8 +1,13 @@
-<?php 
-	include "include/header.php";
+<?php
+ session_start(); 
+ if(isset($_SESSION['id'])){
+	include "include/header2.php";
+ }
+else{
+	header("Location: index.php");
+}
 	
  ?>
-
 <main>
 	<div class="container-fluid">
 					<!-- movil  -->
@@ -73,17 +78,19 @@
 							<img src="img/Icon awesome-exclamation-triangle.svg" class="imgborrar" alt="">
 						</div>
 					</div>
+					<form id="eliminar_cuenta">
 					<h5 class="f12 my-4 font-weight-bolder">¿Estás seguro que quieres eliminar tu cuenta y todos los anuncios que contiene?</h5>
 					<p class="grey-text font-weight-normal f4">Ingresa tu contraseña para verificar que seas tu quien confirme la acción de Eliminar esta cuenta.</p>
-					<input class="form-control campo1 w-100  f3" type="text" id="borrarcuenta" name="borrarcuenta" placeholder="Contraseña">
+					<input class="form-control campo1 w-100  f3" type="text" id="clave" name="clave" placeholder="Contraseña">
 					<p class="color6 f5 my-2">*Debes ingresar tu contraseña para eliminar esta cuenta.</p>
 					<div class="row mt-3">
 						<div class="col-lg-6 col-12">
-							<a href="#" class="btn botonborrar w-100">Regresar</a>
+							<a href="herramientas.php" class="btn botonborrar w-100">Regresar</a>
 						</div>
 						<div class="col-lg-6 col-12">
-							<a href="#" class="btn botonborrar1 w-100">Eliminar cuenta</a>
+							<a onclick="eliminar_cuenta()" class="btn botonborrar1 w-100">Eliminar cuenta</a>
 						</div>
+</form>
 					</div>
 				</div>
 			</div>
@@ -97,6 +104,35 @@
 
 </main>
 
+<script>
+	function eliminar_cuenta(){
+		var parametros=$( "#eliminar_cuenta" ).serialize();
+                       $.ajax({
+						      data: parametros,
+                              url:   'http://localhost/api/public/json/eliminar_cuenta.php', 
+                              type:  'POST',
+                              success:  function (response) 
+                                          {
+                                            if (response==1) 
+                                            {
+                                              swal("Contraseña no es su contraseña intente nuevamente.");
+                                            }
+
+                                            if(response == 2){
+												swal("Cuenta eliminada, saliendo");
+												setTimeout("location.href='logout.php'", 2000);
+											}
+
+											if(response == 3){
+												swal("Error intentando eliminar su cuenta o sus registro intente nuevamente");
+												setTimeout("location.href='herramientas.php'", 2000);
+											}
+                                           
+                                          }
+                              
+                          });
+	}
+</script>
 
  		<?php 
 	include "modal.php";

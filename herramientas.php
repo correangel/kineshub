@@ -1,8 +1,13 @@
-<?php 
+<?php
+ session_start(); 
+ if(isset($_SESSION['id'])){
 	include "include/header2.php";
+ }
+else{
+	header("Location: index.php");
+}
 	
  ?>
-
 <main>
 	<div class="container-fluid">
 					<!-- movil  -->
@@ -50,7 +55,7 @@
 	<div class="container">
 		<div class="row mt-md-5 d-flex justify-content-center">
 			<div class="col-lg-4 col-12 ">
-				<div class="flex-center">	<button class="btn boton22   d-flex align-items-center">
+				<div class="flex-center">	<button class="btn boton22   d-flex align-items-center" onclick="$(location).attr('href','cambiacontraseña.php');">
 					<img src="img/Icon material-security.svg" width="15" alt=""><p class="d-inline-block pb-0 ml-2 mb-0">Cambiar contraseña</p>	</button>
 				</div>
 
@@ -59,7 +64,7 @@
 			<div class="col-lg-4 col-12 ">
 				<div class="flex-center">
 					<button class="btn boton22   d-flex align-items-center">
-					<img src="img/Icon material-delete.svg" width="15" alt=""><p class="d-inline-block pb-0 ml-2 mb-0">Eliminar Cuenta</p>	</button>
+					<img src="img/Icon material-delete.svg" width="15" alt=""><p class="d-inline-block pb-0 ml-2 mb-0" onclick="$(location).attr('href','eliminarcuenta.php');">Eliminar Cuenta</p>	</button>
 				</div>
 				
 			</div>
