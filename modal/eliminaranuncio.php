@@ -17,7 +17,7 @@
               <a href="#" class="btn botonborrar  px-0" style="font-size: 10px;width: 150px;height: 43px;">Regresar</a>
             </div>
             <div class=" col-6 px-0">
-              <a href="#" class="btn botonborrar1  px-0" style="font-size: 10px;width: 150px;height: 43px;">Borrar</a>
+              <a onclick="eliminar_anuncio()" class="btn botonborrar1  px-0" style="font-size: 10px;width: 150px;height: 43px;">Borrar</a>
             </div>
           </div>
           </div>

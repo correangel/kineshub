@@ -93,7 +93,26 @@ else{
 		 }
 
 		 function eliminar_anuncio() {
-			 
+			 var parametro = $("#anuncio_eliminar").val();
+			$.ajax({
+                              url:   '<?= $url_api ?>public/json/eliminar_anuncio.php?id='+parametro, 
+                              type:  'GET',
+                              success:  function (response) 
+                                          {
+												$.ajax({
+												url:   '<?= $url_api ?>public/json/get_misanuncios.php', 
+												type:  'GET',
+												success:  function (response) 
+															{
+																$("#mis_anuncios").html(response);
+																$("#eliminaranuncio").modal("hide");
+															}
+												
+												});
+											
+                                          }
+                              
+                          });
 		 }
 	</script>
  		<?php 
