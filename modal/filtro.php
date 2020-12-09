@@ -16,8 +16,8 @@
          <div class="row py-1 d-flex justify-content-center">
            <div class="col-8 " >
 
-           <div class="d-inline-block px-3 px-md-5" style="border: 1px solid #D9D9D9;max-width: 450px;border-radius: 3px;">
-                   <span class="text-left font-weight-bold mr-0 mr-md-5 ">Foto verificada</span><img src="img/Grupo 139.svg" style="" class="ml-1 ml-md-5" width="21" alt="">
+           <div class="d-inline-block px-3 px-md-5 py-1 filtro1" style="border: 1px solid #D9D9D9;max-width: 450px;border-radius: 3px;">
+                   <span class="text-left font-weight-bold mr-0  mr-md-5 ">Foto verificada</span><img src="img/Grupo 139.svg" style="" class="ml-1 ml-md-5" width="21" alt="">
               </div>
 
          </div>

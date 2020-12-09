@@ -90,11 +90,11 @@
   </div>
 </div>
 <!-- fin de modal de promocion  -->
-<!-- <script>
+<script>
      window.onload = function primero(){
         $('#cookies').modal('show')
      }
 
 </script>
- -->
+
 
