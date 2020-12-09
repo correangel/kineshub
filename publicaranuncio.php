@@ -1,9 +1,11 @@
 <?php 
 session_start();
 if(isset($_SESSION['id'])){
+    
 	include "include/header2.php";
 }
 else{
+    header("Location: index.php");
 	include "include/header.php";
 }
 
