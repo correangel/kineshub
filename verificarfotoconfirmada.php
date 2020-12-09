@@ -1,6 +1,12 @@
-<?php 
-	include "include/header.php";
-	
+<?php
+ session_start(); 
+ if(isset($_SESSION['id'])){
+	include "include/header2.php";
+ }
+else{
+	header("Location: index.php");
+}
+
  ?>
 <style>
 	.custom-control-input:focus:not(:checked)~.custom-control-label::before {
@@ -74,7 +80,7 @@
 
 </div>
 								<div class="col-lg-2 col-12 mt-2 mt-lg-0 pl-0 pr-lg-2 text-center text-lg-right">
-									<a href="" class="btn botonborrar1 btn-sm">Enviar</a>
+									<a onclick='guardar_foto()' class="btn botonborrar1 btn-sm">Enviar</a>
 								</div>
 							</div>
 					
@@ -95,17 +101,15 @@
         var files = $('#image')[0].files[0];
         formData.append('file',files);
         $.ajax({
-            url: 'upload.php',
+            url: 'upload2.php',
             type: 'post',
             data: formData,
             contentType: false,
             processData: false,
             success: function(response) {
                 if (response != 0) {
-                    $("#imagenes_cargadas").html(response);
-					 imagenes_totales = $("#imagenes_totales").val();
-					 imagenes = imagenes_totales + 1;
-					 $("#imagenes_totales").val(imagenes);
+                    swal("Proceso de Validacion Iniciado con exito."); 
+                    setTimeout("location.href='misanuncios.php'", 3000);
                 } else {
                     $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
                 }
