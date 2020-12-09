@@ -7,7 +7,11 @@ else{
 	include "include/header.php";
 }
  ?>
-
+<style>
+	body{
+		padding-right: 0px!important;
+	}
+</style>
 	<main>
 		<!-- pc  -->
 

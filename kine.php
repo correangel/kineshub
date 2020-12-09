@@ -10,6 +10,7 @@
 else{
 	header("Location: index.php");
 }
+
  ?>
 
 <main>
@@ -73,9 +74,9 @@ else{
 	</div>
 	</div>
 	<h2 class="color5 f10 ml-md-2 font-weight-bolder mt-4 d-none d-md-block">TU PANEL DE KINE</h2>
-	<div class="container">
+<!-- 	<div class="container">
 		<h2 class="color5 f10 mt-4 f14 font-weight-bold mb-3">TU PANEL DE KINE</h2>
-	</div>
+	</div> -->
 	
 <div class="container d-none d-md-block">
 	<div class="row text-center mt-2 mt-md-5">

@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 $host= $_SERVER["HTTP_HOST"];
 $url= $_SERVER["REQUEST_URI"];
 $url_actual = "http://" . $host . $url;
@@ -13,6 +13,7 @@ else{
   $_SESSION['id_anuncio'] = "";
 }
 session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
