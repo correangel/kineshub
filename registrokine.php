@@ -19,24 +19,24 @@ body{
 		
 		<form>
 			<div class="row justify-content-center d-flex">
-				<div class="col-12 pl-4">
+				<div class="col-12 pl-4 pr-2">
 					<input class="form-control w-100 campo2  f1" type="text" id="usuariokine" name="usuariokine" placeholder="Nombre de Usuario">
 				</div>
 
-				<div class="col-12 pl-4 mt-3">
+				<div class="col-12 pl-4 pr-2 mt-3">
 					<input class="form-control w-100 campo2  f1" type="text" id="correokine" name="correokine" placeholder="Correo Electronico">
 				</div>
-				<div class="col-12 pl-4 mt-3">
+				<div class="col-12 pl-4 pr-2 mt-3">
 					
 					<input class="form-control w-100 f1 campo2" type="password" id="contraseñakine" name="contraseñakine" placeholder="Contraseña">
 				
 				</div>
-				<div class="col-12 pl-4 mt-3">
+				<div class="col-12 pl-4 pr-2 mt-3">
 					
 					<input class="form-control w-100 f1 campo2" type="password" id="confirmarcontraseñakine" name="confirmarcontraseñakine" placeholder="Confirmar contraseña">
 				
 				</div>
-				<div class="col-12 pl-4 mt-3">
+				<div class="col-12 pl-4 pr-2 mt-3">
 				
 <div class="custom-control custom-checkbox mt-4 mb-4">
   <input type="checkbox" class="custom-control-input" id="recuerdamekine">
