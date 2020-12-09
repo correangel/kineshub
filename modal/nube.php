@@ -1,5 +1,5 @@
 <div class="fixed-bottom" style="right: 0px;">
-	<div class="row justify-content-lg-end">
+	<div class="row justify-content-lg-start">
 	<div class="col-lg-4 col-10"><div class="alert  alert-dismissible fade show " role="alert" style="padding-left: 40px;max-width: 300px">
 
 
