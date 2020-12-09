@@ -86,6 +86,15 @@ else{
                           });
 		 }, false);
 
+
+		 function anuncio(params) {
+			parametro = $("#int_"+params).val();
+			 $("#anuncio_eliminar").val(parametro);
+		 }
+
+		 function eliminar_anuncio() {
+			 
+		 }
 	</script>
  		<?php 
 	include "modal.php";
