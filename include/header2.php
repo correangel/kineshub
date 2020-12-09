@@ -41,11 +41,12 @@ $url_api="http://localhost/api/";
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-light menu1x d-none d-md-block">
 <div class="container-fluid">
-	 <!-- Basic dropdown -->
-<button class="icomenu1 mr-4 px-3" type="button" data-toggle="dropdown"
-  aria-haspopup="true" aria-expanded="false"><i class="fas fa-bars"></i></button>
 
-<div class="dropdown-menu">
+
+<button class="icomenu1 mr-4 px-3" type="button" data-toggle="dropdown"
+  aria-haspopup="true" aria-expanded="false"  id="menudropdown2"><i class="fas fa-bars"></i></button>
+
+<div class="dropdown-menu" aria-labelledby="menudropdown2">
   <a class="dropdown-item" href="#">Action</a>
   <a class="dropdown-item" href="#">Another action</a>
   <a class="dropdown-item" href="#">Something else here</a>
