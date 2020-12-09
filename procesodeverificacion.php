@@ -1,6 +1,12 @@
-<?php 
-	include "include/header.php";
-	
+<?php
+ session_start(); 
+ if(isset($_SESSION['id'])){
+	include "include/header2.php";
+ }
+else{
+	header("Location: index.php");
+}
+$_SESSION['anuncio_verificar'] = $_GET['anuncio'];
  ?>
 
 <main>

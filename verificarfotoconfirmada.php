@@ -60,7 +60,7 @@
 						</div>
 					</div>
 					<div class="row">
-						<p class="font-weight-bold px-0 px-md-3">Te hemos enviado un email con las instrucciones para poder certificarte.</p>
+						<p class="font-weight-bold px-0 px-md-3">Te enviaremos un email cuando hayamos validado tu foto.</p>
 
 						
 					</div>
@@ -89,6 +89,30 @@
 
 </main>
 
+<script>
+	function guardar_foto(){
+		var formData = new FormData();
+        var files = $('#image')[0].files[0];
+        formData.append('file',files);
+        $.ajax({
+            url: 'upload.php',
+            type: 'post',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                if (response != 0) {
+                    $("#imagenes_cargadas").html(response);
+					 imagenes_totales = $("#imagenes_totales").val();
+					 imagenes = imagenes_totales + 1;
+					 $("#imagenes_totales").val(imagenes);
+                } else {
+                    $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
+                }
+            }
+        });
+	}
+</script>
 
  		<?php 
 	include "modal.php";
