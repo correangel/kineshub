@@ -1,4 +1,7 @@
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <!-- Modal perfil -->
 <div class="modal fade" id="perfilkine" tabindex="-1" role="dialog" aria-labelledby="perfilkine"
   aria-hidden="true">
@@ -153,14 +156,17 @@
            </div>
            <hr class="my-5">
            <p class="f9  font-weight-normal ">Mi galeria</p>
-           <div class="row">
-             <div class="col-lg-6 col-12 pr-2 pr-md-1">
-               <img src="img/Rectangle 3.png" class="imagen1x mt-2" alt="">
-               <img src="img/Rectangle 3.png" class="w-100 mt-2" alt="">
+           <div class="row ">
+             <div class="col-lg-6 col-12 pr-2 pr-md-1 ">
+              <a data-fancybox="gallery" href="img/1607530711.jpg"> <img src="img/Rectangle 3.png" class="imagen1x mt-2" alt=""></a>
+                 
+         
+              <a data-fancybox="gallery" href="img/Rectangle 3.png"> <img src="img/Rectangle 3.png" class="w-100 mt-2" alt=""></a>
+               
              </div>
              <div class="col-lg-6 col-12 pl-2 pl-md-1">
-               <img src="img/Rectangle 3.png" class="imagen2x mt-2" alt="">
-                 <img src="img/Rectangle 3.png" class="w-100 mt-2" alt="">
+               <a data-fancybox="gallery" href="img/1607530711.jpg"> <img src="img/Rectangle 3.png" class="imagen2x mt-2" alt=""></a>
+                    <a data-fancybox="gallery" href="img/1607530711.jpg"> <img src="img/Rectangle 3.png" class="w-100 mt-2" alt=""></a>
              </div>
             
            </div>

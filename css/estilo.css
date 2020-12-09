@@ -787,4 +787,5 @@ transform: rotate(-135deg);
 }
 .fa-heart:hover{
 	color: #FA394A;
+	content: "\f004"!important;
 }
