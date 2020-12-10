@@ -196,6 +196,11 @@ $url_api="http://localhost/api/";
       <li class="nav-item ">
         <a class="nav-link" href="kine.php"><i class="fas fa-user-circle"></i> Panel de usuario </a>
       </li>
+
+      <li class="nav-item ml-5">
+      <a href="publicaranuncio.php" class="nav-link"class="nav-link"><i class="fas fa-tag"></i> Publicar Anuncio</a>
+       
+      </li>
     <?php } ?>
      
        

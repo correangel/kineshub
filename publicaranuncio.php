@@ -246,8 +246,8 @@ border-color: #FF1730!important;
 						  		<div class="col-6">
 						  			<div class="custom-control custom-switch d-inline-block ml-4 ">
 	
-  <input type="checkbox" onchange="act_caracteristica('wsp');" class="custom-control-input" id="wsp">
-  <label class="custom-control-label" for="wsp">Activado</label>
+  <input type="checkbox" onchange="act_caracteristica('wsp1');" class="custom-control-input" id="wsp1">
+  <label class="custom-control-label" for="wsp1">Activado</label>
   <input type="hidden" value="0" id="wss_valor">
   
 </div>
@@ -842,6 +842,23 @@ border-color: #FF1730!important;
 				parametro = 0;
 				$("#wss_valor").val(parametro);
 			}
+		}
+
+		if(valor == 'wsp1'){
+			var parametro = $("#wsp1").val();
+
+			var param = $("#wss_valor").val();
+
+			if(param == 0){
+				parametro = 1;
+				$("#wss_valor").val(parametro);
+			}
+			else{
+				parametro = 0;
+				$("#wss_valor").val(parametro);
+			}
+
+			valor = "wsp";
 		}
 
 		if(valor == "aceptocondiciones"){
