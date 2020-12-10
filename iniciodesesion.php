@@ -14,10 +14,13 @@
 		<div class="text-center my-5">
 			<a href="index.php"><img src="img/logo.png"  width="237" alt=""></a>
 			<h2 class="font-weight-bold f2 ">Inicio de sesión</h2>
-			<div class="col-12" id="mensaje"></div>
 		</div>
 		<form id="frm_login">
 			<div class="row flex-center">
+			
+			<div class="col-11">
+					<div class="col-12" id="mensaje"></div>
+				</div>
 				<div class="col-11">
 					<input class="form-control campo1  f1" type="text" id="correoelectronico" name="usuario" placeholder="Correo Electronico">
 	 				<p style="color:red; font-size: 10px;" id="login_nombre"></p>

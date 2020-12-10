@@ -373,7 +373,7 @@
                                               swal("Usuario Registrado, verifique su correo.");  
                                               $("#registrok").modal("hide");
                                               $("#frm_add_user")[0].reset();
-                                              setTimeout("location.href='index.php'", 5000);
+                                              setTimeout("location.href='index.php'", 3000);
                                             }
                                             if (response==2) 
                                             {

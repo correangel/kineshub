@@ -175,19 +175,30 @@ $url_api="http://localhost/api/";
 
     <!-- Links -->
     <ul class="navbar-nav ml-auto">
+    <?php if($_SESSION['tipo'] == 1){ ?>
       <li class="nav-item ">
-        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Panel de usuario </a>
+        <a class="nav-link" href="user.php"><i class="fas fa-user-circle"></i> Panel de usuario </a>
       </li>
-       <li class="nav-item ml-5">  
+      <li class="nav-item ml-5">  
       <a href="publicaranuncio.php" class="nav-link"><i class="fas fa-heart"></i> Favoritas</a>
        
       </li>
-        <li class="nav-item ml-5">
+
+      <li class="nav-item ml-5">
       <a href="promociones.php" class="nav-link"class="nav-link"><i class="fas fa-tag"></i> Promociones</a>
        
       </li>
+    <?php } ?>
+    <?php if($_SESSION['tipo'] == 2){ ?>
+      <li class="nav-item ">
+        <a class="nav-link" href="kine.php"><i class="fas fa-user-circle"></i> Panel de usuario </a>
+      </li>
+    <?php } ?>
+     
+       
+        
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Salir</a>
       </li>
       
     </ul>
