@@ -8,7 +8,7 @@
         <div class="p-3">
       
           <div class="row d-flex justify-content-center">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-4">
               <img src="img/Icon awesome-exclamation-triangle.svg" class="w-100" alt="">
             </div>
               <p class="font-weight-bold text-center f12 my-3 ">¿Estás seguro que quieres eliminar tu anuncio?</p>
