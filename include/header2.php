@@ -159,12 +159,15 @@ $url_api="http://localhost/api/";
   			<div class="col-10 pl-0 pr-3 mx-0">
   				<img src="img/logo.png" width="132" alt="">
   		<p class="f5 font-weight-bolder pb-0 mb-0">LA MEJOR COMPAÑÍA A SOLO UN CLICK</p>
-  			</div>
-  			<div class="col-2 px-0 mx-0 mt-2">
+        </div>
+        <?php if($_SESSION['tipo'] == 1){ ?>
+          <div class="col-2 px-0 mx-0 mt-2">
   				<div class="corazon1 px-1">
   					<i class="fas fa-heart text-danger"></i> 0
   				</div>
   			</div>
+    <?php } ?>
+  		
   		</div>
   		
   	</div>
