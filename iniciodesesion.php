@@ -1,6 +1,5 @@
 <?php 
 	include "include/header.php";
-	$url_api="http://localhost/api/";
  ?>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
 
@@ -101,8 +100,7 @@
                                             if (response==4) 
                                             {
                                               swal("Inicio de sesion correcto, redirigiendo.");  
-                                              url = "http://localhost/kineshub/";
-                                              setTimeout("location.href='http://localhost/kineshub/'", 5000);
+                                              setTimeout("location.href='<?= $url_api ?>'", 5000);
                                             }
 
                                             if (response==5) 

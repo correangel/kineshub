@@ -478,19 +478,37 @@ border-color: #FF1730!important;
 							<div class="row">
 								<div class="col-sm col-6 mb-3 mb-md-0">
 								
-								    <select class="browser-default custom-select f5 marco1y pl-5 py-2" style="height: 34px;">
+								    <select class="browser-default custom-select f5 marco1y pl-5 py-2" id="la_etnia" style="height: 34px;" onchange="caracteristicas('etnia')">
             <option selected class="">Etnia</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-          </select>
+            <option value="1">Andinas</option>
+            <option value="2">Morenas</option>
+            <option value="3">Piel Blanca</option>
+            <option value="4">Trigueñas</option>
+		  </select>
 								</div>
 								<div class="col-sm col-6 mb-3 mb-md-0">
-									   <select class="browser-default custom-select f5 marco1y pl-5 py-2" style="height: 34px;">
+									   <select class="browser-default custom-select f5 marco1y pl-5 py-2" style="height: 34px;" id="la_pais" onchange="caracteristicas('pais')">
             <option selected>País</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+			<option value="argentinas">Argentinas</option>
+			<option value="bolivianas">Bolivianas</option>
+			<option value="brasileñas">Brasileñas</option>
+			<option value="chilenas">Chilenas</option>
+			<option value="colombianas">Colombianas</option>
+			<option value="costarricenses">Costarricenses</option>
+			<option value="cubanas">Cubanas</option>
+			<option value="dominicanas">Dominicanas</option>
+			<option value="ecuatorianas">Ecuatorianas</option>
+			<option  value="guatemaltecas">Guatemaltecas</option>
+			<option  value="hondureñas">Hondureñas</option>
+			<option value="mexicanas">Mexicanas</option>
+			<option value="nicaraguenses">Nicaragüenses</option>
+			<option value="panameñas">Panameñas</option>
+			<option value="paraguayas">Paraguayas</option>
+			<option value="peruanas">Peruanas</option>
+			<option value="puertorriqueñas">Puertorriqueñas</option>
+			<option  value="salvadoreñas">Salvadoreñas</option>
+			<option value="uruguayas">Uruguayas</option>
+			<option value="venezolanas">Venezolanas</option>
           </select>								</div>
 								<div class="col-sm col-6">
 									<p class="marco1y filtro1 f5 py-2 text-center px-2" id="la_independiente" onclick="caracteristicas('independiente')">Independientes</p>
@@ -957,16 +975,6 @@ border-color: #FF1730!important;
         });
 	}
 
-	function editar_tarifa(id){
-		$("#tiempo_"+id).prop('disabled', false);
-		$("#costo_"+id).prop('disabled', false);
-	}
-
-	function editar_horario(id){
-		$("#dia_"+id).prop('disabled', false);
-		$("#horas_"+id).prop('disabled', false);
-	}
-
 	function eliminar_horario(id, tabla){
 		if(tabla == 1){
 			tabla = "tarifas";
@@ -1016,15 +1024,133 @@ border-color: #FF1730!important;
 		
 		
 		var parametro = $("#in_"+dato).val();
+		
 		if(parametro == 1){
+			if(dato == 'altas' || dato == 'bajas'){
+			$('#la_bajas').attr('onClick', "caracteristicas('bajas');");
+			$('#la_altas').attr('onClick', "caracteristicas('altas');");
+			$("#la_bajas").addClass("filtro1");
+			$("#la_altas").addClass("filtro1");
+			$("#la_altas").removeClass("filtro_d");
+			$("#la_bajas").removeClass("filtro_d");
+			}
+
+			if(dato == 'delgadas' || dato == 'gorditas'){
+			$('#la_delgadas').attr('onClick', "caracteristicas('delgadas');");
+			$('#la_gorditas').attr('onClick', "caracteristicas('gorditas');");
+			$("#la_delgadas").addClass("filtro1");
+			$("#la_gorditas").addClass("filtro1");
+			$("#la_gorditas").removeClass("filtro_d");
+			$("#la_delgadas").removeClass("filtro_d");
+			}
+
+			if(dato == 'independiente' || dato == 'agencia'){
+			$('#la_independiente').attr('onClick', "caracteristicas('independiente');");
+			$('#la_agencia').attr('onClick', "caracteristicas('agencia');");
+			$("#la_independiente").addClass("filtro1");
+			$("#la_agencia").addClass("filtro1");
+			$("#la_independiente").removeClass("filtro_d");
+			$("#la_agencia").removeClass("filtro_d");
+			}
+
+			if(dato == 'depiladas' || dato == 'sin_depilar'){
+			$('#la_depiladas').attr('onClick', "caracteristicas('depiladas');");
+			$('#la_sin_depilar').attr('onClick', "caracteristicas('sin_depilar');");
+			$("#la_depiladas").addClass("filtro1");
+			$("#la_sin_depilar").addClass("filtro1");
+			$("#la_depiladas").removeClass("filtro_d");
+			$("#la_sin_depilar").removeClass("filtro_d");
+			}
+
+			if(dato == 'negro' || dato == 'rubia' || dato == 'rubia1' || dato == 'rojas'){
+			$('#la_negro').attr('onClick', "caracteristicas('negro');");
+			$('#la_rubia').attr('onClick', "caracteristicas('rubia');");
+			$('#la_rubia1').attr('onClick', "caracteristicas('rubia1');");
+			$('#la_rojas').attr('onClick', "caracteristicas('rojas');");
+			$("#la_negro").addClass("filtro1");
+			$("#la_rubia").addClass("filtro1");
+			$("#la_rubia1").addClass("filtro1");
+			$("#la_rojas").addClass("filtro1");
+			$("#la_negro").removeClass("filtro_d");
+			$("#la_rubia").removeClass("filtro_d");
+			$("#la_rubia1").removeClass("filtro_d");
+			$("#la_rojas").removeClass("filtro_d");
+			}
+
+			
 			parametro = 0;
 			$("#in_"+dato).val("0");
 			$("#la_"+dato).removeClass("filtro1_activo");
 		}
 		else{
+			if(dato == 'negro'){
+				$('#la_rubia').removeAttr('onclick');
+				$('#la_rubia1').removeAttr('onclick');
+				$('#la_rojas').removeAttr('onclick');
+				$("#la_rubia").addClass("filtro_d");
+				$("#la_rubia1").addClass("filtro_d");
+				$("#la_rojas").addClass("filtro_d");
+			}
+			if(dato == 'rojas'){
+				$('#la_rubia').removeAttr('onclick');
+				$('#la_rubia1').removeAttr('onclick');
+				$('#la_negro').removeAttr('onclick');
+				$("#la_rubia").addClass("filtro_d");
+				$("#la_rubia1").addClass("filtro_d");
+				$("#la_negro").addClass("filtro_d");
+			}
+			if(dato == 'rubia' || dato == 'rubia1'){
+				$('#la_negro').removeAttr('onclick');
+				$('#la_rojas').removeAttr('onclick');
+				$("#la_negro").addClass("filtro_d");
+				$("#la_rojas").addClass("filtro_d");
+			}
+
+			if(dato == 'altas'){
+				$('#la_bajas').removeAttr('onclick');
+				$("#la_bajas").addClass("filtro_d");
+			}
+			if(dato == 'bajas'){
+				$('#la_altas').removeAttr('onclick');
+				$("#la_altas").addClass("filtro_d");
+			}
+
+			if(dato == 'delgadas'){
+				$('#la_gorditas').removeAttr('onclick');
+				$("#la_gorditas").addClass("filtro_d");
+			}
+			if(dato == 'gorditas'){
+				$('#la_delgadas').removeAttr('onclick');
+				$("#la_delgadas").addClass("filtro_d");
+			}
+
+			if(dato == 'independiente'){
+				$('#la_agencia').removeAttr('onclick');
+				$("#la_agencia").addClass("filtro_d");
+			}
+			if(dato == 'agencia'){
+				$('#la_independiente').removeAttr('onclick');
+				$("#la_independiente").addClass("filtro_d");
+			}
+
+			if(dato == 'depiladas'){
+				$('#la_sin_depilar').removeAttr('onclick');
+				$("#la_sin_depilar").addClass("filtro_d");
+			}
+			if(dato == 'sin_depilar'){
+				$('#la_depiladas').removeAttr('onclick');
+				$("#la_depiladas").addClass("filtro_d");
+			}
 			parametro = 1;
 			$("#in_"+dato).val("1");
+			
 			$("#la_"+dato).addClass("filtro1_activo");
+			if(dato == "etnia"){
+				$("#la_"+dato).removeClass("filtro1_activo");
+			}
+			if(dato == "pais"){
+				$("#la_"+dato).removeClass("filtro1_activo");
+			}
 		}
 
 		if(dato == 'rubia1'){
@@ -1032,6 +1158,14 @@ border-color: #FF1730!important;
 		}
 		if(dato == 'naturales1'){
 			dato = 'naturales';
+		}
+
+		if(dato == 'etnia'){
+			var parametro = $("#la_etnia").val();
+		}
+
+		if(dato == 'pais'){
+			var parametro = $("#la_pais").val();
 		}
 
 		$.ajax({ 

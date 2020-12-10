@@ -75,7 +75,7 @@ else{
 	</div>
 <h2 class="color5 f10 ml-md-2 font-weight-bolder mt-4 d-none d-md-block">TU PANEL DE USUARIO</h2>
 	<div class="container">
-		<h2 class="color5 f10 mt-4 f14 font-weight-bold mb-3 d-block d-md-none">TU PANEL DE USUARIO/h2>
+		<h2 class="color5 f10 mt-4 f14 font-weight-bold mb-3 d-block d-md-none">TU PANEL DE USUARIO</h2>
 	</div>
 	
 <div class="container d-none d-md-block">
