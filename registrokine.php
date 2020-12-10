@@ -16,28 +16,29 @@ body{
 }
  </style>
 	<main class="d-block d-md-none">
-		<div class="text-center my-5">
+		<div class="container">
+			<div class="text-center my-5">
 			<a href="index.php"><img src="img/logo.png"  width="237" alt=""></a>
 			<h2 class="font-weight-bold f2 text-white mt-2 ">Regístrate para Usuario</h2>
 		</div>
 		
 		<form id="frm_add_kine">
 			<div class="row justify-content-center d-flex">
-				<div class="col-12 pl-4 pr-2">
+				<div class="col-12 ">
 					<input class="form-control w-100 campo2  f1" type="text" id="NombreUsuario" name="usuario" placeholder="Nombre de Usuario">
 					<p style="color:white; font-size: 1em;" id="reg_kine_nombre"></p>
 				</div>
 
-				<div class="col-12 pl-4 pr-2 mt-3">
+				<div class="col-12 mt-1">
 					<input class="form-control w-100 campo2  f1" type="text" id="CorreoElectronico" name="correo" placeholder="Correo Electronico">
 				<p style="color:white; font-size: 1em;" id="reg_kine_email"></p>
 				</div>
-				<div class="col-12 pl-4 pr-2 mt-3">
+				<div class="col-12  mt-1">
 					
 					<input class="form-control w-100 f1 campo2" type="password" id="Contraseñakine" name="clave" placeholder="Contraseña">
 				<p style="color:white; font-size: 1em;" id="reg_kine_clave1"></p>
 				</div>
-				<div class="col-12 pl-4 pr-2 mt-3">
+				<div class="col-12  mt-1">
 					
 					<input class="form-control w-100 f1 campo2" type="password" id="Confirmarcontraseñakine" name="clave2" placeholder="Confirmar contraseña">
 				<p style="color:white; font-size: 1em;" id="reg_kine_clave2"></p>
@@ -45,10 +46,14 @@ body{
 				</div>
 				
 			</div>
-			
-			<div class="text-center">
-				<a onclick="registrar_kine()"  class="btn boton1">Registrar</a>
-			</div>
+			 <div class="row justify-content-center">
+        <div class="col-8">
+          <div class="text-center">
+        <a class="btn boton1h w-100" onclick="registrar_kine()">Registrar</a>
+      </div>
+        </div>
+      </div>
+		
 		</form>
 			<div class="mt-4 mb-5">
 			<p class="text-center font-weight-bolder f1 text-white">¿Ya tienes una cuenta? <a href="iniciodesesion.php" class="font-weight-bold text-white ml-1"><u>Inicia Sesión</u></a></p>
@@ -57,6 +62,8 @@ body{
 			<p class="text-white f3">@Kineshub 2020. <br> Todos los derechos reservados.</p>
 
 		</div>
+		</div>
+		
 	</main>
 <script>
 	//Registro de Usuario Kine

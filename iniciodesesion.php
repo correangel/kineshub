@@ -10,50 +10,64 @@
  	
  </style>
 	<main>
-		<div class="text-center my-5">
-			<a href="index.php"><img src="img/logo.png"  width="237" alt=""></a>
-			<h2 class="font-weight-bold f2 ">Inicio de sesión</h2>
-		</div>
-		<form id="frm_login">
-			<div class="row flex-center">
-			
-			<div class="col-11">
-					<div class="col-12" id="mensaje"></div>
-				</div>
-				<div class="col-11">
-					<input class="form-control campo1  f1" type="text" id="correoelectronico" name="usuario" placeholder="Correo Electronico">
-	 				<p style="color:red; font-size: 10px;" id="login_nombre"></p>
-				</div>
-				<div class="col-11 mt-3">
-					
-					<input class="form-control f1 campo1" type="password" id="Contraseña" name="clave" placeholder="Contraseña">
-				<p style="color:red; font-size: 10px;" id="login_clave"></p>
-				</div>
-				<div class="col-11 mt-3">
-				
-<div class="custom-control custom-checkbox mt-4 mb-5">
+    <div class="container">
+      <div class="text-center my-5">
+      <a href="index.php"><img src="img/logo.png"  width="237" alt=""></a>
+      <h2 class="font-weight-bold f2 ">Inicio de sesión</h2>
+    </div>
+    <form id="frm_login">
+      <div class="row ">
+      <div class="col-12">
+     <div class="row">
+       <div class="col-8">
+          <div class="col-12" id="mensaje"></div>
+        </div>
+          <div class="col-12">
+          <input class="form-control campo5  f1" type="text" id="correoelectronico" name="usuario" placeholder="Correo Electronico">
+          <p style="color:red; font-size: 10px;" id="login_nombre"></p>
+        </div>
+            <div class="col-12 ">
+          
+          <input class="form-control f1 campo5" type="password" id="Contraseña" name="clave" placeholder="Contraseña">
+        <p style="color:red; font-size: 10px;" id="login_clave"></p>
+        </div>
+            <div class="col-12">
+        
+<div class="custom-control custom-checkbox mt-3 mb-4">
   <input type="checkbox" class="custom-control-input" id="recuerdame">
   <label class="custom-control-label" for="recuerdame">Recuérdame</label>
 </div>
-			</div>
-			</div>
-			
-			<div class="text-center">
-				<a class="btn boton1" onclick="login()">Ingresar</a>
-			</div>
-		</form>
-		<div class="mt-4">
-			<p class="text-center font-weight-bold f1">¿Eres nuevo?<a href="crearcuenta.php" class="color1 ml-1">Regístrate</a></p>
-		</div>
-		<div class="mt-5">
-			<a href="olvidemicontraseña.php" class="text-dark"><p class="text-center font-weight-bold f1">
-				<u>Olvidé mi contraseña</u>
-			</p></a>	
+      </div>
+     </div>   
+      </div>
+      
+      
+    
+    
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8">
+          <div class="text-center">
+        <a class="btn boton1h w-100" onclick="login()">Ingresar</a>
+      </div>
+        </div>
+      </div>
+      
+    </form>
+    <div class="mt-4">
+      <p class="text-center font-weight-bold f1">¿Eres nuevo?<a href="crearcuenta.php" class="color1 ml-1">Regístrate</a></p>
+    </div>
+    <div class="mt-5">
+      <a href="olvidemicontraseña.php" class="text-dark"><p class="text-center font-weight-bold f1">
+        <u>Olvidé mi contraseña</u>
+      </p></a>  
 
-		</div>
-		<div class="fixed-bottom text-center">
-			<p class="grey-text f3">@Kineshub 2020. <br> Todos los derechos reservados.</p>
-		</div>
+    </div>
+    <div class=" text-center mt-5">
+      <p class="grey-text f3">@Kineshub 2020. <br> Todos los derechos reservados.</p>
+    </div>
+    </div>
+		
 	</main>
 <script>
 	function login(){
