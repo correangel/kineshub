@@ -744,6 +744,12 @@ transform: rotate(-135deg);
 	color: #fff!important;
 }
 
+.filtro_d:hover{
+	cursor: pointer;
+	background-color: #9e9e9e!important;
+	color: #fff!important;
+}
+
 .filtro1_activo{
 	cursor: pointer;
 	background-color: #FA394A!important;

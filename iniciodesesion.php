@@ -1,6 +1,5 @@
 <?php 
 	include "include/header.php";
-	$url_api="http://localhost/api/";
  ?>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
 
@@ -14,10 +13,13 @@
 		<div class="text-center my-5">
 			<a href="index.php"><img src="img/logo.png"  width="237" alt=""></a>
 			<h2 class="font-weight-bold f2 ">Inicio de sesión</h2>
-			<div class="col-12" id="mensaje"></div>
 		</div>
 		<form id="frm_login">
 			<div class="row flex-center">
+			
+			<div class="col-11">
+					<div class="col-12" id="mensaje"></div>
+				</div>
 				<div class="col-11">
 					<input class="form-control campo1  f1" type="text" id="correoelectronico" name="usuario" placeholder="Correo Electronico">
 	 				<p style="color:red; font-size: 10px;" id="login_nombre"></p>
@@ -98,8 +100,7 @@
                                             if (response==4) 
                                             {
                                               swal("Inicio de sesion correcto, redirigiendo.");  
-                                              url = "http://localhost/kineshub/";
-                                              setTimeout("location.href='http://localhost/kineshub/'", 5000);
+                                              setTimeout("location.href='<?= $url_api ?>'", 5000);
                                             }
 
                                             if (response==5) 

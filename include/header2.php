@@ -159,12 +159,15 @@ $url_api="http://localhost/api/";
   			<div class="col-10 pl-0 pr-3 mx-0">
   				<img src="img/logo.png" width="132" alt="">
   		<p class="f5 font-weight-bolder pb-0 mb-0">LA MEJOR COMPAÑÍA A SOLO UN CLICK</p>
-  			</div>
-  			<div class="col-2 px-0 mx-0 mt-2">
+        </div>
+        <?php if($_SESSION['tipo'] == 1){ ?>
+          <div class="col-2 px-0 mx-0 mt-2">
   				<div class="corazon1 px-1">
   					<i class="fas fa-heart text-danger"></i> 0
   				</div>
   			</div>
+    <?php } ?>
+  		
   		</div>
   		
   	</div>
@@ -175,19 +178,35 @@ $url_api="http://localhost/api/";
 
     <!-- Links -->
     <ul class="navbar-nav ml-auto">
+    <?php if($_SESSION['tipo'] == 1){ ?>
       <li class="nav-item ">
-        <a class="nav-link" href="#"><i class="fas fa-user-circle"></i> Panel de usuario </a>
+        <a class="nav-link" href="user.php"><i class="fas fa-user-circle"></i> Panel de usuario </a>
       </li>
-       <li class="nav-item ml-5">  
+      <li class="nav-item ml-5">  
       <a href="publicaranuncio.php" class="nav-link"><i class="fas fa-heart"></i> Favoritas</a>
        
       </li>
-        <li class="nav-item ml-5">
+
+      <li class="nav-item ml-5">
       <a href="promociones.php" class="nav-link"class="nav-link"><i class="fas fa-tag"></i> Promociones</a>
        
       </li>
+    <?php } ?>
+    <?php if($_SESSION['tipo'] == 2){ ?>
+      <li class="nav-item ">
+        <a class="nav-link" href="kine.php"><i class="fas fa-user-circle"></i> Panel de usuario </a>
+      </li>
+
+      <li class="nav-item ml-5">
+      <a href="publicaranuncio.php" class="nav-link"class="nav-link"><i class="fas fa-tag"></i> Publicar Anuncio</a>
+       
+      </li>
+    <?php } ?>
+     
+       
+        
       <li class="nav-item">
-        <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+        <a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i> Salir</a>
       </li>
       
     </ul>

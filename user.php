@@ -1,8 +1,8 @@
 <?php 
  session_start(); 
  if(isset($_SESSION['id'])){
-	 if($_SESSION['tipo'] == 1){
-		 header("Location: user.php");
+	 if($_SESSION['tipo'] == 2){
+		 header("Location: kine.php");
 	 }
 	 
 	include "include/header2.php";
