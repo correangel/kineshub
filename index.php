@@ -672,20 +672,8 @@ else{
 
 <script>
 	function nueva_clave(){
-		var clave1 = $("#clave1").val().length;
-		var clave2 = $("#clave2").val().length;
-    userdevdata = 3;
-    if(clave1 < 8){
-      $("#clave1_text").html("La contraseña, debe contener minimo 8 caracteres.");
-	  $("#clave1").focus();
-    }
-    else{ userdevdata = userdevdata-1; console.log(userdevdata); $("#clave1_text").html("");  }
-
-	if(clave2 < 8){
-      $("#clave2_text").html("La contraseña, debe contener minimo 8 caracteres.");
-	  $("#clave2").focus();
-    }
-    else{ userdevdata = userdevdata-1; console.log(userdevdata); $("#clave2_text").html("");  }
+		
+    userdevdata = 1;
 
 	if(clave1 === clave2){
 		userdevdata = userdevdata-1; console.log(userdevdata);
