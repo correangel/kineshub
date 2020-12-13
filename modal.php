@@ -10,6 +10,7 @@
 
 
 <?php 
+  include "api.php";
   include "modal/filtro.php";
   include "modal/fotoverificada.php";
   include "modal/iniciarsesion.php";
@@ -373,7 +374,7 @@
                                               swal("Usuario Registrado, verifique su correo.");  
                                               $("#registrok").modal("hide");
                                               $("#frm_add_user")[0].reset();
-                                              setTimeout("location.href='index.php'", 3000);
+                                              setTimeout("location.href='index.php'", 2000);
                                             }
                                             if (response==2) 
                                             {
@@ -434,9 +435,7 @@
 
                                             if (response==4) 
                                             {
-                                              swal("Inicio de sesion correcto, redirigiendo.");  
-                                              url = "http://localhost/kineshub/";
-                                              setTimeout("location.href='http://localhost/kineshub/'", 5000);
+                                              setTimeout("location.href='index.php'", 1000);
                                             }
 
                                             if (response==5) 

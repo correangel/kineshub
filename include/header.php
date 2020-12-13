@@ -1,5 +1,5 @@
 <?php
-$url_api="http://localhost/api/";
+require_once "api.php";
 ?>
 
 
