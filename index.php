@@ -6,11 +6,16 @@ if(isset($_SESSION['id'])){
 else{
 	include "include/header.php";
 }
+
+
+require_once "db.php";
+
+$sql = mysqli_query($enlace, "SELECT * FROM anuncio");
  ?>
 <style>
 	body{
 		padding-right: 0px!important;
-	}
+	} 
 </style>
 	<main>
 		<!-- pc  -->
@@ -76,6 +81,7 @@ else{
 	</div>
 	
 	<div>
+	<?php while($row = mysqli_fetch_array($sql)){ ?>
 		<div class="row mt-4">
 			<div class="col-lg-2 col-6 px-1 mx-0">
 					<div class="card card1" data-toggle="modal" data-target="#perfilkine">
@@ -98,15 +104,17 @@ else{
 				</div>
 				</div>
 			</div>
-		
+
 			</div>
-	
-
-	
-	
-
-	
 	</div>
+		
+			
+	<?php } ?>
+	
+
+
+
+	
 </div>
 		<!-- fin pc  -->
 
