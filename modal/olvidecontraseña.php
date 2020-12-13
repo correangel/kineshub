@@ -62,7 +62,7 @@
       var parametros=$( "#recuperar_Contraseña" ).serialize();
                        $.ajax({
                               data:  parametros, 
-                              url:   'http://localhost/api/public/json/validar_recuperacion.php', 
+                              url:   '<?= $url_api ?>/public/json/validar_recuperacion.php', 
                               type:  'POST',
                               success:  function (response) 
                                           {
