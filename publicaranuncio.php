@@ -491,26 +491,26 @@ border-color: #FF1730!important;
 								<div class="col-sm col-6 mb-3 mb-md-0">
 									   <select class="browser-default custom-select f5 marco1y pl-5 py-2" style="height: 34px;" id="la_pais" onchange="caracteristicas('pais')">
             <option selected>País</option>
-			<option value="argentinas">Argentinas</option>
-			<option value="bolivianas">Bolivianas</option>
-			<option value="brasileñas">Brasileñas</option>
-			<option value="chilenas">Chilenas</option>
-			<option value="colombianas">Colombianas</option>
-			<option value="costarricenses">Costarricenses</option>
-			<option value="cubanas">Cubanas</option>
-			<option value="dominicanas">Dominicanas</option>
-			<option value="ecuatorianas">Ecuatorianas</option>
-			<option  value="guatemaltecas">Guatemaltecas</option>
-			<option  value="hondureñas">Hondureñas</option>
-			<option value="mexicanas">Mexicanas</option>
-			<option value="nicaraguenses">Nicaragüenses</option>
-			<option value="panameñas">Panameñas</option>
-			<option value="paraguayas">Paraguayas</option>
-			<option value="peruanas">Peruanas</option>
-			<option value="puertorriqueñas">Puertorriqueñas</option>
-			<option  value="salvadoreñas">Salvadoreñas</option>
-			<option value="uruguayas">Uruguayas</option>
-			<option value="venezolanas">Venezolanas</option>
+			<option value="Argentina">Argentinas</option>
+			<option value="Boliviana">Bolivianas</option>
+			<option value="Brasileña">Brasileñas</option>
+			<option value="Chilena">Chilenas</option>
+			<option value="Colombiana">Colombianas</option>
+			<option value="Coste Ricense">Costarricenses</option>
+			<option value="Cubana">Cubanas</option>
+			<option value="Dominicana">Dominicanas</option>
+			<option value="Ecuatoriana">Ecuatorianas</option>
+			<option  value="Guatemalteca">Guatemaltecas</option>
+			<option  value="Hondureña">Hondureñas</option>
+			<option value="Mexicana">Mexicanas</option>
+			<option value="Nicaraguense">Nicaragüenses</option>
+			<option value="Panameña">Panameñas</option>
+			<option value="Paraguaya">Paraguayas</option>
+			<option value="Peruana">Peruanas</option>
+			<option value="Puerto Riqueña">Puertorriqueñas</option>
+			<option  value="Slavadoreña">Salvadoreñas</option>
+			<option value="Uruguaya">Uruguayas</option>
+			<option value="Venezolana">Venezolanas</option>
           </select>								</div>
 								<div class="col-sm col-6">
 									<p class="marco1y filtro1 f5 py-2 text-center px-2" id="la_independiente" onclick="caracteristicas('independiente')">Independientes</p>

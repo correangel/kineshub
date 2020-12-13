@@ -9,8 +9,8 @@ else{
 
 
 require_once "db.php";
-
-$sql = mysqli_query($enlace, "SELECT * FROM anuncio");
+mysqli_set_charset($enlace,"utf8");
+$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
  ?>
 <style>
 	body{
@@ -83,7 +83,7 @@ $sql = mysqli_query($enlace, "SELECT * FROM anuncio");
 	<div>
 	<div class="row mt-4">
 	<?php while($row = mysqli_fetch_array($sql)){
-		$sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['id'] ."' LIMIT 1");
+		$sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['ID'] ."' LIMIT 1");
 		$rowq = mysqli_fetch_array($sqlq);
 		?>
 			
@@ -94,17 +94,17 @@ $sql = mysqli_query($enlace, "SELECT * FROM anuncio");
 					<div class="row ">
 						<div class="col-8">
 							<div class="row">
-								<div class="col-12 "><p><?= $row['nombre'] ?>  <img src="img/Grupo 139.svg" alt="" class="ml-1"></p></div>
+	<div class="col-12 "><p><?= $row['Nombre'] ?> <?php if($row['verificado'] == 1){ ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
 								
 							</div>
 						</div>
 						<div class="col-4"><i class="fas fa-heart f2 color3"></i></div>
 					</div>
 				<div>
-					<span class="badge badge-pill badge-light">Lima Metropolitana</span>
-					<span class="badge badge-pill badge-light">18 años</span>
+					<span class="badge badge-pill badge-light"><?= $row['Distrito'] ?></span>
+					<span class="badge badge-pill badge-light"><?= $row['Edad'] ?> años</span>
 					<span class="badge badge-pill badge-light">S/180</span>
-					<span class="badge badge-pill badge-light">Venezolana</span>
+					<span class="badge badge-pill badge-light"><?= $row['Pais'] ?></span>
 				</div>
 				</div>
 			</div>
