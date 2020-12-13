@@ -43,16 +43,7 @@ require_once "api.php";
 <div class="container-fluid" id="menud1">
 
 
-<button class="icomenu1 mr-4 px-3" type="button" data-toggle="dropdown"
-  aria-haspopup="true" aria-expanded="false"   id="menudropdown2"><i class="fas fa-bars"></i></button>
 
-<div class="dropdown-menu" aria-labelledby="menudropdown2" id="menud2">
-  <a class="dropdown-item" href="#">Action</a>
-  <a class="dropdown-item" href="#">Another action</a>
-  <a class="dropdown-item" href="#">Something else here</a>
-  <div class="dropdown-divider"></div>
-  <a class="dropdown-item" href="logout.php">Cerrar Sesion</a>
-</div>
 <!-- Basic dropdown -->
   <a class="navbar-brand" href="index.php"><img src="img/logo.png" width="180" alt=""></a>
 
