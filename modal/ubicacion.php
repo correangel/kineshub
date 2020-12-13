@@ -24,8 +24,10 @@ mysqli_set_charset($enlace,"utf8");
             <?php
 								$sql_dep = mysqli_query($enlace, "SELECT * FROM departamentos");
 								while($row_dep = mysqli_fetch_array($sql_dep)){
+                  $sqlqq = mysqli_query($enlace, "SELECT * FROM anuncio WHERE departamento = '". $row_dep['id'] ."'");
+                  $num2 = mysqli_num_rows($sqlqq);
 							?>
-								<option value="<?= $row_dep['id'] ?>"><?= $row_dep['departamento'] ?></option>
+								<option <?php if($num2 > 0){ } else {echo "disabled=''";} ?>value="<?= $row_dep['id'] ?>"><?= $row_dep['departamento'] ?></option>
 							<?php } ?>
           </select>
          </div>
@@ -69,7 +71,7 @@ function select_dep(){
 		var parametro = $("#dep").val();
 
 		$.ajax({ 
-            url:   '<?= $url_api ?>public/json/mostrar_provincias.php?departamento=' + parametro, 
+            url:   '<?= $url_api ?>public/json/mostrar_provincias2.php?departamento=' + parametro, 
             type:  'GET',
             success:  function (response) 
 				{
@@ -83,23 +85,13 @@ function select_dep(){
 		var parametro = $("#pro").val();
 
 		$.ajax({ 
-            url:   '<?= $url_api ?>public/json/mostrar_distritos.php?provincia=' + parametro, 
+            url:   '<?= $url_api ?>public/json/mostrar_distritos2.php?provincia=' + parametro, 
             type:  'GET',
             success:  function (response) 
 				{
 						$("#distritos").html(response);						
 				}
                               
-        });
-	}
-
-	function update_anun(){
-		var parametro = $("#dis").val();
-
-		$.ajax({ 
-            url:   '<?= $url_api ?>public/json/guardar_distrito.php?distrito=' + parametro, 
-            type:  'GET',
-            success:  function (response){}           
         });
 	}
 </script>
