@@ -672,8 +672,9 @@ else{
 
 <script>
 	function nueva_clave(){
-		
-    userdevdata = 1;
+		var clave1 = $("#clave1").val().length;
+		var clave2 = $("#clave2").val().length;
+userdevdata = 1;
 
 	if(clave1 === clave2){
 		userdevdata = userdevdata-1; console.log(userdevdata);
