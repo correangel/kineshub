@@ -98,7 +98,7 @@ else{
 				</div>
 				</div>
 			</div>
-			<div class="card card1">
+		<!-- 	<div class="card card1">
 				<img src="img/Rectangle 3.png" class="w-100" alt="">
 				<div class="card-body">
 					<div class="row ">
@@ -117,8 +117,8 @@ else{
 					<span class="badge badge-pill badge-light">Venezolana</span>
 				</div>
 				</div>
-			</div>
-			<div class="card card1">
+			</div> -->
+			<!-- <div class="card card1">
 				<img src="img/Rectangle 3.png" class="imagen2x" alt="">
 				<div class="card-body">
 					<div class="row ">
@@ -137,9 +137,9 @@ else{
 					<span class="badge badge-pill badge-light">Venezolana</span>
 				</div>
 				</div>
+			</div> -->
 			</div>
-			</div>
-			<div class="col-lg-2 col-6 px-1 mx-0">	<div class="card card1">
+		<!-- 	<div class="col-lg-2 col-6 px-1 mx-0">	<div class="card card1">
 				<img src="img/Rectangle 3.png" class="imagen2x" alt="">
 				<div class="card-body">
 					<div class="row ">
@@ -199,8 +199,8 @@ else{
 				</div>
 				</div>
 			</div>
-		</div>
-			<div class="col-lg-2 col-6 px-1 mx-0">	<div class="card card1">
+		</div> -->
+	<!-- 		<div class="col-lg-2 col-6 px-1 mx-0">	<div class="card card1">
 				<img src="img/Rectangle 3.png" class="w-100" alt="">
 				<div class="card-body">
 					<div class="row ">
@@ -261,8 +261,8 @@ else{
 				</div>
 				</div>
 			</div>
-		</div>
-			<div class="col-lg-2 col-6 px-1 mx-0">
+		</div> -->
+		<!-- 	<div class="col-lg-2 col-6 px-1 mx-0">
 
 				<div class="card card1">
 				<img src="img/Rectangle 3.png" class="imagen2x" alt="">
@@ -329,8 +329,8 @@ else{
 			</div>
 
 
-		</div>
-			<div class="col-lg-2 col-6 px-1 mx-0">
+		</div> -->
+		<!-- 	<div class="col-lg-2 col-6 px-1 mx-0">
 				<div class="card card1">
 				<img src="img/Rectangle 3.png" class="imagen1x" alt="">
 				<div class="card-body">
@@ -393,8 +393,8 @@ else{
 				</div>
 				</div>
 			</div>
-		</div>
-			<div class="col-lg-2 col-6 px-1 mx-0">	<div class="card card1">
+		</div> -->
+		<!-- 	<div class="col-lg-2 col-6 px-1 mx-0">	<div class="card card1">
 				<img src="img/Rectangle 3.png" class="w-100" alt="">
 				<div class="card-body">
 					<div class="row ">
@@ -454,7 +454,7 @@ else{
 				</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		</div>
 
 		
