@@ -205,9 +205,9 @@
             </div>
             <div class="col-12">
               <div class="custom-control custom-checkbox mt-4 mb-3">
-  <input type="checkbox" class="custom-control-input" id="recuerdame1">
-  <label class="custom-control-label f3 pt-1" for="recuerdame1">Recuérdame</label>
-</div>
+                <input type="checkbox" class="custom-control-input" id="recuerdame1">
+                <label class="custom-control-label f3 pt-1" for="recuerdame1">Recuérdame</label>
+              </div>
             
 
     
