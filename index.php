@@ -81,16 +81,20 @@ $sql = mysqli_query($enlace, "SELECT * FROM anuncio");
 	</div>
 	
 	<div>
-	<?php while($row = mysqli_fetch_array($sql)){ ?>
-		<div class="row mt-4">
+	<div class="row mt-4">
+	<?php while($row = mysqli_fetch_array($sql)){
+		$sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['id'] ."' LIMIT 1");
+		$rowq = mysqli_fetch_array($sqlq);
+		?>
+			
 			<div class="col-lg-2 col-6 px-1 mx-0">
-					<div class="card card1" data-toggle="modal" data-target="#perfilkine">
-				<img src="img/Rectangle 3.png" class="imagen1x" alt="">
+			<div class="card card1" data-toggle="modal" data-target="#perfilkine">
+				<img src="images/<?= $rowq['imagen'] ?>" class="imagen1x" alt="">
 				<div class="card-body">
 					<div class="row ">
 						<div class="col-8">
 							<div class="row">
-								<div class="col-12 "><p>Isabella <img src="img/Grupo 139.svg" alt="" class="ml-1"></p></div>
+								<div class="col-12 "><p><?= $row['nombre'] ?>  <img src="img/Grupo 139.svg" alt="" class="ml-1"></p></div>
 								
 							</div>
 						</div>
@@ -106,10 +110,11 @@ $sql = mysqli_query($enlace, "SELECT * FROM anuncio");
 			</div>
 
 			</div>
-	</div>
+
 		
 			
 	<?php } ?>
+	</div>
 	
 
 
