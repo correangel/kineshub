@@ -10,7 +10,7 @@
     <div class="mask flex-center">
         <h2 class="f10 font-weight-bolder text-white f16" style="position: absolute;top: 30px; right: 32px;">03:59</h2>
         <div class="flex-center ml-4" style="position: relative;top: 35px;">
-        	<p class="text-white f4">¡Regístrate y accede a un sorteo  para <u><a href="#" class="text-white">UNA NOCHE GRATIS</a></u> con nuestras kines!</p>
+        	<p class="text-white f4" style="max-width: 185px;">¡Regístrate y accede a un sorteo  para <u><a href="#" class="text-white">UNA NOCHE GRATIS</a></u> con nuestras kines!</p>
         </div>
         
     </div>
