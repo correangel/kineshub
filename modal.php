@@ -435,7 +435,7 @@
 
                                             if (response==4) 
                                             {
-                                              setTimeout("location.href='index.php'", 1000);
+                                              setTimeout("location.href='kine.php'", 1000);
                                             }
 
                                             if (response==5) 
