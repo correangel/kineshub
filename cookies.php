@@ -16,7 +16,7 @@
           </div>
         
            <div class=" mt-3">
-          <h1  class=" font-weight-bold f8 pt-4">Contenido sólo para adutos</h1>
+          <h1  class=" font-weight-bold f8 pt-4">Contenido sólo para adutos  <?= $_COOKIE['modal']; ?></h1>
 
           <p class=" pr-2 mb-0 pb-1  f4 mt-3 font-weight-normal" >Para seguir navegando has de ser mayor de 18 años</p> 
            <h1  class=" font-weight-bold f8  mt-3" >Uso de cookies</h1>
@@ -27,7 +27,7 @@
          <div class="mt-3">
             <div class="row">
               <div class="col-12">
-                <button class="btn boton14 w-100" data-dismiss="modal" data-toggle="modal" data-dismiss="modal">Acepto</button>
+                <button class="btn boton14 w-100" data-dismiss="modal" data-toggle="modal" onclick="cook_modal()" data-dismiss="modal">Acepto</button>
               </div>
             </div>
          
@@ -46,11 +46,32 @@
 <!-- fin de modal de cookies  -->
 
 
+<?php
+  if(isset($_COOKIE['modal']) && $_COOKIE['modal'] == 'si'){}
+  else{
+?>
 <script>
-     window.onload = function primero(){
+  window.onload = function primero(){
         $('#cookies').modal('show')
      }
+</script>
+<?php
+}
+?>
 
+     
+<script>
+    function cook_modal(){
+      $.ajax({
+                              url:   'activar_cookie_modal.php', 
+                              type:  'POST',
+                              success:  function (response) 
+                                          {
+                                           console.log(response);
+                                          }
+                              
+                          });
+    }
 </script>
 
 
