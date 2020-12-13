@@ -696,7 +696,7 @@ userdevdata = 1;
                                             if (response==1) 
                                             {
                                               swal("Hemos restablecido su contraseña con exito, inicie sesion por favor."); 
-                                              setTimeout("location.href='kine.php'", 5000);
+                                              setTimeout("location.href='kine.php'", 2000);
                                             }
 
                                             else{
