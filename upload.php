@@ -1,11 +1,12 @@
-<?php
 
-
-$temp = explode(".", $_FILES["file"]["name"]); 
-$newfilename = round(microtime(true)) . '.' . end($temp); 
-
+    <?php
+/**
+ * Ejemplos de c贸mo poner marcas de agua con PHP y GD
+ * 
+ * @author parzibyte
+ */
 $rutaImagenOriginal = $_FILES["file"]["tmp_name"];
-$rutaMarcaDeAgua =  "marca_agua.png";
+$rutaMarcaDeAgua = "marca_agua.png";
 
 $original = imagecreatefrompng($rutaImagenOriginal);
 $marcaDeAgua = imagecreatefrompng($rutaMarcaDeAgua);
@@ -15,7 +16,7 @@ $anchuraOriginal = imagesx($original);
 $alturaOriginal = imagesy($original);
 $alturaMarcaDeAgua = imagesy($marcaDeAgua);
 $anchuraMarcaDeAgua = imagesx($marcaDeAgua);
-# En dónde poner la marca de agua sobre la original
+# En d贸nde poner la marca de agua sobre la original
 $centroHorizontalDeOriginal = floor($anchuraOriginal / 2);
 $centroHorizontalDeMarcaDeAgua = floor($anchuraMarcaDeAgua / 2);
 $centroVerticalDeOriginal = floor($alturaOriginal / 2);
@@ -25,20 +26,20 @@ $centroVertical = $centroVerticalDeOriginal - $centroVerticalDeMarcaDeAgua;
 
 $xOriginal = $centroHorizontal;
 $yOriginal = $centroVertical;
-# Desde dónde comenzar a cortar la marca de agua (si son 0, se comienza desde el inicio)
+# Desde d贸nde comenzar a cortar la marca de agua (si son 0, se comienza desde el inicio)
 $xMarcaDeAgua = 0;
 $yMarcaDeAgua = 0;
-# Hasta dónde poner la marca de agua sobre la original
+# Hasta d贸nde poner la marca de agua sobre la original
 $alturaMarcaDeAgua = $alturaMarcaDeAgua - $yMarcaDeAgua;
 $anchuraMarcaDeAgua = $anchuraMarcaDeAgua - $xMarcaDeAgua;
 imagecopy($original, $marcaDeAgua, $xOriginal, $yOriginal, $xMarcaDeAgua, $yMarcaDeAgua, $anchuraMarcaDeAgua, $alturaMarcaDeAgua);
 
-# Imprimir y liberar recursos
-header('Content-Type: image/png');
-
-
-move_uploaded_file($original, "images/" . $newfilename);
-
+# Guardar y liberar recursos
+# Segundo argumento de imagepng es la ruta de la imagen de salida
+$temp = explode(".", $_FILES["file"]["name"]); 
+$newfilename = round(microtime(true)) . '.' . end($temp); 
+$resultado = imagepng($original, "images/".$newfilename);
+var_dump($resultado);
 imagedestroy($original);
 imagedestroy($marcaDeAgua);
 
@@ -53,8 +54,8 @@ $id_anuncio =  $_SESSION['id_anuncio'];
         while($row = mysqli_fetch_array($sql2)){
             $imagen = $row['imagen'];
             echo"<div class='col-lg-2 col-4'>
-				<img src='images/$imagen' class='w-100 mt-2' alt=''>
-			</div>";
+                <img src='images/$imagen' class='w-100 mt-2' alt=''>
+            </div>";
         }
     }
     else{
