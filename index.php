@@ -2,7 +2,7 @@
 
 require_once "db.php";
 mysqli_set_charset($enlace,"utf8");
-$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
+$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1 ORDER BY orden DESC");
 $num = mysqli_num_rows($sql);
 
 
@@ -71,14 +71,14 @@ else{
 				<div class="col-lg-4">
 				<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){?>
 					<div class="fondo1">
-						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> Favotiro <span class="ml-3">
+						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> <a href="favoritos.php">Favotiro <span class="ml-3">
 						 <?php
               $sqlll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_usuario = '". $_SESSION['id'] ."'");
               $nummm = mysqli_num_rows($sqlll);    
               
               echo $nummm;
             ?>
-						</span></p>
+						</a></span></p>
 					</div>
 				<?php } ?>
 
