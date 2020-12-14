@@ -36,7 +36,7 @@ else{
 				<div class="col-lg-4">
 				<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){?>
 					<div class="fondo1">
-						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> <a href="favoritos.php">Favotiro <span class="ml-3">
+						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> <a href="favoritos.php" class="text-dark">Favotiro <span class="ml-3">
 						 <?php
               $sqlll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_usuario = '". $_SESSION['id'] ."'");
               $nummm = mysqli_num_rows($sqlll);    
