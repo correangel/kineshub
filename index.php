@@ -81,7 +81,7 @@ $sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre,
 	</div>
 	
 	<div>
-	<div class="row mt-4">
+	<div class="row mt-4" id="filtrar">
 	<?php while($row = mysqli_fetch_array($sql)){
 		$sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['ID'] ."' LIMIT 1");
 		$rowq = mysqli_fetch_array($sqlq);

@@ -20,11 +20,11 @@ mysqli_set_charset($enlace,"utf8");
          <div class="col-12 col-lg-4">
            <p class="f7 font-weight-bolder mt-3">Departamento</p>
            <select class="browser-default custom-select campo3" id="dep" onchange="select_dep()">
-            <option selected>Selecciona un Departamento</option>
+            <option value="0" selected>Selecciona un Departamento</option>
             <?php
 								$sql_dep = mysqli_query($enlace, "SELECT * FROM departamentos");
 								while($row_dep = mysqli_fetch_array($sql_dep)){
-                  $sqlqq = mysqli_query($enlace, "SELECT * FROM anuncio WHERE departamento = '". $row_dep['id'] ."'");
+                  $sqlqq = mysqli_query($enlace, "SELECT * FROM anuncio WHERE departamento = '". $row_dep['id'] ."' AND estado = 1");
                   $num2 = mysqli_num_rows($sqlqq);
 							?>
 								<option <?php if($num2 > 0){ } else {echo "disabled=''";} ?>value="<?= $row_dep['id'] ?>"><?= $row_dep['departamento'] ?></option>
@@ -47,7 +47,7 @@ mysqli_set_charset($enlace,"utf8");
          <div id="distritos">
 							<p class="f7 font-weight-bolder mt-3">Distritos</p>
 							<select class="browser-default custom-select campo3" id="dis">
-								<option selected>Selecciona un Distrito</option>
+								<option value="0" selected>Selecciona un Distrito</option>
 							</select>
 							<span id="dis_text" style="color:red; font-size: 1em;"></span>
 							</div>
@@ -58,7 +58,7 @@ mysqli_set_charset($enlace,"utf8");
        </div>
        </div>
       <div class="text-center mb-3">
-        <button class="btn boton13 btn-lg">Buscar</button>
+        <button class="btn boton13 btn-lg" data-dismiss="modal" aria-label="Close" onclick="filtrar()">Buscar</button>
       </div>
       </div>
      
@@ -93,5 +93,22 @@ function select_dep(){
 				}
                               
         });
-	}
+  }
+  
+  function filtrar(){
+    console.log("ejecutando");
+    var param1 = $("#dep").val();
+    var param2 = $("#pro").val();
+    var param3 = $("#dis").val();
+
+    $.ajax({ 
+            url:   '<?= $url_api ?>public/json/filtrar_ubicacion.php?valor1=' + param1 + '&valor2=' + param2 + '&valor3=' + param3, 
+            type:  'GET',
+            success:  function (response) 
+				{
+						$("#filtrar").html(response);						
+				}
+                              
+        });
+  }
 </script>
