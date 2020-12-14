@@ -39,7 +39,6 @@ imagecopy($original, $marcaDeAgua, $xOriginal, $yOriginal, $xMarcaDeAgua, $yMarc
 $temp = explode(".", $_FILES["file"]["name"]); 
 $newfilename = round(microtime(true)) . '.' . end($temp); 
 $resultado = imagepng($original, "images/".$newfilename);
-var_dump($resultado);
 imagedestroy($original);
 imagedestroy($marcaDeAgua);
 
