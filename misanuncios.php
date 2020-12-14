@@ -62,10 +62,8 @@ else{
 
 	</div>
 		</div>
-	<div class=" fixed-bottom text-center d-none d-md-block">
-			<p class="grey-text f3">@Kineshub 2020. <br> Todos los derechos reservados.</p>
-		</div>
-			<div class="my-4  text-center d-block d-md-none">
+
+			<div class="my-4  text-center ">
 			<p class="grey-text f3">@Kineshub 2020. <br> Todos los derechos reservados.</p>
 		</div>
 			
