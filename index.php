@@ -85,6 +85,11 @@ $sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre,
 	<?php while($row = mysqli_fetch_array($sql)){
 		$sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['ID'] ."' LIMIT 1");
 		$rowq = mysqli_fetch_array($sqlq);
+		$sqlp = mysqli_query($enlace, "SELECT min(costo) AS PrecioMinimo FROM tarifas WHERE id_anuncio = '". $row['ID']."'");
+		$rowp = mysqli_fetch_array($sqlp);
+		if(!$sqlp){
+			echo "error";
+		}
 		?>
 			
 			<div class="col-lg-2 col-6 px-1 mx-0">
@@ -103,7 +108,7 @@ $sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre,
 				<div>
 					<span class="badge badge-pill badge-light"><?= $row['Distrito'] ?></span>
 					<span class="badge badge-pill badge-light"><?= $row['Edad'] ?> años</span>
-					<span class="badge badge-pill badge-light">S/180</span>
+					<span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
 					<span class="badge badge-pill badge-light"><?= $row['Pais'] ?></span>
 				</div>
 				</div>

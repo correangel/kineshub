@@ -3,7 +3,7 @@
 /**
  * Ejemplos de c贸mo poner marcas de agua con PHP y GD
  * 
- * @author parzibyte
+ * 
  */
 $rutaImagenOriginal = $_FILES["file"]["tmp_name"];
 $rutaMarcaDeAgua = "marca_agua.png";
