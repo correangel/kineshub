@@ -58,7 +58,7 @@ require_once "api.php";
       <li class="nav-item " style="width: 450px;">
         <div class="input-group md-form ml-3 form-sm form-1 pl-0">
  
-  <input class="form-control my-0 py-1 buscador1" type="text" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search">
+  <input class="form-control my-0 py-1 buscador1" type="text" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search" id="buscar_texto" onkeyup="filtrar_busqueda()">
    <div class="input-group-prepend">
     <span class="input-group-text text-dark" id="buscador" style="border-radius: 3px;"><i class="fas fa-search  pr-1"
         aria-hidden="true"></i> Buscar</span>
@@ -154,7 +154,12 @@ require_once "api.php";
         <?php if($_SESSION['tipo'] == 1){ ?>
           <div class="col-2 px-0 mx-0 mt-2">
   				<div class="corazon1 px-1">
-  					<i class="fas fa-heart text-danger"></i> 0
+            <i class="fas fa-heart text-danger"></i> <?php
+              $sqlll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_usuario = '". $_SESSION['id'] ."'");
+              $nummm = mysqli_num_rows($sqlll);    
+              
+              echo $nummm;
+            ?>
   				</div>
   			</div>
     <?php } ?>

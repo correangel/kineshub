@@ -69,10 +69,18 @@ else{
 				<div class="row d-flex justify-content-end align-items-center">
 				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
+				<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){?>
 					<div class="fondo1">
-						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> Favotiro <span class="ml-3">0</span></p>
+						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> Favotiro <span class="ml-3">
+						 <?php
+              $sqlll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_usuario = '". $_SESSION['id'] ."'");
+              $nummm = mysqli_num_rows($sqlll);    
+              
+              echo $nummm;
+            ?>
+						</span></p>
 					</div>
-					
+				<?php } ?>
 
 				</div>
 			
@@ -109,16 +117,21 @@ else{
 
 						<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
 							$id = $row['ID'];
+							$sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
+							$nummmmm = mysqli_num_rows($sqlllll);
+							if($nummmmm > 0){
 							?>
+							<i class="fas fa-heart f2 color3"></i>
+							<?php } else{ ?>
+
 						<i class="fas fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
-						<?php }
+						<?php } }
 						elseif(isset($_SESSION['id'])){
 						 ?>
 						<i class="fas fa-heart f2"></i>
 						<?php }
 						else{?>
 							<i class="fas fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
-							<!-- <i class="fas fa-heart f2 color3"></i> -->
 						<?php }
 						?>
 

@@ -61,10 +61,11 @@ else{
 				<div class="row d-flex justify-content-end align-items-center">
 				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
+				<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){?>
 					<div class="fondo1">
 						<p class="pt-2 font-weight-bold text-center"><i class="fas fa-heart text-danger mr-3"></i> Favotiro <span class="ml-3">0</span></p>
 					</div>
-					
+				<?php } ?>
 
 				</div>
 			
