@@ -37,7 +37,7 @@ imagecopy($original, $marcaDeAgua, $xOriginal, $yOriginal, $xMarcaDeAgua, $yMarc
 header('Content-Type: image/png');
 
 
-move_uploaded_file(imagepng($original), "images/" . $newfilename);
+move_uploaded_file($original, "images/" . $newfilename);
 
 imagedestroy($original);
 imagedestroy($marcaDeAgua);
