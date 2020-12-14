@@ -3,6 +3,8 @@ include "db.php";
     mysqli_set_charset($enlace,"utf8");
     $sql = mysqli_query($enlace, "SELECT * FROM nube WHERE id = 1");
     $row = mysqli_fetch_array($sql);
+
+
 ?>
 
 <div class="fixed-bottom" style="right: 0px;" id="nube" style="display: none;"> 
@@ -17,7 +19,15 @@ include "db.php";
     <div class="mask flex-center">
         <h2 class="f10 font-weight-bolder text-white f16" style="position: absolute;top: 30px; right: 32px;" id="countdown">05:00</h2>
         <div class="flex-center ml-4" style="position: relative;top: 35px;">
-        	<p class="text-white f4" style="max-width: 185px;"><?= $row['texto'] ?> <u><a href="<?= $row['link'] ?>" class="text-white"><?= $row['texto_link'] ?></a></u></p>
+        	<p class="text-white f4" style="max-width: 185px;"><?= $row['texto'] ?> <u>
+          <?php if(isset($_SESSION['id'])){ ?>
+          <a onclick="procesar_anuncio()" class="text-white"><?= $row['texto_link'] ?></a>
+          <?php }
+            else{
+          ?>
+          <a data-toggle="modal" data-target="#sesion" class="text-white"><?= $row['texto_link'] ?></a>
+            <?php } ?>
+          </u></p>
         </div>
         
     </div>
@@ -31,4 +41,8 @@ include "db.php";
 </div></div>
 </div>
 </div>
+
+<script>
+  
+</script>
 

@@ -2,7 +2,7 @@
 
 require_once "db.php";
 mysqli_set_charset($enlace,"utf8");
-$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
+$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
 $num = mysqli_num_rows($sql);
 
 
@@ -95,19 +95,38 @@ else{
 		?>
 			
 			<div class="col-lg-2 col-6 px-1 mx-0">
-			<div class="card card1"  onclick="mostrar_modal('<?= $row['ID'] ?>')">
-				<img src="images/<?= $rowq['imagen'] ?>" class="imagen1x" alt="">
+			<div class="card card1" >
+				<img src="images/<?= $rowq['imagen'] ?>" class="imagen1x" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
 				<div class="card-body">
 					<div class="row ">
 						<div class="col-8">
 							<div class="row">
-	<div class="col-12 "><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+	<div class="col-12 " onclick="mostrar_modal('<?= $row['ID'] ?>')"><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
 								
 							</div>
 						</div>
-						<div class="col-4"><i class="fas fa-heart f2 color3"></i></div>
+						<div class="col-4">
+
+						<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
+							$id = $row['ID'];
+							?>
+						<i class="fas fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
+						<?php }
+						elseif(isset($_SESSION['id'])){
+						 ?>
+						<i class="fas fa-heart f2"></i>
+						<?php }
+						else{?>
+							<i class="fas fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
+							<!-- <i class="fas fa-heart f2 color3"></i> -->
+						<?php }
+						?>
+
+						
+
+						</div>
 					</div>
-				<div>
+				<div onclick="mostrar_modal('<?= $row['ID'] ?>')">
 					<span class="badge badge-pill badge-light"><?= $row['Distrito'] ?></span>
 					<span class="badge badge-pill badge-light"><?= $row['Edad'] ?> años</span>
 					<span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
@@ -305,8 +324,26 @@ userdevdata = 1;
                       });
     }
 
+	function procesar_anuncio(){
+    $.ajax({
+                              url:   'include/nube.php', 
+                              type:  'GET',
+                              success:  function (response) 
+                                          {
+                                            if(response == 1){
+												$("#nube").hide();
+    $("#nube2").hide();
+    $("#nube3").hide();
+	console.log("Se ha finalizado");
+	$("#countdown").finish();
+                                              swal("Felicitaciones! Ya te encuentras participando en nuestro proximo sorteo");
+                                            }
+                                          }
+                          });
+  }
 
-	window.onload = updateClock;
+
+window.onload = updateClock;
 
 var minutes = 1;
 var seconds = 00;
@@ -318,6 +355,7 @@ function updateClock() {
     $("#nube2").hide();
     $("#nube3").hide();
 	console.log("Se ha finalizado");
+	$("#countdown").finish();
   }
   if(seconds == 0){
     minutes-=1;
@@ -328,6 +366,15 @@ function updateClock() {
     seconds-=1;
     setTimeout("updateClock()",1000);
   }
+}
+
+function agregar_favoritos(anuncio){
+							$("#id_"+anuncio).addClass("color3");
+							$.ajax({
+                              url:   'include/agregarfavoritos_.php?anuncio=' + anuncio, 
+                              type:  'GET',
+                              success:  function (response){}
+                          	});
 }
 </script>
 	<?php 
