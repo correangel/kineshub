@@ -56,7 +56,7 @@ require_once "api.php";
       <li class="nav-item " style="width: 450px;">
         <div class="input-group md-form ml-3 form-sm form-1 pl-0">
  
-  <input class="form-control my-0 py-1 buscador1" type="text" placeholder="Buscar 355 Anuncios" aria-label="Search">
+  <input class="form-control my-0 py-1 buscador1" type="text" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search" id="buscar_texto" onkeyup="filtrar_busqueda()">
    <div class="input-group-prepend">
     <span class="input-group-text text-dark" id="buscador" style="border-radius: 3px;"><i class="fas fa-search  pr-1"
         aria-hidden="true"></i> Buscar</span>

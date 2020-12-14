@@ -1,4 +1,11 @@
 <?php 
+
+require_once "db.php";
+mysqli_set_charset($enlace,"utf8");
+$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
+$num = mysqli_num_rows($sql);
+
+
 session_start();
 if(isset($_SESSION['id'])){
 	include "include/header2.php";
@@ -6,11 +13,6 @@ if(isset($_SESSION['id'])){
 else{
 	include "include/header.php";
 }
-
-
-require_once "db.php";
-mysqli_set_charset($enlace,"utf8");
-$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
  ?>
 <style>
 	body{
@@ -26,7 +28,7 @@ $sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre,
 	<div class="container">
 			<div class="input-group md-form form-sm form-1 pl-0">
  
-  <input class="form-control my-0 py-1 buscador1" type="text" placeholder="Buscar 355 Anuncios" aria-label="Search">
+  <input class="form-control my-0 py-1 buscador1" type="text" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search">
    <div class="input-group-prepend">
     <span class="input-group-text text-dark" id="buscador" style="border-radius: 3px;"><i class="fas fa-search  pr-1"
         aria-hidden="true"></i> Buscar</span>
@@ -288,6 +290,45 @@ userdevdata = 1;
                               
                           });
 	}
+
+	function filtrar_busqueda(){
+        var parametro = $("#buscar_texto").val();
+
+                        $.ajax({ 
+                          url:   '<?= $url_api ?>public/json/filtrar_texto.php?q=' + parametro, 
+                          type:  'GET',
+                          success:  function (response) 
+                            {
+                                $("#filtrar").html(response);						
+                            }
+                                            
+                      });
+    }
+
+
+	window.onload = updateClock;
+
+var minutes = 1;
+var seconds = 00;
+
+function updateClock() {
+  document.getElementById('countdown').innerHTML = (minutes + ":" + seconds);
+  if(seconds == 0 && minutes == 0){
+    $("#nube").hide();
+    $("#nube2").hide();
+    $("#nube3").hide();
+	console.log("Se ha finalizado");
+  }
+  if(seconds == 0){
+    minutes-=1;
+    seconds=59;
+    setTimeout("updateClock()",1000);
+  }
+  else{
+    seconds-=1;
+    setTimeout("updateClock()",1000);
+  }
+}
 </script>
 	<?php 
 	include "modal/nube.php";
