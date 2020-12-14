@@ -2,7 +2,7 @@
 
 require_once "db.php";
 mysqli_set_charset($enlace,"utf8");
-$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
+$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1");
 $num = mysqli_num_rows($sql);
 
 
@@ -101,7 +101,7 @@ else{
 					<div class="row ">
 						<div class="col-8">
 							<div class="row">
-	<div class="col-12 "><p><?= $row['Nombre'] ?> <?php if($row['verificado'] == 1){ ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+	<div class="col-12 "><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
 								
 							</div>
 						</div>

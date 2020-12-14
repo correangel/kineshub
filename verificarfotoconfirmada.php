@@ -109,7 +109,7 @@ else{
             success: function(response) {
                 if (response != 0) {
                     swal("Proceso de Validacion Iniciado con exito."); 
-                    setTimeout("location.href='misanuncios.php'", 3000);
+                    setTimeout("location.href='misanuncios.php'", 2000);
                 } else {
                     $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
                 }

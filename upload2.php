@@ -1,7 +1,7 @@
 <?php
 $temp = explode(".", $_FILES["file"]["name"]); 
 $newfilename = round(microtime(true)) . '.' . end($temp); 
-move_uploaded_file($_FILES["file"]["tmp_name"], "images/" . $newfilename);
+move_uploaded_file($_FILES["file"]["tmp_name"], "images/" . $newfilename)?"Todo Ok":"Error al ejecutar la subida";
 
 
 session_start();
