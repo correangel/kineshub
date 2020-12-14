@@ -88,7 +88,7 @@ $sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.nombre AS Nombre,
 		?>
 			
 			<div class="col-lg-2 col-6 px-1 mx-0">
-			<div class="card card1" data-toggle="modal" data-target="#perfilkine">
+			<div class="card card1"  onclick="mostrar_modal('<?= $row['ID'] ?>')">
 				<img src="images/<?= $rowq['imagen'] ?>" class="imagen1x" alt="">
 				<div class="card-body">
 					<div class="row ">
@@ -268,6 +268,20 @@ userdevdata = 1;
                               
                           });
     }
+	}
+
+	function mostrar_modal(id_modal){
+		$.ajax({ 
+                              url:   '<?= $url_api ?>public/json/mostrar_modal.php?id_anuncio=' + id_modal, 
+                              type:  'POST',
+                              success:  function (response) 
+                                          {
+                                          	$("#contenido_modal").html(response);
+                                          	$("#perfilkine").modal("show");
+                                            console.log(response);                                           
+                                          }
+                              
+                          });
 	}
 </script>
 	<?php 

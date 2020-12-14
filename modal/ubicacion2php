@@ -21,7 +21,7 @@ $url= $_SERVER["REQUEST_URI"];
           <div class="row my-5">
          <div class="col-12 col-lg-4">
            <p class="f7 font-weight-bolder mt-3">Departamento</p>
-           <select class="browser-default custom-select campo3" id="dep" onchange="select_dep2()">
+           <select class="browser-default custom-select campo3" id="dep" onchange="select_dep()">
             <option value="0" selected>Selecciona un Departamento</option>
             <?php
 								$sql_dep = mysqli_query($enlace, "SELECT * FROM departamentos");
@@ -68,49 +68,3 @@ $url= $_SERVER["REQUEST_URI"];
   </div>
 </div>
 
-<script>
-function select_dep2(){
-		var parametro = $("#dep").val();
-
-		$.ajax({ 
-            url:   '<?= $url_api ?>public/json/mostrar_provincias2.php?departamento=' + parametro, 
-            type:  'GET',
-            success:  function (response) 
-				{
-						$("#provincias").html(response);						
-				}
-                              
-        });
-	}
-
-	function select_pro2(){
-		var parametro = $("#pro").val();
-
-		$.ajax({ 
-            url:   '<?= $url_api ?>public/json/mostrar_distritos2.php?provincia=' + parametro, 
-            type:  'GET',
-            success:  function (response) 
-				{
-						$("#distritos").html(response);						
-				}
-                              
-        });
-  }
-  
-  function filtrar(){
-    console.log("ejecutando");
-    var param1 = $("#dep").val();
-    var param2 = $("#pro").val();
-    var param3 = $("#dis").val();
-
-    $.ajax({ 
-            url:   '<?= $url_api ?>public/json/filtrar_ubicacion.php?valor1=' + param1 + '&valor2=' + param2 + '&valor3=' + param3, 
-            type:  'GET',
-            success:  function (response) 
-				{
-						$("#filtrar").html(response);						
-				}
-                              
-        });
-  }
-</script>
