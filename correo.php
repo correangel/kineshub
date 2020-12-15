@@ -21,22 +21,22 @@
 }
 </style>
 <main>
-	<div class='container mt-2 mt-lg-5'>
-		<div class='row d-flex justify-content-center mt-0 pt-lg-5'>
-			<div class='col-lg-3 col-8 text-center'>
+	<div class='container mt-2 mt-lg-5' style='position: absolute;left: 50%;'>
+		<div class='row  mt-0 pt-lg-5'>
+			<div class='col-lg-3 col-8' style="margin-left: 150px;">
 				<img src='img/logo.png' class='w-100' alt=''>
 
 			</div>
 		</div>
 		
-		<div class='row justify-content-center mt-5'>
+		<div class='row  mt-5'>
 			<div class='col-lg-6 col-10 text-center'>
 				<h2 class='font-weight-bold h2-responsive'>Hola,</h2>
 				<h1 class='font-weight-bold h1-responsive'>Carlos Olivera</h1>
 			</div>
 		</div>
-		<p class='text-center font-weight-bold'>---</p>
-		<div class='row justify-content-center mt-2'>
+		<!-- <p class=' font-weight-bold' style='margin-left: 250px;'>---</p> -->
+		<div class='row mt-2'>
 			<div class='col-lg-6 col-10 text-center'>
 				<h4 class='font-weight-normal '>Empieza a acceder a tu cuenta de Kineshub.
 </h4>
