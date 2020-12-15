@@ -11,6 +11,10 @@ else{
 	header("Location: index.php");
 }
 
+$url_admin = "http://localhost/admin/";
+
+include "db.php";
+$sql = mysqli_query($enlace, "SELECT * FROM promociones");
  ?>
 
 <main>
@@ -61,38 +65,18 @@ else{
 	</div>
 	
 <div class="container-fluid d-none d-md-block">
-	<div class="row d-flex justify-content-center text-center mt-2 mt-md-5">
+	<div class="row d-flex  text-center mt-2 mt-md-5">
+		<?php
+			while($row = mysqli_fetch_array($sql)){
+		?>
+		<div class="col-lg-3">
+			<a href="<?= $row['link'] ?>"><img src="<?= $url_admin ?>images/<?= $row['imagen'] ?>" class="w-100" alt=""></a>
+		</div>
+
+		<?php
+			}
+		?>
 		
-		<div class="col-lg-3">
-			<a href="#"><img src="img/Grupo 91.png" class="w-100" alt=""></a>
-		</div>
-		<div class="col-lg-3">
-			<a href="#"><img src="img/Grupo 460.png" class="w-100" alt=""></a>
-			<a href="#"> <img src="img/Promociones-en-masajes-eróticos-para-empezar-el-año.png" class="w-100 mt-2" alt=""></a>	
-		</div>
-		<div class="col-lg-3">
-			<a href="#"><img src="img/Grupo 464.png" class="w-100" alt=""></a>	
-		</div>
-		<div class="col-lg-3">
-			<a href="#"><img src="img/Grupo 460.png" class="w-100" alt=""></a>
-			<a href="#"><img src="img/Promociones-en-masajes-eróticos-para-empezar-el-año.png" class="w-100 mt-2" alt=""></a>
-		</div>
-	</div>
-</div>
-
-
-
-
-
-<div class="container-fluid d-block d-md-none">
-	<div class="row mt-2">
-		<div class="col-12 ">
-			<a href="#">	<img src="img/Grupo 91.png" class="w-100" alt=""></a>
-		</div>
-		
-		<div class="col-12 ">
-			<a href="#"> <img src="img/Promociones-en-masajes-eróticos-para-empezar-el-año.png" class="w-100 mt-2" alt=""></a>	
-		</div>
 	</div>
 </div>
 	
