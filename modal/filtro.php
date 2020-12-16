@@ -10,7 +10,7 @@
       </div>
       <form id="filtro_mayor_frm">
       <!-- pc -->
-      <div class="modal-body   d-none d-md-block ">
+      <div class="modal-body   ">
        <h2 class="color2 mt-4 f6 font-weight-bold text-center"> Filtros de Búsqueda</h2>
        <div class="container text-center" >
          <div class="row py-1 d-flex justify-content-center">
@@ -375,17 +375,17 @@
        
       </div>
       <div class="row">
-        <div class="col-4 px-0 mx-0">
+        <div class="col-lg-4 col-6 px-md-0 mx-0">
             <div class="row">
           <div class="col-12">
-                    <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_domicilio" onclick="cambiar_stados('domicilio')" class="f8 font-weight-bolder px-3 py-2 marco1y filtro1  text-center">A domicilio</h5>
+                    <div class="pl-3 mt-2 pl-md-5 ">
+                  <h5 id="li_domicilio" onclick="cambiar_stados('domicilio')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center">A domicilio</h5>
                   <input type="hidden" name="in_domicilio" id="in_domicilio" value="domicilio,0">
                 </div>
                   </div>
     </div>
         </div>
-        <div class="col-4 px-0 mx-0">
+        <div class="col-lg-4 col-6 px-0 mx-0">
             <div class="row">
           <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-3 d-inline-block">
@@ -395,10 +395,10 @@
                   </div>
     </div>
         </div>
-        <div class="col-4 px-0 mx-0">
+        <div class="col-lg-4 col-6  px-md-0 mx-md-0">
             <div class="row">
           <div class="col-12">
-                    <div class="pl-0 mt-2 pl-md-0 d-inline-block">
+                    <div class="pl-3 mt-2 pl-md-0 d-inline-block">
                   <h5 id="li_viajes" onclick="cambiar_stados('viajes')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center">Viajes</h5>
                   <input type="hidden" name="in_viajes" id="in_viajes" value="viajes,0">
                 </div>
@@ -407,21 +407,21 @@
         </div>
       </div>
             <div class="row pl-2">
-  <div class="col-4"> <div class="row">
+  <div class="col-lg-4 col-6"> <div class="row">
                 
                    <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_club_inter" onclick="cambiar_stados('club_inter')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center" style="width: 190px;">Club intercambio</h5>
+                  <h5 id="li_club_inter" onclick="cambiar_stados('club_inter')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Club intercambio</h5>
                   <input type="hidden" name="in_club_inter" id="in_club_inter" value="club_inter,0">
                 </div>
                   </div>
                   
                 </div> </div>
-  <div class="col-4">
+  <div class="col-lg-4 col-6">
     <div class="row">
           <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_departamento" onclick="cambiar_stados('departamento')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center" style="width: 190px;">Departamento propio</h5>
+                  <h5 id="li_departamento" onclick="cambiar_stados('departamento')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Departamento propio</h5>
                   <input type="hidden" name="in_departamento" id="in_departamento" value="departamento,0">
                 </div>
                   </div>
@@ -430,11 +430,11 @@
   </div>
 </div>
   <div class="row pl-2">
-  <div class="col-4"> <div class="row">
+  <div class="col-lg-4 col-6"> <div class="row">
                 
                    <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_despedida" onclick="cambiar_stados('despedida')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center" style="width: 190px;">Despedida de solteros</h5>
+                  <h5 id="li_despedida" onclick="cambiar_stados('despedida')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Despedida de solteros</h5>
                   <input type="hidden" name="in_despedida" id="in_despedida" value="despedida,0">
                   </div>
                   </div>
@@ -489,7 +489,7 @@
         </div>
             <p class="color3 f2 pl-0 pl-md-5 pt-4 font-weight-bold">País</p>
             <div class="row">
-               <div class="col-4 ml-0 ml-md-5"><select class="pl-4 browser-default custom-select" name="pais">
+               <div class="col-4 ml-0 ml-md-5"><select class="pl-4 browser-default custom-select cuerpo" name="pais">
                     <option value="0" selected>SELECCIONE</option>
                     <option value="Argentina">Argentinas</option>
                     <option value="Boliviana">Bolivianas</option>
@@ -515,21 +515,21 @@
             </div>
              <p class="color3 f2 pl-0 pl-md-5 pt-4 font-weight-bold">Etnia</p>
               <div class="row pl-4">
-  <div class="col-lg-4 col-12 px-0 px-md-4"> <div class="row">
+  <div class="col-lg-4 col-6 pl-0 px-md-4"> <div class="row">
                 
                    <div class="col-lg-10 col-12 px-1 px-lg-2">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_andina" onclick="cambiar_stados('andina')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center" style="width: 190px;">Andinas</h5>
+                  <h5 id="li_andina" onclick="cambiar_stados('andina')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1 cuerpo  text-center" >Andinas</h5>
                   <input type="hidden" name="in_andina" id="in_andina" value="andina,0">
                 </div>
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12  px-0 px-md-2">
+  <div class="col-lg-4 col-6  pl-3 px-md-2">
     <div class="row">
           <div class="col-lg-10 col-12 px-1 px-md-4">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_morena" onclick="cambiar_stados('morena')" class="f8 font-weight-bolder px-0 px-md-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2 " style="width: 190px;">Morenas</h5>
+                  <h5 id="li_morena" onclick="cambiar_stados('morena')" class="f8 font-weight-bolder px-0 px-md-2 py-2 marco1y cuerpo filtro1  text-center ml-0 ml-md-2 " >Morenas</h5>
                   <input type="hidden" name="in_morena" id="in_morena" value="morena,0">
                 </div>
                   </div>
@@ -538,21 +538,21 @@
   </div>
 </div>
      <div class="row pl-4">
-  <div class="col-lg-4 col-12  px-0 px-md-4"> <div class="row">
+  <div class="col-lg-4 col-6 pl-0  px-md-4"> <div class="row">
                 
                    <div class="col-lg-10 col-12 px-1 px-lg-2">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_blanca" onclick="cambiar_stados('blanca')" class="f8 font-weight-bolder px-0 px-md-2px-0 px-md-2 py-2 marco1y filtro1  text-center " style="width: 190px;">Piel blanca</h5>
+                  <h5 id="li_blanca" onclick="cambiar_stados('blanca')" class="f8 font-weight-bolder px-0 px-md-2px-0 px-md-2 py-2 cuerpo marco1y filtro1  text-center " >Piel blanca</h5>
                   <input type="hidden" name="in_blanca" id="in_blanca" value="blanca,0">
                 </div>
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12  px-0 px-md-4">
+  <div class="col-lg-4 col-6  px-md-4">
     <div class="row">
           <div class="col-lg-10 col-12 px-0 px-lg-2">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_triguena" onclick="cambiar_stados('triguena')" class="f8 font-weight-bolder px-0 px-md-2 py-2 marco1y filtro1  text-center ml-1 ml-md-2" style="width: 190px;">Trigueñas</h5>
+                  <h5 id="li_triguena" onclick="cambiar_stados('triguena')" class="f8 font-weight-bolder px-0 px-md-2 py-2 cuerpo marco1y filtro1  text-center ml-1 ml-md-2" >Trigueñas</h5>
                   <input type="hidden" name="in_triguena" id="in_triguena" value="triguena,0">
                 </div>
                   </div>
@@ -562,46 +562,42 @@
 </div>
              <p class="color3 f2 pl-0 pl-md-5 pt-4 font-weight-bold">Estatura</p>
                <div class="row pl-4">
-  <div class="col-lg-4 col-12 px-1 px-md-4"> <div class="row">
+  <div class="col-lg-12 col-12 px-1 px-md-4"> <div class="row">
                 
-                   <div class="col-lg-4 col-12 px-0 px-md-2">
+                   <div class="col-lg-4 col-6 px-0 px-md-2">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_bajas" onclick="cambiar_stados('bajas')" class="f8 font-weight-bolder px-0 px-md-2 py-2 marco1y filtro1  text-center " style="width: 100px;">Baja</h5>
+                  <h5 id="li_bajas" onclick="cambiar_stados('bajas')" class="f8 font-weight-bolder px-0  px-md-2 py-2 marco1y filtro1  text-center estatura" >Baja</h5>
                   <input type="hidden" name="in_bajas" id="in_bajas" value="bajas,0">
+                </div>
+                  </div>
+                   <div class="col-lg-4 col-6 pl-1 pl-md-3 pr-1 pr-md-4">
+                    <div class="pl-0 mt-2 pl-md-0 d-inline-block">
+                  <h5 id="li_altas" onclick="cambiar_stados('altas')" class="f8 font-weight-bolder px-0 px-md-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2 estatura" >Alta</h5>
+                  <input type="hidden" name="in_altas" id="in_altas" value="altas,0">
                 </div>
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12 px-1 px-md-4">
-    <div class="row">
-          <div class="col-lg-4 col-12 px-0 px-md-2">
-                    <div class="pl-0 mt-2 pl-md-0 d-inline-block">
-                  <h5 id="li_altas" onclick="cambiar_stados('altas')" class="f8 font-weight-bolder px-0 px-md-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2" style="width: 100px;">Alta</h5>
-                  <input type="hidden" name="in_altas" id="in_altas" value="altas,0">
-                </div>
-                  </div>
-    </div>
-  
-  </div>
+
 </div>
 
              <p class="color3 f2 pl-0 pl-md-5 pt-4 font-weight-bold">Pecho</p>
                 <div class="row pl-4">
-  <div class="col-lg-4 col-12 px-0 px-md-2"> <div class="row">
+  <div class="col-lg-4 col-6 px-0 px-md-2"> <div class="row">
                 
-                   <div class="col-10 pl-1 pl-md-4">
+                   <div class="col-6 pl-1 pl-md-4">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_naturales" onclick="cambiar_stados('naturales')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center " style="width: 190px;">Pechos naturales</h5>
+                  <h5 id="li_naturales" onclick="cambiar_stados('naturales')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1 cuerpo  text-center " >Pechos naturales</h5>
                   <input type="hidden" name="in_naturales" id="in_naturales" value="naturales,0">
                 </div>
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12 px-0 px-md-2">
+  <div class="col-lg-4 col-6 px-0 px-md-2">
     <div class="row">
           <div class="col-10 pl-1 pl-md-4">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_tetonas" onclick="cambiar_stados('tetonas')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2" style="width: 190px;">Tetonas</h5>
+                  <h5 id="li_tetonas" onclick="cambiar_stados('tetonas')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center ml-3 ml-md-2 cuerpo" >Tetonas</h5>
                   <input type="hidden" name="in_tetonas" id="in_tetonas" value="tetonas,0">
                 </div>
                   </div>
@@ -612,21 +608,21 @@
 
              <p class="color3 f2 pl-0 pl-md-5 pt-4 font-weight-bold">Pelo</p>
               <div class="row pl-0 pl-md-4">
-  <div class="col-lg-4 col-12"> <div class="row">
+  <div class="col-lg-4 col-6"> <div class="row">
                 
                    <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_negro" onclick="cambiar_stados('negro')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center " style="width: 190px;">Cabello negro</h5>
+                  <h5 id="li_negro" onclick="cambiar_stados('negro')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Cabello negro</h5>
                   <input type="hidden" name="in_negro" id="in_negro" value="negro,0">
                 </div>
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-6">
     <div class="row">
           <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_rojas" onclick="cambiar_stados('rojas')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2" style="width: 190px;">Pelirojas</h5>
+                  <h5 id="li_rojas" onclick="cambiar_stados('rojas')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1 cuerpo  text-center ml-0 ml-md-2" >Pelirojas</h5>
                   <input type="hidden" name="in_rojas" id="in_rojas" value="rojas,0">
                 </div>
                   </div>
@@ -635,11 +631,11 @@
   </div>
 </div>
 <div class="row pl-0 pl-md-4">
-  <div class="col-lg-4 col-12"> <div class="row">
+  <div class="col-lg-4 col-6"> <div class="row">
                 
                    <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_rubia" onclick="cambiar_stados('rubia')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center " style="width: 190px;">Rubias</h5>
+                  <h5 id="li_rubia" onclick="cambiar_stados('rubia')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Rubias</h5>
                   <input type="hidden" name="in_rubia" id="in_rubia" value="rubia,0">
                 </div>
                   </div>
@@ -649,21 +645,21 @@
 </div>
    <p class="color3 f2 pl-0 pl-md-5 pt-4 font-weight-bold">Cuerpo</p>
      <div class="row pl-0 pl-md-4">
-  <div class="col-lg-4 col-12"> <div class="row">
+  <div class="col-lg-4 col-6"> <div class="row">
                 
                    <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_delgadas" onclick="cambiar_stados('delgadas')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center " style="width: 190px;">Delgada</h5>
+                  <h5 id="li_delgadas" onclick="cambiar_stados('delgadas')" class="f8 font-weight-bolder px-2 cuerpo py-2 marco1y filtro1  text-center " >Delgada</h5>
                   <input type="hidden" name="in_delgadas" id="in_delgadas" value="delgadas,0">
                 </div>
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-6">
     <div class="row">
           <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_gorditas" onclick="cambiar_stados('gorditas')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2" style="width: 190px;">Gordita</h5>
+                  <h5 id="li_gorditas" onclick="cambiar_stados('gorditas')" class="f8 font-weight-bolder cuerpo px-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2" >Gordita</h5>
                   <input type="hidden" name="in_gorditas" id="in_gorditas" value="gorditas,0">
                 </div>
                   </div>
@@ -673,9 +669,9 @@
 </div>
 <p class="color3 f2 pl-0 pl-md-5 pt-4 font-weight-bold">Pubis</p>
  <div class="row pl-0 pl-md-4">
-  <div class="col-lg-4 col-12"> <div class="row">
+  <div class="col-lg-4 col-6"> <div class="row">
                 
-                   <div class="col-10">
+                   <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
                   <h5 id="li_depiladas" onclick="cambiar_stados('depiladas')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center " style="width: 150px;">Depilada</h5>
                   <input type="hidden" name="in_depiladas" id="in_depiladas" value="depiladas,0">
@@ -683,9 +679,9 @@
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-6">
     <div class="row">
-          <div class="col-10">
+          <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
                   <h5 id="li_sin_depilar" onclick="cambiar_stados('sin_depilar')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center ml-0 ml-md-2" style="width: 150px;">Sin depilada</h5>
                   <input type="hidden" name="in_sin_depilar" id="in_sin_depilar" value="sin_depilar,0">
@@ -708,27 +704,27 @@
             <div class="row">
           <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_blanco" onclick="cambiar_stados('blanco')" class="f8 font-weight-bolder px-3 py-2 marco1y filtro1  text-center">Beso blanco</h5>
+                  <h5 id="li_blanco" onclick="cambiar_stados('blanco')" class=" especial f8 font-weight-bolder px-3 py-2 marco1y filtro1  text-center">Beso blanco</h5>
                   <input type="hidden" name="in_blanco" id="in_blanco" value="blanco,0">
                 </div>
                   </div>
     </div>
         </div>
-        <div class="col-lg-4 col-12 px-0 mx-0">
+        <div class="col-lg-4 col-6 px-0 mx-0">
             <div class="row">
           <div class="col-12">
                     <div class="pl-3 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_benegro" onclick="cambiar_stados('benegro')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center">Beso negro</h5>
+                  <h5 id="li_benegro" onclick="cambiar_stados('benegro')" class=" especial f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center">Beso negro</h5>
                   <input type="hidden" name="in_benegro" id="in_benegro" value="benegro,0">
                 </div>
                   </div>
     </div>
         </div>
-        <div class="col-lg-4 col-12 pl-3 pr-0 px-md-0 mx-0">
+        <div class="col-lg-4 col-6 pl-3 pr-0 px-md-0 mx-0">
             <div class="row">
           <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-0 d-inline-block">
-                  <h5 id="li_copro" onclick="cambiar_stados('copro')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center">Copro</h5>
+                  <h5 id="li_copro" onclick="cambiar_stados('copro')" class=" especial f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center">Copro</h5>
                   <input type="hidden" name="in_copro" id="in_copro" value="copro,0">
                 </div>
                   </div>
@@ -737,7 +733,7 @@
 
       </div>
        <div class="row pl-0 pl-md-4">
-  <div class="col-lg-4 col-12 pl-3 pr-0 px-md-0 mx-0"> <div class="row">
+  <div class="col-lg-4 col-6 pl-3 pr-0 px-md-0 mx-0"> <div class="row">
                 
                    <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-4 d-inline-block">
@@ -747,7 +743,7 @@
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-6">
     <div class="row">
           <div class="col-10">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
@@ -760,31 +756,31 @@
   </div>
 </div>
  <div class="row">
-        <div class="col-lg-4 col-12 px-0 mx-0">
+        <div class="col-lg-4 col-6 px-0 mx-0">
             <div class="row">
           <div class="col-12">
                     <div class="pl-3 pl-md-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_suave" onclick="cambiar_stados('suave')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center">Sado suave</h5>
+                  <h5 id="li_suave" onclick="cambiar_stados('suave')" class="especial f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center">Sado suave</h5>
                   <input type="hidden" name="in_suave" id="in_suave" value="suave,0">
                 </div>
                   </div>
     </div>
         </div>
-        <div class="col-lg-4 col-12 px-0 mx-0">
+        <div class="col-lg-4 col-6 px-0 mx-0">
             <div class="row">
           <div class="col-12">
                     <div class="pl-3 pl-md-0 mt-2 pl-md-2 d-inline-block">
-                  <h5 id="li_duro" onclick="cambiar_stados('duro')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center">Sado duro</h5>
+                  <h5 id="li_duro" onclick="cambiar_stados('duro')" class="especial f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center">Sado duro</h5>
                   <input type="hidden" name="in_duro" id="in_duro" value="duro,0">
                 </div>
                   </div>
     </div>
         </div>
-        <div class="col-lg-4 col-12 px-0 mx-0">
+        <div class="col-lg-4 col-6 px-0 mx-0">
             <div class="row">
           <div class="col-10">
                     <div class="pl-3 pl-md-0 mt-2 pl-md-0 d-inline-block">
-                  <h5 id="li_dorada" onclick="cambiar_stados('dorada')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center">Lluvia dorada</h5>
+                  <h5 id="li_dorada" onclick="cambiar_stados('dorada')" class="especial f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center">Lluvia dorada</h5>
                   <input type="hidden" name="in_dorada" id="in_dorada" value="dorada,0">
                 </div>
                   </div>
@@ -792,9 +788,9 @@
         </div>
       </div>
        <div class="row pl-0 pl-md-4">
-  <div class="col-lg-4 col-12"> <div class="row">
+  <div class="col-lg-4 col-6"> <div class="row">
                 
-                   <div class="col-10">
+                   <div class="col-12">
                     <div class="pl-0 mt-1 pl-md-0 pl-md-2 d-inline-block">
                   <h5 id="li_strap" onclick="cambiar_stados('strap')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center " style="width: 150px;">Strap on</h5>
                   <input type="hidden" name="in_strap" id="in_strap" value="strap,0">
@@ -802,9 +798,9 @@
                   </div>
                   
                 </div> </div>
-  <div class="col-lg-4 col-12">
+  <div class="col-lg-4 col-6">
     <div class="row">
-          <div class="col-10">
+          <div class="col-12">
                     <div class="pl-0 pl-md-0  mt-2 pl-md-5 d-inline-block">
                   <h5 id="li_squirting" onclick="cambiar_stados('squirting')" class="f8 font-weight-bolder px-1 py-2 marco1y filtro1  text-center ml-0 ml-md-2" style="width: 150px;">Squirting</h5>
                   <input type="hidden" name="in_squirting" id="in_squirting" value="squirting,0">
@@ -819,10 +815,10 @@
 
 
       <div class="row d-flex justify-content-center my-5  mr-1 mr-md-0">
-        <div class="col-lg-5 col-12">
+        <div class="col-lg-5 col-6">
           <button class="btn boton10 text-white">Borrar</button>
         </div>
-        <div class="col-lg-5 col-12">
+        <div class="col-lg-5 col-6">
            <button class="btn boton9 text-white">Buscar</button>
         </div>
       </div>

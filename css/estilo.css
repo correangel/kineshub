@@ -675,6 +675,10 @@ transform: rotate(-135deg);
 	.modal1x{
 		top: 15%!important;
 	}
+
+	.cuerpo , .estatura ,.especial{
+		width: 150px!important;
+	}
 	.table td, .table th {
     padding: 0.5rem!important;
     
@@ -841,4 +845,10 @@ transform: rotate(-135deg);
 .fa-heart:hover{
 	color: #FA394A;
 	content: "\f004"!important;
+}
+.cuerpo{
+	width: 190px;
+}
+.estatura{
+	width: 165px;
 }
