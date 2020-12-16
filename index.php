@@ -28,7 +28,7 @@ else{
 	<div class="container">
 			<div class="input-group md-form form-sm form-1 pl-0">
  
-  <input class="form-control my-0 py-1 buscador1" type="text" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search">
+  <input class="form-control my-0 py-1 buscador1" type="text" autocomplete="off" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search">
    <div class="input-group-prepend">
     <span class="input-group-text text-dark" id="buscador" style="border-radius: 3px;"><i class="fas fa-search  pr-1"
         aria-hidden="true"></i> Buscar</span>
