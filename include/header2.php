@@ -98,6 +98,10 @@ require_once "api.php";
       <li class="nav-item">
        <button onclick="$(location).attr('href','kine.php');" class="boton12 font-weight-bolder btn pt-2">Mi cuenta</button>
       </li>
+
+      <li class="nav-item">
+       <a href="#" class="text-dark"><i class="fas fa-sign-out-alt"></i></a>
+      </li>
   </ul>
   </div>
 <?php } ?>
