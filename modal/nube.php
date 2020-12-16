@@ -4,7 +4,9 @@ include "db.php";
     $sql = mysqli_query($enlace, "SELECT * FROM nube WHERE id = 1");
     $row = mysqli_fetch_array($sql);
 
-
+    $sql2= mysqli_query($enlace, "SELECT * FROM participar WHERE id_usuario = '". $_SESSION['id'] ."'");
+    $num = mysqli_num_rows($sql2);
+    if($num == 0){
 ?>
 
 <div class="fixed-bottom" style="right: 0px;" id="nube" style="display: none;"> 
@@ -43,6 +45,36 @@ include "db.php";
 </div>
 
 <script>
-  
+  window.onload = updateClock;
+
+var minutes = 5;
+var seconds = 00;
+
+function updateClock() {
+  document.getElementById('countdown').innerHTML = (minutes + ":" + seconds);
+  if(seconds == 0 && minutes == 0){
+    $("#nube").hide();
+    $("#nube2").hide();
+    $("#nube3").hide();
+	console.log("Se ha finalizado");
+	$("#countdown").finish();
+  }
+  if(seconds == 0){
+    minutes-=1;
+    seconds=59;
+    setTimeout("updateClock()",1000);
+  }
+  else{
+    seconds-=1;
+    setTimeout("updateClock()",1000);
+  }
+}
 </script>
 
+<?php } 
+
+else{
+
+  echo "hay en la lista.";
+
+}?>

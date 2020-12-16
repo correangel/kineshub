@@ -355,32 +355,6 @@ userdevdata = 1;
                           });
   }
 
-
-window.onload = updateClock;
-
-var minutes = 1;
-var seconds = 00;
-
-function updateClock() {
-  document.getElementById('countdown').innerHTML = (minutes + ":" + seconds);
-  if(seconds == 0 && minutes == 0){
-    $("#nube").hide();
-    $("#nube2").hide();
-    $("#nube3").hide();
-	console.log("Se ha finalizado");
-	$("#countdown").finish();
-  }
-  if(seconds == 0){
-    minutes-=1;
-    seconds=59;
-    setTimeout("updateClock()",1000);
-  }
-  else{
-    seconds-=1;
-    setTimeout("updateClock()",1000);
-  }
-}
-
 function agregar_favoritos(anuncio){
 							$("#id_"+anuncio).addClass("color3");
 							$.ajax({
