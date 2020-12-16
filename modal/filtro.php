@@ -829,7 +829,9 @@
       </div>
       </form>
      <!-- fin de pc -->
-
+</div>
+</div>
+</div>
 
 <script>
   function cambiar_stados(valor){
