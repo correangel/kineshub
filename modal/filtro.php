@@ -50,7 +50,7 @@
                     <p class="pl-5 pt-3   font-weight-bold">Min</p>
                   </div>
                   <div class="col-8 col-lg-6 pl-5 pl-md-3">
-                  <select class="browser-default custom-select" id="min" name="min_precio">
+                  <select class="browser-default custom-select especial2" id="min" name="min_precio">
                     <option value="0" selected></option>
                     <option value="10">10</option>
                     <option value="20">20</option>
@@ -64,21 +64,24 @@
                   </select>
                   </div>
                 </div>
-                <div class="row ">
-                  <div class="col-4">
+                <div class="d-none d-lg-block">
+                    <div class="row ">
+                  <div class="col-lg-4 col-6">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_a1" onclick="cambiar_stados('a1')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1">A1</h5>
+                  <h5 id="li_a1" onclick="cambiar_stados('a1')" class=" f8 font-weight-bolder px-4 py-2 marco1y filtro1">A1</h5>
                   <input type="hidden" name="in_a1" id="in_a1" value="a1,0">
                 </div>
                   </div>
-                  <div class="col-4">
+                  <div class="col-lg-4 col-6">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_baratas" onclick="cambiar_stados('baratas')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1 ">Baratas</h5>
+                  <h5 id="li_baratas" onclick="cambiar_stados('baratas')" class=" f8 font-weight-bolder px-4 py-2 marco1y filtro1 ">Baratas</h5>
                   <input type="hidden" name="in_baratas" id="in_baratas" value="baratas,0">
                 </div>
                   </div>
-                  <div class="col-4"></div>
+                  <div class="col-lg-4 col-6"></div>
                 </div>
+                </div>
+              
                 
               </div>
                <div class="col-lg-5 col-6">
@@ -86,7 +89,7 @@
                   <div class="col-3  ">
                     <p class="pl-3 pt-3  text-right font-weight-bold">Max</p>
                   </div>
-                  <div class="col-6 "><select class="browser-default ml-3 ml-md-0 custom-select" id="max" name = "max_precio">
+                  <div class="col-6 "><select class="browser-default ml-3 ml-md-0 custom-select especial2" id="max" name = "max_precio">
                   <option value="0" selected></option>
                     <option value="10">10</option>
                     <option value="20">20</option>
@@ -99,22 +102,38 @@
                     <option value="250">250</option>
                     </select></div>
                 </div>
-                <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_tarjeta" onclick="cambiar_stados('tarjeta')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1 ">Pago con tarjeta</h5>
+                <div class="pl-0 mt-2 pl-md-5 d-inline-block ">
+                  <h5 id="li_tarjeta" onclick="cambiar_stados('tarjeta')" class="f8 font-weight-bolder px-2 py-2 d-none d-lg-block marco1y filtro1 ">Pago con tarjeta</h5>
                   <input type="hidden" name="in_tarjeta" id="in_tarjeta" value="tarjeta,0">
                 </div>
               </div>
             </div>
-          </div>  
-<p class="color3 f2 pl-5 pt-4 font-weight-bold">Edad</p>
-<div class="row">
-   <div class="col-5">
-                <div class="row d-flex align-items-center">
-                  <div class="col-5 pl-5">
-                    <p class="pl-3 pt-3  font-weight-bold">Min</p>
+            <div class="row">
+              <div class="col-6"><div class=" col-6">
+                    <div class=" mt-2 pl-md-5 d-inline-block">
+                  <h5 id="li_a1" onclick="cambiar_stados('a1')" class="d-block d-lg-none cuerpo text-center f8 font-weight-bolder px-4 py-2 marco1y filtro1">A1</h5>
+                  <input type="hidden" name="in_a1" id="in_a1" value="a1,0">
+                </div>
+                  </div></div>
+              <div class="col-6">
+                <div class=" col-6">
+                    <div class="pl-3 mt-2 pl-md-5 d-inline-block">
+                  <h5 id="li_baratas" onclick="cambiar_stados('baratas')" class="d-block d-lg-none cuerpo text-center f8 font-weight-bolder px-4 py-2 marco1y filtro1 ">Baratas</h5>
+                  <input type="hidden" name="in_baratas" id="in_baratas" value="baratas,0">
+                </div>
                   </div>
-                  <div class="col-6 ">
-                  <select class="browser-default custom-select" name="min_edad">
+              </div>
+            </div>
+          </div>  
+<p class="color3 f2 pl-lg-5 pl-3 pt-4 font-weight-bold">Edad</p>
+<div class="row">
+   <div class="col-lg-5 col-6">
+                <div class="row d-flex align-items-center">
+                  <div class="col-lg-5 col-4 pl-3 pl-md-4">
+                    <p class="pl-5 pt-3  font-weight-bold">Min</p>
+                  </div>
+                  <div class="col-8 col-lg-6 pl-5 pl-md-3 ">
+                  <select class="browser-default custom-select especial2" name="min_edad">
                     <option value = "0" selected></option>
 
                     <?php
@@ -127,8 +146,8 @@
                 </div>
                 <div class="row">
                   <div class="col-12">
-                    <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_joven" onclick="cambiar_stados('joven')" class="f8 font-weight-bolder text-center px-4 py-2 marco1y filtro1 " style="width: 200px;">Joven</h5>
+                    <div class="pl-3 mt-2 pl-md-5 d-inline-block">
+                  <h5 id="li_joven" onclick="cambiar_stados('joven')" class="f8 font-weight-bolder text-center px-4 py-2 marco1y filtro1 cuerpo " >Joven</h5>
                     <input type="hidden" name="in_joven" id="in_joven" value="joven,0">
                 </div>
                   </div>
@@ -136,13 +155,13 @@
                 </div>
                 
               </div>
-               <div class="col-5">
+               <div class="col-lg-5 col-6">
                 <div class="row d-flex align-items-center">
-                  <div class="col-5 pl-5">
-                    <p class="pl-3 pt-3  font-weight-bold">Max</p>
+                  <div class="col-3">
+                    <p class="pl-3 pt-3  text-right font-weight-bold">Max</p>
                   </div>
                   <div class="col-6 ">
-                  <select class="browser-default custom-select" name="max_edad">
+                  <select class="browser-default ml-3 ml-md-0 custom-select especial2" name="max_edad">
                     <option selected></option>
                     <?php
                       for ($i = 18; $i <= 99; $i++) {
@@ -153,9 +172,9 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-12">
+                  <div class="col-12 pl-0 pl-lg-2">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_madura" onclick="cambiar_stados('madura')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center" style="width: 200px;">Madura</h5>
+                  <h5 id="li_madura" onclick="cambiar_stados('madura')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1 cuerpo  text-center ml-5 ml-lg-2" >Madura</h5>
                     <input type="hidden" name="in_madura" id="in_madura" value="madura,0">
                 </div>
                   </div>
@@ -171,10 +190,10 @@
 
 
 
-<p class="color3 f2 pl-5 pt-4 font-weight-bold">Atención a</p>
+<p class="color3 f2 pl-lg-5 pl-3 pt-4 font-weight-bold">Atención a</p>
 <div class="row">
   <div class="col-6">
-     <div class="row">
+     <div class="row pl-3 pl-lg-0">
                   <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
                   <h5 id="li_discapacitados" onclick="cambiar_stados('discapacitados')" class="f8 font-weight-bolder px-4 py-2 marco1y text-center filtro1 especial" style="width: 200px;">Discapacitados</h5>
@@ -193,8 +212,8 @@
   <div class="col-6">
     <div class="row">
                   <div class="col-12">
-                    <div class="pl-0 mt-2 pl-md-0 d-inline-block">
-                  <h5 id="li_mujeres" onclick="cambiar_stados('mujeres')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center especial" style="width: 200px;">Mujeres</h5>
+                    <div class="pl-2 mt-2 pl-md-0 d-inline-block">
+                  <h5 id="li_mujeres" onclick="cambiar_stados('mujeres')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center especial ml-4 ml-lg-1 cuerpo">Mujeres</h5>
                   <input type="hidden" name="in_mujeres" id="in_mujeres" value="mujeres,0">
                 </div>
                   </div>
@@ -211,13 +230,13 @@
 
 
 
-<p class="color3 f2 pl-5 pt-4 font-weight-bold">Tipo de escort</p>
+<p class="color3 f2 pl-lg-5 pl-3 pt-4 font-weight-bold">Tipo de escort</p>
 <div class="row">
   <div class="col-4"> <div class="row">
                 
                    <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_agencia" onclick="cambiar_stados('agencia')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center" style="width: 150px;">De agencia</h5>
+                  <h5 id="li_agencia" onclick="cambiar_stados('agencia')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center cuerpo ml-3 ml-lg-1" >De agencia</h5>
                   <input type="hidden" name="in_agencia" id="in_agencia" value="agencia,0">
                 </div>
                   </div>
@@ -225,9 +244,9 @@
                 </div> </div>
   <div class="col-4">
     <div class="row">
-          <div class="col-12">
-                    <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_independiente" onclick="cambiar_stados('independiente')" class="f8 font-weight-bolder px-4 py-2 filtro1  marco1y text-center" style="width: 180px;">Independiente</h5>
+          <div class="col-12 pl-0 pl-lg-2">
+                    <div class="pl-5 mt-2 pl-md-5 d-inline-block">
+                  <h5 id="li_independiente" onclick="cambiar_stados('independiente')" class="f8 ml-5 ml-lg-5 font-weight-bolder px-4 py-2 filtro1  marco1y text-center cuerpo" >Independiente</h5>
                   <input type="hidden" name="in_independiente" id="in_independiente" value="independiente,0">
                 </div>
                   </div>
@@ -235,13 +254,13 @@
   
   </div>
 </div>
-<p class="color3 f2 pl-5 pt-4 font-weight-bold">Contacto</p>
+<p class="color3 f2 pl-lg-5 pl-3 pt-4 font-weight-bold">Contacto</p>
 <div class="row">
   <div class="col-6">
        <div class="row">
           <div class="col-12">
                     <div class="pl-0 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_whatsapp" onclick="cambiar_stados('whatsapp')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center" style="width: 180px;">WhatsApp</h5>
+                  <h5 id="li_whatsapp" onclick="cambiar_stados('whatsapp')" class="f8 font-weight-bolder cuerpo ml-3 ml-lg-1 px-4 py-2 marco1y filtro1  text-center" >WhatsApp</h5>
                   <input type="hidden" name="in_whatsapp" id="in_whatsapp" value="whatsapp,0">
                 </div>
                   </div>
@@ -271,8 +290,8 @@
         <div class="col-lg-4 col-6  px-lg-0 mx-lg-0">
             <div class="row">
           <div class="col-12 pl-4 pl-lg-2">
-                    <div class="pl-4 mt-2 pl-lg-4 d-inline-block">
-                  <h5 id="li_besos" onclick="cambiar_stados('besos')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1 especial  text-center">Besos boca</h5>
+                    <div class="pl-1 mt-2 pl-lg-4 d-inline-block">
+                  <h5 id="li_besos" onclick="cambiar_stados('besos')" class="f8 ml-2 font-weight-bolder px-4 py-2 marco1y filtro1 especial  text-center">Besos boca</h5>
                   <input type="hidden" name="in_besos" id="in_besos" value="besos,0">
                 </div>
                   </div>
@@ -290,8 +309,8 @@
          <div class="col-lg-4 col-6 px-lg-0 mx-lg-0">
             <div class="row">
           <div class="col-12 pl-4 pl-lg-2 d-block d-lg-none">
-                    <div class="pl-4 mt-2 pl-md-0 d-inline-block ">
-                    <h5 id="li_trio" onclick="cambiar_stados('trio')" class="f8 font-weight-bolder especial px-4 py-2 marco1y filtro1  text-center">Trio</h5>
+                    <div class="pl-1 mt-2 pl-md-0 d-inline-block ">
+                    <h5 id="li_trio" onclick="cambiar_stados('trio')" class="f8 ml-2  font-weight-bolder especial px-4 py-2 marco1y filtro1  text-center">Trio</h5>
                   <input type="hidden" name="in_trio" id="in_trio" value="trio,0">
                 </div>
                   </div>
@@ -311,9 +330,9 @@
                 </div> </div>
   <div class="col-lg-4 col-6">
     <div class="row">
-          <div class="col-12 pl-5 pl-md-2">
-                    <div class="pl-1 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_facial" onclick="cambiar_stados('facial')" class="f8 cuerpo font-weight-bolder px-4 py-2 marco1y filtro1 ml-lg-4  text-center" >Eyaculación facial</h5>
+          <div class="col-12 pl-4 pl-md-2">
+                    <div class="pl-2 mt-2 pl-md-5 d-inline-block">
+                  <h5 id="li_facial" onclick="cambiar_stados('facial')" class="f8 cuerpo font-weight-bolder ml-2 px-4 py-2 marco1y filtro1 ml-lg-4  text-center" >Eyaculación facial</h5>
                   <input type="hidden" name="in_facial" id="in_facial" value="facial,0">
                 </div>
                   </div>
@@ -324,8 +343,8 @@
   <div class="row pl-3 pl-lg-2">
   <div class="col-lg-4 col-6"> <div class="row">
                 
-                   <div class="col-10">
-                    <div class="pl-0 mt-2 pl-md-4 d-inline-block">
+                   <div class="col-10 pl-lg-4">
+                    <div class="pl-0 mt-2 pl-lg-4 d-inline-block">
                   <h5 id="li_disfraces" onclick="cambiar_stados('disfraces')" class="f8 especial font-weight-bolder px-2 py-2 marco1y filtro1  text-center" style="width: 210px;">Fantasías y disfraces</h5>
                   <input type="hidden" name="in_disfraces" id="in_disfraces" value="disfraces,0">
                 </div>
@@ -334,9 +353,9 @@
                 </div> </div>
   <div class="col-lg-4 col-6">
     <div class="row">
-          <div class="col-12 pl-5">
-                    <div class="pl-1 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_eroticos" onclick="cambiar_stados('eroticos')" class="f8 especial font-weight-bolder px-3 py-2 marco1y filtro1  text-center" style="width: 170px;">Masajes eroticos</h5>
+          <div class="col-12 pl-4 pl-lg-5">
+                    <div class="pl-2 mt-2 pl-md-5 d-inline-block">
+                  <h5 id="li_eroticos" onclick="cambiar_stados('eroticos')" class="f8 ml-2 especial font-weight-bolder px-3 py-2 marco1y filtro1  text-center" style="width: 170px;">Masajes eroticos</h5>
                   <input type="hidden" name="in_eroticos" id="in_eroticos" value="eroticos,0">
                 </div>
                   </div>
@@ -345,9 +364,9 @@
   </div>
 </div>
  <div class="row">
-        <div class="col-4 px-0 mx-0">
+        <div class="col-lg-4 col-6  px-lg-0 mx-lg-0">
             <div class="row d-flex align-items-center">
-          <div class="col-12 pl-4">
+          <div class="col-12 pl-2">
                     <div class="pl-4 mt-2 pl-md-5 d-inline-block">
                   <h5 id="li_anal" onclick="cambiar_stados('anal')" class="f8 font-weight-bolder especial px-3 py-2 marco1y filtro1  text-center">Sexo anal</h5>
                   <input type="hidden" name="in_anal" id="in_anal" value="anal,0">
@@ -357,8 +376,8 @@
         </div>
         <div class="col-lg-4 col-6 pl-2 px-lg-0 mx-lg-0">
             <div class="row">
-          <div class="col-12 pl-5 pl-lg-2">
-                    <div class="pl-5 mt-2 pl-lg-1 d-inline-block">
+          <div class="col-12 pl-4 pl-lg-2">
+                    <div class="pl-2 mt-2 pl-lg-1 d-inline-block">
                   <h5 id="li_novia" onclick="cambiar_stados('novia')" class="f8 font-weight-bolder especial px-lg-4 ml-4 ml-md-2 py-2 marco1y filtro1  text-center">Trato de novia</h5>
                   <input type="hidden" name="in_novia" id="in_novia" value="novia,0">
                 </div>
@@ -387,7 +406,7 @@
       <div class="row">
         <div class="col-lg-4 col-6 px-lg-0 mx-0">
             <div class="row">
-          <div class="col-12">
+          <div class="col-12 pl-lg-4">
                     <div class="pl-3 mt-2 pl-md-5 ">
                   <h5 id="li_domicilio" onclick="cambiar_stados('domicilio')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center especial">A domicilio</h5>
                   <input type="hidden" name="in_domicilio" id="in_domicilio" value="domicilio,0">
@@ -397,8 +416,8 @@
         </div>
         <div class="col-lg-4 col-6 px-0 mx-0">
             <div class="row">
-          <div class="col-12 pl-4 pl-md-2">
-                    <div class="pl-1 ml-5 mt-2 pl-md-3 d-inline-block">
+          <div class="col-12 pl-3 pl-md-2">
+                    <div class="pl-0 ml-5 ml-lg-3 mt-2 pl-md-3 d-inline-block">
                   <h5 id="li_cena" onclick="cambiar_stados('cena')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center especial">Cena romantica</h5>
                   <input type="hidden" name="in_cena" id="in_cena" value="cena,0">
                 </div>
@@ -407,7 +426,7 @@
         </div>
         <div class="col-lg-4 col-6  px-md-0 mx-md-0">
             <div class="row">
-          <div class="col-12  ">
+          <div class="col-12   ">
                     <div class="pl-3 mt-2 pl-md-0 d-inline-block">
                   <h5 id="li_viajes" onclick="cambiar_stados('viajes')" class="f8 font-weight-bolder px-4 py-2 marco1y filtro1  text-center especial">Viajes</h5>
                   <input type="hidden" name="in_viajes" id="in_viajes" value="viajes,0">
@@ -417,9 +436,9 @@
         </div>
           <div class="col-lg-4 col-6  d-block d-lg-none">
     <div class="row">
-          <div class="col-12 pl-1 pl-md-3  ">
-                    <div class="pl-2 ml-5 ml-lg-0 mt-2 pl-lg-5 d-inline-block">
-                  <h5 id="li_eventos" onclick="cambiar_stados('eventos')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Eventos y fiestas</h5>
+          <div class="col-12 pl-0 pl-md-2  ">
+                    <div class="pl-0 ml-5 ml-lg-0 mt-2 pl-lg-5 d-inline-block">
+                  <h5 id="li_eventos" onclick="cambiar_stados('eventos')" class="f8   font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Eventos y fiestas</h5>
                   <input type="hidden" name="in_eventos" id="in_eventos" value="eventos,0">
                 </div>
                   </div>
@@ -440,8 +459,8 @@
                 </div> </div>
   <div class="col-lg-4 col-6">
     <div class="row">
-          <div class="col-12 pl-1 pl-md-2">
-                    <div class="pl-0 ml-5 mt-2 pl-md-5 d-inline-block">
+          <div class="col-12 pl-3 pl-md-2">
+                    <div class="pl-0 ml-4 mt-2 pl-md-5 d-inline-block">
                   <h5 id="li_departamento" onclick="cambiar_stados('departamento')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Departamento propio</h5>
                   <input type="hidden" name="in_departamento" id="in_departamento" value="departamento,0">
                 </div>
@@ -451,12 +470,12 @@
   </div>
 </div>
   <div class="row pl-4 d-flex align-items-center">
-  <div class="col-lg-4 col-6"> 
+  <div class="col-lg-4 col-6 pl-2"> 
     <div class="row">
                 
                    <div class="col-12">
-                    <div class="pl-2 mt-2 pl-md-4 d-inline-block">
-                  <h5 id="li_despedida" onclick="cambiar_stados('despedida')" class="f8 font-weight-bolder px-4 px-md-2 py-2 marco1y filtro1  text-center especial" >Despedida de solteros</h5>
+                    <div class="mt-2 pl-md-4 d-inline-block">
+                  <h5 id="li_despedida" onclick="cambiar_stados('despedida')" class="f8 font-weight-bolder px-4 px-md-2 py-2 marco1y filtro1  text-center cuerpo" >Despedida de solteros</h5>
                   <input type="hidden" name="in_despedida" id="in_despedida" value="despedida,0">
                   </div>
                   </div>
@@ -465,8 +484,8 @@
   <div class="col-lg-4 col-6">
     <div class="row">
           <div class="col-12 pl-3 pl-md-2">
-                    <div class="pl-0 ml-4 ml-md-2 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_club" onclick="cambiar_stados('club')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center especial" style="width: 100px;">En un club</h5>
+                    <div class="pl-0 ml-3 ml-md-2 mt-2 pl-md-5 d-inline-block">
+                  <h5 id="li_club" onclick="cambiar_stados('club')" class="f8 font-weight-bolder ml-1 px-2 py-2 marco1y filtro1  text-center cuerpo ml-lg-3" >En un club</h5>
                   <input type="hidden" name="in_club" id="in_club" value="club,0">
                 </div>
                   </div>
@@ -489,7 +508,7 @@
     <div class="row">
           <div class="col-12 pl-4 pl-md-3  d-none d-lg-block">
                     <div class="pl-3 mt-2 pl-md-5 d-inline-block">
-                  <h5 id="li_eventos" onclick="cambiar_stados('eventos')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Eventos y fiestas</h5>
+                  <h5 id="li_eventos" onclick="cambiar_stados('eventos')" class="f8 ml-lg-3 font-weight-bolder px-2 py-2 marco1y filtro1  text-center cuerpo" >Eventos y fiestas</h5>
                   <input type="hidden" name="in_eventos" id="in_eventos" value="eventos,0">
                 </div>
                   </div>
@@ -822,8 +841,8 @@
        <div class="row pl-0 pl-md-4">
   <div class="col-lg-4 col-6"> <div class="row">
                 
-                   <div class="col-12">
-                    <div class="pl-0 mt-2 pl-md-0 pl-md-2 d-inline-block">
+                   <div class="col-12 pl-lg-3">
+                    <div class="pl-0 mt-2  pl-md-2 d-inline-block">
                   <h5 id="li_strap" onclick="cambiar_stados('strap')" class="f8 font-weight-bolder px-2 py-2 marco1y filtro1  text-center " style="width: 150px;">Strap on</h5>
                   <input type="hidden" name="in_strap" id="in_strap" value="strap,0">
                 </div>

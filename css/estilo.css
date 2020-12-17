@@ -676,6 +676,9 @@ transform: rotate(-135deg);
 	.modal1x{
 		top: 15%!important;
 	}
+	.especial2{
+		width: 65px!important;
+	}
 
 	.cuerpo , .estatura ,.especial{
 		width: 150px!important;
