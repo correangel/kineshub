@@ -858,15 +858,16 @@ transform: rotate(-135deg);
 }
 
 
-@media (min-width: 576px) {
-    .card-columns {
-        column-count: 2;
-    }
-}
+
 
 @media (max-width: 768px) {
     .card-columns {
-        column-count: 3;
+        column-count: 2;
+        width: 113%;
+    }
+    .movilinicio
+    {
+    width: 100%;
     }
 }
 

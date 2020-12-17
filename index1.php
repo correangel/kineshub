@@ -16,36 +16,14 @@ else{
  ?>
 <style>
 
-@media (min-width: 576px) {
-    .card-columns {
-        column-count: 2;
-    }
-}
 
-@media (max-width: 768px) {
-    .card-columns {
-        column-count: 3;
-    }
-}
-
-@media (min-width: 992px) {
-    .card-columns {
-        column-count: 4;
-    }
-}
-
-@media (min-width: 1200px) {
-    .card-columns {
-        column-count: 6;
-    }
-}
 </style>
 <body>
   
       
  <div class="container-fluid ">
- <div class="row"> 
-   <div class="row mx-lg-2">
+ <div class="row movilinicio"> 
+   <div class="row mx-lg-2 w-100">
      <div class="card-columns">
 <?php while($row = mysqli_fetch_array($sql)){
     $sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['ID'] ."' LIMIT 1");
