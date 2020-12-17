@@ -395,10 +395,11 @@ border-radius: 5px;
 	   
 }
 .boton16{
-	padding: .84rem .9rem;
+	padding: .84rem .8rem;
 	background-color: #EEEEEE;
 	color: #000;
 	border-radius: 3px;
+	font-size: 12px;
 }
 
 .boton17{
@@ -851,4 +852,29 @@ transform: rotate(-135deg);
 }
 .estatura{
 	width: 145px;
+}
+
+
+@media (min-width: 576px) {
+    .card-columns {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-columns {
+        column-count: 3;
+    }
+}
+
+@media (min-width: 992px) {
+    .card-columns {
+        column-count: 4;
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-columns {
+        column-count: 6;
+    }
 }
