@@ -23,7 +23,7 @@ else{
       
  <div class="container-fluid ">
  <div class="row movilinicio"> 
-   <div class="row mx-lg-2 w-100">
+   <div class="row mx-1 mx-lg-2 w-100">
      <div class="card-columns">
 <?php while($row = mysqli_fetch_array($sql)){
     $sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['ID'] ."' LIMIT 1");
