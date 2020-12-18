@@ -863,8 +863,10 @@ transform: rotate(-135deg);
 @media (max-width: 768px) {
     .card-columns {
         column-count: 2;
-        width: 107%;
-        height: 100%;
+        width: 102%;
+        display: inline-block
+        column-break-inside: avoid
+       
     }
     .movilinicio
     {
@@ -882,4 +884,9 @@ transform: rotate(-135deg);
     .card-columns {
         column-count: 6;
     }
+}
+
+.card-columns .card {
+     /*display: block; */
+     break-inside: avoid; 
 }
