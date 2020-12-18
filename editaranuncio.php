@@ -503,7 +503,7 @@ border-color: #FF1730!important;
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Sobre ti</h2>
-						<input type="hidden" id="sobreti_total" value="0">
+						<input type="hidden" id="sobreti_total" value="1">
 						<span id="sobreti_text" style="color:red; font-size: 1em;"></span>
 					</div>
 					
@@ -799,7 +799,7 @@ border-color: #FF1730!important;
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Lugar de encuentro</h2>
-						<input type="hidden" id="encuentro_total" value="0">
+						<input type="hidden" id="encuentro_total" value="1">
 						<span id="encuentro_text" style="color:red; font-size: 1em;"></span>
 					</div>
 					
