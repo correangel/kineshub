@@ -651,7 +651,7 @@ border-color: #FF1730!important;
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Servicios</h2>
-						<input type="hidden" id="servicio_total" value="0">
+						<input type="hidden" id="servicio_total" value="1">
 						<span id="servicio_text" style="color:red; font-size: 1em;"></span>
 					</div>
 					
