@@ -90,7 +90,7 @@ else{
   </div>
   </div>  </div>
  <div class="row movilinicio mt-2"> 
-   <div class="row mx-1 mx-lg-2 w-100">
+   <div class="row mx-1 mx-lg-2 w-100" id="filtrar">
      <div class="card-columns" style="height: 100%;" id="load_data">
 <?php while($row = mysqli_fetch_array($sql)){
     $sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['ID'] ."' LIMIT 1");
@@ -273,8 +273,8 @@ userdevdata = 1;
                           type:  'GET',
                           success:  function (response) 
                             { 
-                                $("#load_data").html("");
-                                $("#load_data").html(response);           
+                                $("#filtrar").html("");
+                                $("#filtrar").html(response);           
                             }
                                             
                       });
