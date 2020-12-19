@@ -273,7 +273,7 @@ userdevdata = 1;
                           type:  'GET',
                           success:  function (response) 
                             {
-                                $("#filtrar").html(response);           
+                                $("#load_data").html(response);           
                             }
                                             
                       });
