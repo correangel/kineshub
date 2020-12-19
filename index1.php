@@ -2,8 +2,10 @@
 
 require_once "db.php";
 mysqli_set_charset($enlace,"utf8");
-$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1 ORDER BY orden DESC");
-$num = mysqli_num_rows($sql);
+$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1 ORDER BY orden DESC LIMIT 0, 30");
+  if(!$sql){echo "error".mysqli_error($enlace);}
+$sql2 = mysqli_query($enlace, "SELECT id FROM anuncio WHERE estado = 1");
+$num = mysqli_num_rows($sql2);
 
 
 session_start();
@@ -89,7 +91,7 @@ else{
   </div>  </div>
  <div class="row movilinicio mt-2"> 
    <div class="row mx-1 mx-lg-2 w-100">
-     <div class="card-columns" style="height: 100%;">
+     <div class="card-columns" style="height: 100%;" id="load_data">
 <?php while($row = mysqli_fetch_array($sql)){
     $sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $row['ID'] ."' LIMIT 1");
     $rowq = mysqli_fetch_array($sqlq);
@@ -146,6 +148,8 @@ else{
       <!-- fin de aqui  -->
 <?php } ?>
      </div>
+
+     <div class="row mt-4" id="load_data_message"></div>
    </div>
 </div>
  </div>
@@ -301,6 +305,63 @@ function agregar_favoritos(anuncio){
                               success:  function (response){}
                             });
 }
+
+
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+ 
+ var limit = 30;
+ var start = 31;
+ var action = 'inactive';
+ function load_country_data(limit, start)
+ {
+  $.ajax({
+   url:"cargar_anuncio2.php",
+   method:"POST",
+   data:{limit:limit, start:start},
+   cache:false,
+   success:function(data)
+   {
+    $('#load_data').append(data);
+    if(data == '')
+    {
+     $('#load_data_message').html("<button type='button' class='btn btn-info'>No hay mas anuncios</button>");
+     action = 'active';
+    }
+    else
+    {
+     $('#load_data_message').html("<button type='button' class='btn btn-warning color3'>Espere Seguimos Cargando</button>");
+     action = "inactive";
+    }
+   }
+  });
+ }
+
+ if(action == 'inactive')
+ {
+  action = 'active';
+  load_country_data(limit, start);
+ }
+
+ $(window).scroll(function(){
+  if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive')
+  {
+   action = 'active';
+   start = start + limit;
+   setTimeout(function(){
+    load_country_data(limit, start);
+   }, 1000);
+  }
+ });
+ 
+});
 </script>
 <?php 
   include "modal/nube.php";
