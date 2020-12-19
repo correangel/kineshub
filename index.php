@@ -272,7 +272,8 @@ userdevdata = 1;
                           url:   '<?= $url_api ?>public/json/filtrar_texto.php?q=' + parametro, 
                           type:  'GET',
                           success:  function (response) 
-                            {
+                            { 
+                                $("#load_data").html("");
                                 $("#load_data").html(response);           
                             }
                                             
