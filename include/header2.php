@@ -68,10 +68,6 @@ require_once "api.php";
       <li class="nav-item">
         <p class="font-weight-bold ml-5 text-dark">LA MEJOR COMPAÑÍA A SOLO UN CLICK</p>
       </li>
-      
-
-     
-
     </ul>
     <!-- Links -->
 <?php if($_SESSION['tipo'] == 1){ ?>
