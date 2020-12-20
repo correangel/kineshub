@@ -63,7 +63,7 @@ else{
 <div class="container d-none d-md-block">
 	<div class="row d-flex justify-content-center text-center mt-2 mt-md-5">
 		<div class="col-lg-4 col-12 mt-2 mt-md-0">
-			<a href="#"><img src="img/Grupo 541.svg"  height="168" alt=""></a>
+			<a href="favoritos.php"><img src="img/Grupo 541.svg"  height="168" alt=""></a>
 		</div>
 		
 		<div class="col-lg-4 col-12 mt-2 mt-md-0">

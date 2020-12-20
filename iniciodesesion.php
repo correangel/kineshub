@@ -23,12 +23,12 @@
           <div class="col-12" id="mensaje"></div>
         </div>
           <div class="col-12">
-          <input class="form-control campo5  f1" type="text" id="correoelectronico" name="usuario" placeholder="Correo Electronico">
+          <input class="form-control campo5  f1 text-dark" style="color: black !important;" type="text" id="correoelectronico" name="usuario" placeholder="Correo Electronico">
           <p style="color:red; font-size: 10px;" id="login_nombre"></p>
         </div>
             <div class="col-12 ">
           
-          <input class="form-control f1 campo5" type="password" id="Contraseña" name="clave" placeholder="Contraseña">
+          <input class="form-control f1 campo5 text-dark" style="color: black !important;" type="password" id="Contraseña" name="clave" placeholder="Contraseña">
         <p style="color:red; font-size: 10px;" id="login_clave"></p>
         </div>
             <div class="col-12">

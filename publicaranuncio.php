@@ -152,7 +152,7 @@ border-color: #FF1730!important;
 			
 				
 			</div>
-			<div class="card mt-3">
+			<div class="card mt-3" id="div_telefono" style="display: none;">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-lg-6 col-12">
@@ -176,7 +176,7 @@ border-color: #FF1730!important;
 					
 				</div>
 			</div>
-			<div class="card mt-3 pb-3">
+			<div class="card mt-3 pb-3" id="div_datos" style="display: none;">
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Datos del anuncio</h2>
@@ -187,7 +187,7 @@ border-color: #FF1730!important;
 					
 					<div class="row">
 						<div class="col-lg-6 col-12">
-							<input class="form-control form-control-lg campo3" type="text" placeholder="Nombre" id="ca_nombre" onblur="act_caracteristica('nombre');" onkeyup="validar_cantidad('nombre', 3, 'nombre')" onkeydown="validar_cantidad('nombre', 3, 'nombre')">
+							<input class="form-control form-control-lg campo3" type="text" placeholder="Nombre" id="ca_nombre" onblur="act_caracteristica('nombre');" onkeyup="validar_cantidad('nombre', 3, 'nombre')" value="" autocomplete="off" onkeydown="validar_cantidad('nombre', 3, 'nombre')">
 							<p class="text-center text-md-right mt-2 color2 f4" id="la_nombre">Mínimo de 3 caracteres</p>
 						</div>
 					</div>
@@ -266,7 +266,7 @@ border-color: #FF1730!important;
 			
 				
 			</div>
-			<div class="card mt-3">
+			<div class="card mt-3" id="div_independiente" style="display: none;">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-lg-11 col-12">
@@ -289,7 +289,7 @@ border-color: #FF1730!important;
 					</div>
 				</div>
 			</div>
-			<div class="card mt-3">
+			<div class="card mt-3" id="div_tarifas" style="display: none">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-lg-11 col-12">
@@ -330,7 +330,7 @@ border-color: #FF1730!important;
 				</div>
 			</div>
 
-			<div class="card mt-3">
+			<div class="card mt-3" id="div_horarios" style="display: none;">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-lg-11 col-12">
@@ -372,7 +372,7 @@ border-color: #FF1730!important;
 					</div>
 				</div>
 			</div>
-				<div class="card mt-3">
+				<div class="card mt-3" style="display: none" id="div_galeria">
 				<div class="card-body">
 					<div class="row">
 						<div class="col-lg-11 col-12">
@@ -391,7 +391,7 @@ border-color: #FF1730!important;
 										<div class="custom-file">
 										<form method="post" action="#" enctype="multipart/form-data">
   <input type="file" class="custom-file-input"  name="image" id="image" lang="es">
-  <label class="custom-file-label" for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
+  <label class="custom-file-label" required for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
 </div>
 									</div>
 									<div class="col-lg-3 col-12 text-center text-lg-right mt-2 mt-lg-0 ">
@@ -416,7 +416,7 @@ border-color: #FF1730!important;
 				</div>
 
 			</div>
-			<div class="card  mt-3">
+			<div class="card  mt-3" id="div_sobreti" style="display: none">
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Sobre ti</h2>
@@ -560,7 +560,7 @@ border-color: #FF1730!important;
 			
 				
 			</div>
-			<div class="card  mt-3">
+			<div class="card  mt-3" style="display: none" id="div_servicios">
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Servicios</h2>
@@ -639,7 +639,7 @@ border-color: #FF1730!important;
 			
 				
 			</div>
-			<div class="card  mt-3">
+			<div class="card  mt-3" id="div_especiales" style="display: none">
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Servicios epeciales</h2>
@@ -708,7 +708,7 @@ border-color: #FF1730!important;
 			
 				
 			</div>
-			<div class="card  mt-3">
+			<div class="card  mt-3" id="div_encuentro" style="display: none">
 				<div class="fondocolor3">
 					<div class="container">
 						<h2 class="f9 pl-2 py-2 font-weight-bolder font-weight-normal">Lugar de encuentro</h2>
@@ -779,9 +779,9 @@ border-color: #FF1730!important;
 				
 			</div>
 			<div>
-				<div class="row d-flex justify-content-center mt-4">
+				<div class="row d-flex justify-content-center mt-4" >
 					<div class="col-lg-4 text-center col-12">
-						<button class="btn boton14 w-100 " onclick="validar_guardar()">Publicar Anuncio</button>
+						<button class="btn boton14 w-100 " id="publicar" style="display: none" onclick="validar_guardar()">Publicar Anuncio</button>
 					</div>
 				</div>
 					<div class="mt-4 mb-4 text-center">
@@ -806,7 +806,18 @@ border-color: #FF1730!important;
             type:  'GET',
             success:  function (response) 
 				{
-						$("#provincias").html(response);						
+						$("#provincias").html(response);
+						$("#div_telefono").css("display", "block");						
+						$("#div_datos").css("display", "block");						
+						$("#div_independiente").css("display", "block");						
+						$("#div_tarifas").css("display", "block");						
+						$("#div_horarios").css("display", "block");						
+						$("#div_galeria").css("display", "block");						
+						$("#div_sobreti").css("display", "block");						
+						$("#div_servicios").css("display", "block");						
+						$("#div_especiales").css("display", "block");						
+						$("#div_encuentro").css("display", "block");						
+						$("#publicar").css("display", "block");						
 				}
                               
         });
@@ -1029,6 +1040,7 @@ border-color: #FF1730!important;
 					 imagenes_totales = $("#imagenes_totales").val();
 					 imagenes = imagenes_totales + 1;
 					 $("#imagenes_totales").val(imagenes);
+					 $("#image").val();
                 } else {
                     $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
                 }

@@ -100,7 +100,7 @@ require_once "api.php";
       </li>
 
       <li class="nav-item">
-       <a href="#" class="text-dark"><i class="fas fa-sign-out-alt"></i></a>
+       <a href="logout.php" class="text-dark"><i class="fas fa-sign-out-alt"></i></a>
       </li>
   </ul>
   </div>
