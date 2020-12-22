@@ -922,6 +922,7 @@
         type:  'POST',
         success:  function (response) 
           {
+            $("#filtro").modal("hide");
             $("#filtrar").html(response);						
           }
                                             
