@@ -923,6 +923,7 @@
         success:  function (response) 
           {
             $("#filtro").modal("hide");
+            $('.modal-backdrop').remove();
             $("#filtrar").html(response);						
           }
                                             
