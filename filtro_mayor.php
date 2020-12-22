@@ -176,23 +176,23 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
             if($verificado[1] == 1){
                 $sqlve = "SELECT * FROM anuncio WHERE id = '$id' AND verificado = 1 AND estado = 1";
-                // if($a1[1] == 0 && $baratas[1] == 0){
-                //     if($max_precio > 0){ $sqlve .= "AND max_precio <= '$max_precio'"; }
-                //     if($min_precio > 0){ $sqlve .= "AND min_precio >= '$min_precio'"; }
-                // }
-                // else{
-                //     if($a1[1] > 0){ $sqlve .= "AND a1 = '1'"; }
-                //     elseif($baratas[1] > 0) { $sqlve .= "AND barata = '1'"; }
-                // }
+                if($a1[1] == 0 && $baratas[1] == 0){
+                    if($max_precio > 0){ $sqlve .= "AND max_precio <= '$max_precio'"; }
+                    if($min_precio > 0){ $sqlve .= "AND min_precio >= '$min_precio'"; }
+                }
+                else{
+                    if($a1[1] > 0){ $sqlve .= "AND a1 = '1'"; }
+                    elseif($baratas[1] > 0) { $sqlve .= "AND barata = '1'"; }
+                }
 
-                // if($joven[1]  == 0 && $madura[1] == 0){
-                //     if($min_edad > 0){ $sqlve .= "AND edad >= '$min_edad'"; }
-                //     if($max_edad > 0){ $sqlve .= "AND edad <= '$max_edad'"; }
-                // }
-                // else{
-                //     if($joven[1] > 0){ $sqlve .= "AND edad <= '35'"; }
-                //     else{ $sqlve .= "AND edad >= '35'"; }
-                // }
+                if($joven[1]  == 0 && $madura[1] == 0){
+                    if($min_edad > 0){ $sqlve .= "AND edad >= '$min_edad'"; }
+                    if($max_edad > 0){ $sqlve .= "AND edad <= '$max_edad'"; }
+                }
+                else{
+                    if($joven[1] > 0){ $sqlve .= "AND edad <= '35'"; }
+                    else{ $sqlve .= "AND edad >= '35'"; }
+                }
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
@@ -343,3 +343,98 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
             }
         }
     }
+
+    else{
+        $sqlve = "SELECT * FROM anuncio WHERE estado = 1";
+                if($a1[1] == 0 && $baratas[1] == 0){
+                    if($max_precio > 0){ $sqlve .= " AND max_precio <= '$max_precio'"; }
+                    if($min_precio > 0){ $sqlve .= " AND min_precio >= '$min_precio'"; }
+                }
+                else{
+                    if($a1[1] > 0){ $sqlve .= " AND a1 = '1'"; }
+                    elseif($baratas[1] > 0) { $sqlve .= " AND barata = 1"; }
+                }
+
+                if($joven[1]  == 0 && $madura[1] == 0){
+                    if($min_edad > 0){ $sqlve .= " AND edad >= '$min_edad'"; }
+                    if($max_edad > 0){ $sqlve .= " AND edad <= '$max_edad'"; }
+                }
+                else{
+                    if($joven[1] > 0){ $sqlve .= " AND edad <= '35'"; }
+                    else{ $sqlve .= "AND edad >= '35'"; }
+                }
+
+                $resultve = mysqli_query($enlace, $sqlve);
+                if(!$resultve){echo $sqlve."<br><br>Error: ".mysqli_error($enlace);}
+                else{echo "La consulta se esta ejecutando";}
+                $numve = mysqli_num_rows($resultve);
+                $rowvee = mysqli_fetch_array($resultve);
+                $id = $rowvee['id'];
+
+                if($numve > 0){
+                    $sqlfinal = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE anuncio.id = '$id'");
+                    $rowfinal = mysqli_fetch_array($sqlfinal);
+
+                    $sqlq = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $rowfinal['ID'] ."' LIMIT 1");
+                    $rowq = mysqli_fetch_array($sqlq);
+                    $sqlp = mysqli_query($enlace, "SELECT min(costo) AS PrecioMinimo FROM tarifas WHERE id_anuncio = '". $rowfinal['ID']."'");
+                    $rowp = mysqli_fetch_array($sqlp);
+
+                    ?>
+                        <div class="col-lg-2 col-6 px-1 mx-0">
+			<div class="card card1" >
+				<img src="images/<?= $rowq['imagen'] ?>" class="imagen1x" alt="" onclick="mostrar_modal('<?= $id ?>')">
+				<div class="card-body">
+					<div class="row ">
+						<div class="col-8">
+							<div class="row">
+	<div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $rowfinal['Nombre'] ?> <?php if($rowfinal['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+								
+							</div>
+						</div>
+						<div class="col-4">
+
+						<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
+							$id = $rowfinal['ID'];
+							$sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
+							$nummmmm = mysqli_num_rows($sqlllll);
+							if($nummmmm > 0){
+							?>
+							<i class="fas fa-heart f2 color3"></i>
+							<?php } else{ ?>
+
+						<i class="fas fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
+						<?php } }
+						elseif(isset($_SESSION['id'])){
+						 ?>
+						<i class="fas fa-heart f2"></i>
+						<?php }
+						else{?>
+							<i class="fas fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
+						<?php }
+						?>
+
+						
+
+						</div>
+					</div>
+				<div onclick="mostrar_modal('<?= $id ?>')">
+					<span class="badge badge-pill badge-light"><?= $rowfinal['Distrito'] ?></span>
+					<span class="badge badge-pill badge-light"><?= $rowfinal['Edad'] ?> a単os</span>
+					<span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
+					<span class="badge badge-pill badge-light"><?= $rowfinal['Pais'] ?></span>
+				</div>
+				</div>
+			</div>
+
+			</div>
+                    <?php
+                }
+                else{
+                    echo  "nada";
+                }
+    }
+
+           
+
+?>
