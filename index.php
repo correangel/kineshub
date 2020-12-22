@@ -333,7 +333,17 @@ function limpiar_buscasudjf(){
   }
 
 $(document).ready(function(){
-  setInterval('limpiar_buscasudjf()',1000);
+  setTimeout('limpiar_buscasudjf()',1000);
+  setTimeout('limpiar_buscasudjf()',2000);
+  setTimeout('limpiar_buscasudjf()',3000);
+  setTimeout('limpiar_buscasudjf()',4000);
+  setTimeout('limpiar_buscasudjf()',5000);
+  setTimeout('limpiar_buscasudjf()',6000);
+  setTimeout('limpiar_buscasudjf()',7000);
+  setTimeout('limpiar_buscasudjf()',8000);
+  setTimeout('limpiar_buscasudjf()',9000);
+  setTimeout('limpiar_buscasudjf()',10000);
+  setTimeout('limpiar_buscasudjf()',11000);
  
  var limit = 30;
  var start = 31;
