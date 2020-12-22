@@ -163,6 +163,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
         echo "Aqui hay un error";
     }
 
+        echo $sql;
 
     if($num > 0){
        echo " <div class='card-columns' style='height: 100%;' id='load_data'>";
