@@ -41,11 +41,11 @@ while($row = mysqli_fetch_array($sql)){
               <i class="fas fa-heart f2 color3"></i>
               <?php } else{ ?>
 
-            <i class="fas fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
+            <i class="far fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
             <?php } }
             elseif(isset($_SESSION['id'])){
              ?>
-            <i class="fas fa-heart f2"></i>
+            <i class="far fa-heart f2"></i>
             <?php }
             else{?>
               <i class="far fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
