@@ -1358,20 +1358,20 @@ border-color: #FF1730!important;
             contentType: false,
             cache: false,
             processData:false,
-            beforeSend: function(){
-                $('#uploadStatus').html('<img src="images/uploading.gif"/>');
-            },
-            error:function(){
-                $('#uploadStatus').html('<span style="color:#EA4335;">Images upload failed, please try again.<span>');
-            },
-            success: function(data){
-                $('#uploadForm')[0].reset();
-                $('#uploadStatus').html('<span style="color:#28A74B;">Images uploaded successfully.<span>');
-                $('.gallery').html(data);
+            success: function(response){
+                if (response != 0) {
+                    $("#imagenes_cargadas").html(response);
+					 imagenes_totales = $("#imagenes_totales").val();
+					 imagenes = imagenes_totales + 1;
+					 $("#imagenes_totales").val(imagenes);
+					 $("#image").val();
+                } else {
+                    $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
+                }
             }
         });
     });
-	}
+	});
 </script>
 
  		<?php 
