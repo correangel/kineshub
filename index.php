@@ -333,6 +333,8 @@ function agregar_favoritos(anuncio){
 
 
 $(document).ready(function(){
+
+  $(".buscador1").val("");
  
  var limit = 30;
  var start = 31;
