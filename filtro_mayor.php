@@ -162,11 +162,11 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
     if(!$result){
         echo "Aqui hay un error";
     }
-    $num = mysqli_num_rows($result);
 
 
     if($num > 0){
        echo " <div class='card-columns' style='height: 100%;' id='load_data'>";
+       echo "Vamos Bien";
         while($row_re = mysqli_fetch_array($result)){
             $id = $row_re['id_anuncio'];
 
