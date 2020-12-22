@@ -161,6 +161,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
         echo "Aqui hay un error";
     }
     $num = mysqli_num_rows($result);
+    echo $sql;
     echo $num;
     if($num > 0){
         while($row_re = mysqli_fetch_array($result)){
