@@ -847,8 +847,16 @@ border-color: #FF1730!important;
 			processData:false, //Debe estar en false para que JQuery no procese los datos a enviar
 			cache:false, //Para que el formulario no guarde cache
 			success: function(response){
-				console.log(response);
-				$("#archivos").val();
+				document.getElementById("uploadForm").reset();
+				if (response != 0) {
+                    $("#imagenes_cargadas").html(response);
+					 imagenes_totales = $("#imagenes_totales").val();
+					 imagenes = imagenes_totales + 1;
+					 $("#imagenes_totales").val(imagenes);
+					 $("#image").val();
+                } else {
+                    $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
+                }
 			}
 		});
 	}
