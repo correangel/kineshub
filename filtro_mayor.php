@@ -157,6 +157,9 @@ $madura = explode(",", $_POST['in_madura']);
     if($valores[1] == 1){ $sql .=  " AND $valores[0] = '$valores[1]'"; }
     
     $result = mysqli_query($enlace, $sql);
+    if(!$result){
+        echo "Aqui hay un error";
+    }
     $num = mysqli_num_rows($result);
 
     
@@ -363,6 +366,7 @@ $madura = explode(",", $_POST['in_madura']);
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 if(!$resultve){echo $sqlve."<br><br>Error: ".mysqli_error($enlace);}
+                else{echo "La consulta se esta ejecutando";}
                 $numve = mysqli_num_rows($resultve);
                 $rowvee = mysqli_fetch_array($resultve);
                 $id = $rowvee['id'];
