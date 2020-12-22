@@ -9,7 +9,7 @@ $a1 = explode(",", $_POST['in_a1']);
 $joven = explode(",", $_POST['in_joven']);
 $madura = explode(",", $_POST['in_madura']);
 
-$sql = "SELECT id_anuncio FROM caracteristicas WHERE id_anuncio > 0";
+$sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
     $valores = explode(",", $_POST['in_discapacitados']);
     if($valores[1] == 1){ $sql .=  " AND $valores[0] = '$valores[1]'"; }
 
