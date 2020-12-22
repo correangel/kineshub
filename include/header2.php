@@ -72,13 +72,17 @@ require_once "api.php";
     <!-- Links -->
 <?php if($_SESSION['tipo'] == 1){ ?>
   <ul class="navbar-nav ml-auto flex-center">
-  	<li class="nav-item">
+  	<!-- <li class="nav-item">
       <a href="publicaranuncio.php"><button class="boton11 font-weight-bolder btn pt-2">Publicar anuncio</button></a>
        
-      </li>
+      </li> -->
        
       <li class="nav-item">
        <button onclick="$(location).attr('href','user.php');" class="boton12 font-weight-bolder btn pt-2">Mi cuenta</button>
+      </li>
+
+      <li class="nav-item">
+       <a href="logout.php" class="text-dark"><i class="fas fa-sign-out-alt"></i></a>
       </li>
   </ul>
   </div>
