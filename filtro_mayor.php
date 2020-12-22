@@ -162,4 +162,4 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id_anuncio > 0";
     }
     $num = mysqli_num_rows($result);
 
-    echo $num;
+    echo $sql;
