@@ -172,7 +172,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
             $verificado = explode(",", $_POST['in_verificado']);
 
             if($verificado[1] == 1){
-                echo "verificado";
+                echo "verificado <br>";
                 $sqlve = "SELECT * FROM anuncio WHERE id_anuncio = '$id' AND verificado = 1 AND estado = 1";
                 if($a1[1] == 0 && $baratas[1] == 0){
                     if($max_precio > 0){ $sqlve .= "AND max_precio <= '$max_precio'"; }
