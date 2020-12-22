@@ -371,7 +371,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 if(!$resultve){echo $sqlve."<br><br>Error: ".mysqli_error($enlace);}
-                else{echo "La consulta se esta ejecutando";}
+                echo $sqlve;
                 $numve = mysqli_num_rows($resultve);
                 $rowvee = mysqli_fetch_array($resultve);
                 $id = $rowvee['id'];
