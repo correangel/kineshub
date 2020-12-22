@@ -398,11 +398,12 @@ border-color: #FF1730!important;
 									<input type="submit" value="Cargar Foto" class="btn botonborrar1 btn-sm" >
 									<!-- <input type="submit" value="Cargar Foto" onclick='guardar_foto()' class="btn botonborrar1 btn-sm" > -->
 								
-										</form>
+										
 									</div>
 								</div>
 							
 							</div>
+							</form>
 							<div class="row" id="imagenes_cargadas">
 								<span id="imagenes_text" style="color:red; font-size: 1em;"></span>
 							</div>
