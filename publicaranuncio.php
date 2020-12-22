@@ -89,10 +89,10 @@ border-color: #FF1730!important;
 
 	</div>
 	<div class="mt-3 d-block d-md-none">
-		<img src="img/Grupo 4201.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 4201.svg" class="w-100"  alt="">
 	</div>
 	<div class="mt-3 d-none d-md-block">
-		<img src="img/Grupo 394.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 394.svg" class="w-100"  alt="">
 	</div>
 
 	<div class="row d-flex justify-content-center mt-4">
