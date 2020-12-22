@@ -49,7 +49,19 @@ if(!empty($_FILES['images'])){
         require_once 'db.php';
 
         $id_anuncio =  $_SESSION['id_anuncio'];
-            $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
+
+        $sqlb = mysqli_query($enlace, "SELECT count(*) as Conteo FROM imagenes WHERE imagen  = '".$newfilename."'");
+    $rooro = mysqli_fetch_array($sqlb);
+    $contador = $rooro['Conteo'];
+    if($contador > 0){
+
+    }
+    else{
+        $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
+    }
+
+
+           // $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
 
             if($sql){
                 $sql2 = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $id_anuncio ."'");
