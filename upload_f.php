@@ -1,82 +1,26 @@
 <?php
-if(!empty($_FILES['images'])){
-    // File upload configuration
-    $targetDir = "uploads/";
-    $allowTypes = array('jpg','png','jpeg','gif');
-    
-    $images_arr = array();
-    foreach($_FILES['images']['name'] as $key=>$val){
-        $$rutaImagenOriginal = "";
+$ruta = 'images/'; //Decalaramos una variable con la ruta en donde almacenaremos los archivos
+$mensage = '';//Declaramos una variable mensaje quue almacenara el resultado de las operaciones.
+foreach ($_FILES as $key) //Iteramos el arreglo de archivos
+{
+	if($key['error'] == UPLOAD_ERR_OK )//Si el archivo se paso correctamente Ccontinuamos 
+		{
+			$NombreOriginal = $key['name'];//Obtenemos el nombre original del archivo
+			$temporal = $key['tmp_name']; //Obtenemos la ruta Original del archivo
+			$Destino = $ruta.$NombreOriginal;	//Creamos una ruta de destino con la variable ruta y el nombre original del archivo	
+			
+			move_uploaded_file($temporal, $Destino); //Movemos el archivo temporal a la ruta especificada		
+		}
 
-        $rutaImagenOriginal = $_FILES['images']['name'][$key];
-        $rutaMarcaDeAgua = "marca_agua.png";
-
-        $original = imagecreatefrompng($rutaImagenOriginal);
-        $marcaDeAgua = imagecreatefrompng($rutaMarcaDeAgua);
-
-
-        # Como vamos a centrar  necesitamos sacar antes las anchuras y alturas
-        $anchuraOriginal = imagesx($original);
-        $alturaOriginal = imagesy($original);
-        $alturaMarcaDeAgua = imagesy($marcaDeAgua);
-        $anchuraMarcaDeAgua = imagesx($marcaDeAgua);
-        # En d贸nde poner la marca de agua sobre la original
-        $centroHorizontalDeOriginal = floor($anchuraOriginal / 2);
-        $centroHorizontalDeMarcaDeAgua = floor($anchuraMarcaDeAgua / 2);
-        $centroVerticalDeOriginal = floor($alturaOriginal / 2);
-        $centroVerticalDeMarcaDeAgua = floor($alturaMarcaDeAgua / 2);
-        $centroHorizontal = $centroHorizontalDeOriginal - $centroHorizontalDeMarcaDeAgua;
-        $centroVertical = $centroVerticalDeOriginal - $centroVerticalDeMarcaDeAgua;
-
-        $xOriginal = $centroHorizontal;
-        $yOriginal = $centroVertical;
-        # Desde d贸nde comenzar a cortar la marca de agua (si son 0, se comienza desde el inicio)
-        $xMarcaDeAgua = 0;
-        $yMarcaDeAgua = 0;
-        # Hasta d贸nde poner la marca de agua sobre la original
-        $alturaMarcaDeAgua = $alturaMarcaDeAgua - $yMarcaDeAgua;
-        $anchuraMarcaDeAgua = $anchuraMarcaDeAgua - $xMarcaDeAgua;
-        imagecopy($original, $marcaDeAgua, $xOriginal, $yOriginal, $xMarcaDeAgua, $yMarcaDeAgua, $anchuraMarcaDeAgua, $alturaMarcaDeAgua);
-
-        # Guardar y liberar recursos
-        # Segundo argumento de imagepng es la ruta de la imagen de salida
-        $temp = explode(".", $_FILES['images']['name'][$key]); 
-        $newfilename = round(microtime(true)) . '.' . end($temp); 
-        $resultado = imagepng($original, "images/".$newfilename);
-        imagedestroy($original);
-        imagedestroy($marcaDeAgua);
-
-        session_start();
-        require_once 'db.php';
-
-        $id_anuncio =  $_SESSION['id_anuncio'];
-
-        $sqlb = mysqli_query($enlace, "SELECT count(*) as Conteo FROM imagenes WHERE imagen  = '".$newfilename."'");
-        $rooro = mysqli_fetch_array($sqlb);
-        $contador = $rooro['Conteo'];
-        if($contador > 0){
-
-        }
-        else{
-            $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
-        }
-
-
-           // $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
-
-            if($sql){
-                $sql2 = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $id_anuncio ."'");
-                while($row = mysqli_fetch_array($sql2)){
-                    $imagen = $row['imagen'];
-                    echo"<div class='col-lg-2 col-4'>
-                        <img src='images/$imagen' class='w-100 mt-2' alt=''>
-                    </div>";
-                }
-            }
-            else{
-                echo 0;
-            }
-    }
-    
+	if ($key['error']=='') //Si no existio ningun error, retornamos un mensaje por cada archivo subido
+		{
+			$mensage .= '-> Archivo <b>'.$NombreOriginal.'</b> Subido correctamente. <br>';
+		}
+	if ($key['error']!='')//Si existio algún error retornamos un el error por cada archivo.
+		{
+			$mensage .= '-> No se pudo subir el archivo <b>'.$NombreOriginal.'</b> debido al siguiente Error: n'.$key['error']; 
+		}
+	
 }
+echo $mensage;// Regresamos los mensajes generados al cliente
 ?>

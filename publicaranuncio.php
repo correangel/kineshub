@@ -390,14 +390,13 @@ border-color: #FF1730!important;
 									<div class="col-lg-9 col-12 " style="margin-top: 5px;">
 										<div class="custom-file">
 										<form id="uploadForm" enctype="multipart/form-data">
-  <input type="file" class="custom-file-input" required type="file" name="images[]" id="fileInput" multiple lang="es">
+  <input type="file" class="custom-file-input" required id="archivos" multiple="multiple" lang="es">
   <label class="custom-file-label" required for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
-  <input type="submit" value="Cargar Foto" class="btn botonborrar1 btn-sm" >
 </div>
 									</div>
 									<div class="col-lg-3 col-12 text-center text-lg-right mt-2 mt-lg-0 ">
 									<!-- <input type="submit" value="Cargar Foto" class="btn botonborrar1 btn-sm" > -->
-									<!-- <input type="submit" value="Cargar Foto" onclick='guardar_foto()' class="btn botonborrar1 btn-sm" > -->
+									 <input type="submit" value="Cargar Foto" onclick='guardar_foto()' class="btn botonborrar1 btn-sm" >
 								
 										
 									</div>
@@ -801,31 +800,57 @@ border-color: #FF1730!important;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script>
-	$(document).ready(function(){
-    // File upload via Ajax
-    $("#uploadForm").on('submit', function(e){
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'upload_f.php',
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData:false,
-            success: function(response){
-                if (response != 0) {
-                    $("#imagenes_cargadas").html(response);
-					 imagenes_totales = $("#imagenes_totales").val();
-					 imagenes = imagenes_totales + 1;
-					 $("#imagenes_totales").val(imagenes);
-					 $("#image").val();
-                } else {
-                    $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
-                }
-            }
-        });
-    });
-	})
+	// $(document).ready(function(){
+    // // File upload via Ajax
+    // $("#uploadForm").on('submit', function(e){
+    //     e.preventDefault();
+    //     $.ajax({
+    //         type: 'POST',
+    //         url: 'upload_f.php',
+    //         data: new FormData(this),
+    //         contentType: false,
+    //         cache: false,
+    //         processData:false,
+    //         success: function(response){
+    //             if (response != 0) {
+    //                 $("#imagenes_cargadas").html(response);
+	// 				 imagenes_totales = $("#imagenes_totales").val();
+	// 				 imagenes = imagenes_totales + 1;
+	// 				 $("#imagenes_totales").val(imagenes);
+	// 				 $("#image").val();
+    //             } else {
+    //                 $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
+    //             }
+    //         }
+    //     });
+    // });
+	// })
+
+	function guardar_foto(){	
+		var archivos = document.getElementById("archivos");//Creamos un objeto con el elemento que contiene los archivos: el campo input file, que tiene el id = 'archivos'
+		var archivo = archivos.files; //Obtenemos los archivos seleccionados en el imput
+		//Creamos una instancia del Objeto FormDara.
+		var archivos = new FormData();
+		/* Como son multiples archivos creamos un ciclo for que recorra la el arreglo de los archivos seleccionados en el input
+		Este y añadimos cada elemento al formulario FormData en forma de arreglo, utilizando la variable i (autoincremental) como 
+		indice para cada archivo, si no hacemos esto, los valores del arreglo se sobre escriben*/
+		for(i=0; i<archivo.length; i++){
+		archivos.append('archivo'+i,archivo[i]); //Añadimos cada archivo a el arreglo con un indice direfente
+		}
+
+		/*Ejecutamos la función ajax de jQuery*/		
+		$.ajax({
+			url:'upload_f.php', //Url a donde la enviaremos
+			type:'POST', //Metodo que usaremos
+			contentType:false, //Debe estar en false para que pase el objeto sin procesar
+			data:archivos, //Le pasamos el objeto que creamos con los archivos
+			processData:false, //Debe estar en false para que JQuery no procese los datos a enviar
+			cache:false, //Para que el formulario no guarde cache
+			success: function(response){
+				console.log(response);
+			}
+		});
+	}
 
 	function select_dep(){
 		var parametro = $("#dep").val();
