@@ -54,10 +54,10 @@ else{
 	</div>
 	</div>
 	<div class="mt-3 d-block d-md-none">
-		<img src="img/Grupo 3911.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 3911.svg" class="w-100"  alt="">
 	</div>
 	<div class="mt-3 d-none d-md-block">
-		<img src="img/Grupo 391.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 391.svg" class="w-100"  alt="">
 	</div>
 
 	<div class="text-center">

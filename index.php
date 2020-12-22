@@ -339,8 +339,6 @@ $(document).ready(function(){
   }
   
   setInterval('limpiar_buscasudjf()',1000);
-  setInterval('limpiar_buscasudjf()',2000);
-  setInterval('limpiar_buscasudjf()',3000);
  
  var limit = 30;
  var start = 31;

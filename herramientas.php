@@ -55,10 +55,10 @@ else{
 	</div>
 	</div>
 	<div class="mt-3 d-block d-md-none">
-		<img src="img/Grupo 4191.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 4191.svg" class="w-100" alt="">
 	</div>
 	<div class="mt-3 d-none d-md-block">
-		<img src="img/Grupo 420.svg" class="w-100" style="" alt="">
+		<img src="img/Grupo 420.svg" class="w-100"  alt="">
 	</div>
 	<div class="container">
 		<div class="row mt-md-5 d-flex justify-content-center">
