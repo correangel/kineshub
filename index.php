@@ -280,6 +280,20 @@ userdevdata = 1;
                       });
     }
 
+    function limpiar_modal_mayor(){
+      var parametro = "";
+      $.ajax({ 
+                          url:   '<?= $url_api ?>public/json/filtrar_texto.php?q=' + parametro, 
+                          type:  'GET',
+                          success:  function (response) 
+                            { 
+                                $("#filtrar").html("");
+                                $("#filtrar").html(response);           
+                            }
+                                            
+                      });
+    }
+
 
     function filtrar_busqueda2(){
         var parametro = $("#filtrar_busqueda2").val();
