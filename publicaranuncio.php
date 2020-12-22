@@ -392,10 +392,11 @@ border-color: #FF1730!important;
 										<form id="uploadForm" enctype="multipart/form-data">
   <input type="file" class="custom-file-input"  type="file" name="images[]" id="fileInput" multiple lang="es">
   <label class="custom-file-label" required for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
+  <input type="submit" value="Cargar Foto" class="btn botonborrar1 btn-sm" >
 </div>
 									</div>
 									<div class="col-lg-3 col-12 text-center text-lg-right mt-2 mt-lg-0 ">
-									<input type="submit" value="Cargar Foto" class="btn botonborrar1 btn-sm" >
+									<!-- <input type="submit" value="Cargar Foto" class="btn botonborrar1 btn-sm" > -->
 									<!-- <input type="submit" value="Cargar Foto" onclick='guardar_foto()' class="btn botonborrar1 btn-sm" > -->
 								
 										
