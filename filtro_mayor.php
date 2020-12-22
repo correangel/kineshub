@@ -167,7 +167,6 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
     if($num > 0){
        echo " <div class='card-columns' style='height: 100%;' id='load_data'>";
-       echo "Vamos Bien";
         while($row_re = mysqli_fetch_array($result)){
             $id = $row_re['id_anuncio'];
 
@@ -212,7 +211,8 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
                     ?>
                    
-				<div class="card">
+				<!-- Aqui -->
+                <div class="card">
            <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
         <div class="card-body">
           <div class="row ">
@@ -226,7 +226,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
                        <?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
               $id = $row['ID'];
-              $sqlllll = mysqli_query($db, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
+              $sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
               $nummmmm = mysqli_num_rows($sqlllll);
               if($nummmmm > 0){
               ?>
@@ -255,8 +255,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
         </div>
         </div>
        </div>
-			
-		</div>
+      <!-- fin de aqui  -->
                     <?php
                 }
                 else{}
