@@ -1074,6 +1074,7 @@ border-color: #FF1730!important;
             }
         });
     });
+	}
 
 	function caracteristicas(dato){
 		
