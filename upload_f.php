@@ -46,11 +46,11 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
 
 	if ($key['error']=='') //Si no existio ningun error, retornamos un mensaje por cada archivo subido
 		{
-			$mensage .= '-> Archivo <b>'.$newfilename.'</b> Subido correctamente. <br>';
+			$mensage .= '-> Archivo <b>'.$NombreOriginal.' como '. $newfilename .' </b> Subido correctamente. <br>';
 		}
 	if ($key['error']!='')//Si existio algún error retornamos un el error por cada archivo.
 		{
-			$mensage .= '-> No se pudo subir el archivo <b>'.$newfilename.'</b> debido al siguiente Error: n'.$key['error']; 
+			$mensage .= '-> No se pudo subir el archivo <b>'.$NombreOriginal.'</b> debido al siguiente Error: n'.$key['error']; 
 		}
 	
 }
