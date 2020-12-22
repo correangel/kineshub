@@ -50,6 +50,7 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
 
                 if($sql){
                     $sql2 = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $id_anuncio ."'");
+                    $countmm = mysqli_num_rows($sql2);
                     while($row = mysqli_fetch_array($sql2)){
                         $imagen = $row['imagen'];
                         echo"<div class='col-lg-2 col-4'>
@@ -72,5 +73,5 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
         $resultado = "";
 	
 }
-echo 1;// Regresamos los mensajes generados al cliente
+echo $countmm;// Regresamos los mensajes generados al cliente
 ?>
