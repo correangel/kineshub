@@ -48,19 +48,6 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
             $id_anuncio =  $_SESSION['id_anuncio'];
                 $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
 
-                if($sql){
-                    $sql2 = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $id_anuncio ."'");
-                    $countmm = mysqli_num_rows($sql2);
-                    while($row = mysqli_fetch_array($sql2)){
-                        $imagen = $row['imagen'];
-                        echo"<div class='col-lg-2 col-4'>
-                            <img src='images/$imagen' class='w-100 mt-2' alt=''>
-                        </div>";
-                    }
-                }
-                else{
-                    echo 0;
-                }
 		}
         
         $rutaImagenOriginal = "";
@@ -73,5 +60,14 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
         $resultado = "";
 	
 }
-echo $countmm;// Regresamos los mensajes generados al cliente
+
+
+$sql2 = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $id_anuncio ."'");
+                    $countmm = mysqli_num_rows($sql2);
+                    while($row = mysqli_fetch_array($sql2)){
+                        $imagen = $row['imagen'];
+                        echo"<div class='col-lg-2 col-4'>
+                            <img src='images/$imagen' class='w-100 mt-2' alt=''>
+                        </div>";
+                    }
 ?>
