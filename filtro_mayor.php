@@ -209,53 +209,50 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
                     $rowp = mysqli_fetch_array($sqlp);
 
                     ?>
-                        <div class="col-lg-2 col-6 px-1 mx-0">
-			<div class="card card1" >
-				<img src="images/<?= $rowq['imagen'] ?>" class="imagen1x" alt="" onclick="mostrar_modal('<?= $id ?>')">
-				<div class="card-body">
-					<div class="row ">
-						<div class="col-8">
-							<div class="row">
-	<div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $rowfinal['Nombre'] ?> <?php if($rowfinal['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
-								
-							</div>
-						</div>
-						<div class="col-4">
+                      <!-- Aqui -->
+       <div class="card">
+           <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $id ?>')">
+        <div class="card-body">
+          <div class="row ">
+            <div class="col-8">
+              <div class="row">
+  <div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+                
+              </div>
+            </div>
+            <div class="col-4">
 
-						<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
-							$id = $rowfinal['ID'];
-							$sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
-							$nummmmm = mysqli_num_rows($sqlllll);
-							if($nummmmm > 0){
-							?>
-							<i class="fas fa-heart f2 color3"></i>
-							<?php } else{ ?>
+                       <?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
+              $sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
+              $nummmmm = mysqli_num_rows($sqlllll);
+              if($nummmmm > 0){
+              ?>
+              <i class="fas fa-heart f2 color3"></i>
+              <?php } else{ ?>
 
-						<i class="fas fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
-						<?php } }
-						elseif(isset($_SESSION['id'])){
-						 ?>
-						<i class="fas fa-heart f2"></i>
-						<?php }
-						else{?>
-							<i class="fas fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
-						<?php }
-						?>
+            <i class="far fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
+            <?php } }
+            elseif(isset($_SESSION['id'])){
+             ?>
+            <i class="far fa-heart f2"></i>
+            <?php }
+            else{?>
+              <i class="far fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
+            <?php }
+            ?>
 
-						
 
-						</div>
-					</div>
-				<div onclick="mostrar_modal('<?= $id ?>')">
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Distrito'] ?></span>
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Edad'] ?> años</span>
-					<span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Pais'] ?></span>
-				</div>
-				</div>
-			</div>
-
-			</div>
+            </div>
+          </div>
+       <div onclick="mostrar_modal('<?= $id ?>')">
+          <span class="badge badge-pill badge-light"><?= $row['Distrito'] ?></span>
+          <span class="badge badge-pill badge-light"><?= $row['Edad'] ?> años</span>
+          <span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
+          <span class="badge badge-pill badge-light"><?= $row['Pais'] ?></span>
+        </div>
+        </div>
+       </div>
+      <!-- fin de aqui  -->
                     <?php
                 }
                 else{}
@@ -295,52 +292,50 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
                     $rowp = mysqli_fetch_array($sqlp);
 
                     ?>
-                        <div class="col-lg-2 col-6 px-1 mx-0">
-			<div class="card card1" >
-				<img src="images/<?= $rowq['imagen'] ?>" class="imagen1x" alt="" onclick="mostrar_modal('<?= $id ?>')">
-				<div class="card-body">
-					<div class="row ">
-						<div class="col-8">
-							<div class="row">
-	<div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $rowfinal['Nombre'] ?> <?php if($rowfinal['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
-								
-							</div>
-						</div>
-						<div class="col-4">
+                       <!-- Aqui -->
+       <div class="card">
+           <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $id ?>')">
+        <div class="card-body">
+          <div class="row ">
+            <div class="col-8">
+              <div class="row">
+  <div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+                
+              </div>
+            </div>
+            <div class="col-4">
 
-						<?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
-							$sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
-							$nummmmm = mysqli_num_rows($sqlllll);
-							if($nummmmm > 0){
-							?>
-							<i class="fas fa-heart f2 color3"></i>
-							<?php } else{ ?>
+                       <?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
+              $sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
+              $nummmmm = mysqli_num_rows($sqlllll);
+              if($nummmmm > 0){
+              ?>
+              <i class="fas fa-heart f2 color3"></i>
+              <?php } else{ ?>
 
-						<i class="fas fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
-						<?php } }
-						elseif(isset($_SESSION['id'])){
-						 ?>
-						<i class="fas fa-heart f2"></i>
-						<?php }
-						else{?>
-							<i class="fas fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
-						<?php }
-						?>
+            <i class="far fa-heart f2" onclick="agregar_favoritos('<?=  $id ?>')" id="id_<?=  $id ?>"></i>
+            <?php } }
+            elseif(isset($_SESSION['id'])){
+             ?>
+            <i class="far fa-heart f2"></i>
+            <?php }
+            else{?>
+              <i class="far fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
+            <?php }
+            ?>
 
-						
 
-						</div>
-					</div>
-				<div onclick="mostrar_modal('<?= $id ?>')">
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Distrito'] ?></span>
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Edad'] ?> años</span>
-					<span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Pais'] ?></span>
-				</div>
-				</div>
-			</div>
-
-			</div>
+            </div>
+          </div>
+       <div onclick="mostrar_modal('<?= $id ?>')">
+          <span class="badge badge-pill badge-light"><?= $row['Distrito'] ?></span>
+          <span class="badge badge-pill badge-light"><?= $row['Edad'] ?> años</span>
+          <span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
+          <span class="badge badge-pill badge-light"><?= $row['Pais'] ?></span>
+        </div>
+        </div>
+       </div>
+      <!-- fin de aqui  -->
                     <?php
                 }
                 else{}
