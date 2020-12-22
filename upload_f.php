@@ -37,20 +37,11 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
             # Guardar y liberar recursos
             # Segundo argumento de imagepng es la ruta de la imagen de salida
             $temp = explode(".", $key['name']); 
-            $newfilename = round(microtime(true)) . '.' . end($temp); 
-            $resultado = imagepng($original, "images/".$key['name']);
+            $newfilename = $key['name'].date("Y-m-d H:i:s");
+            $resultado = imagepng($original, "images/".$newfilename);
             imagedestroy($original);
             imagedestroy($marcaDeAgua);
 		}
-
-	if ($key['error']=='') //Si no existio ningun error, retornamos un mensaje por cada archivo subido
-		{
-			$mensage .= '-> Archivo : '.$rutaImagenOriginal.' como : '. $key['name'] .' Subido correctamente. '."<br><br>";
-		}
-	if ($key['error']!='')//Si existio algún error retornamos un el error por cada archivo.
-		{
-			$mensage .= '-> No se pudo subir el archivo <b>'.$NombreOriginal.'</b> debido al siguiente Error: n'.$key['error']; 
-        }
         
         $rutaImagenOriginal = "";
         $rutaMarcaDeAgua = "";    
@@ -62,5 +53,5 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
         $resultado = "";
 	
 }
-echo $mensage;// Regresamos los mensajes generados al cliente
+echo 1;// Regresamos los mensajes generados al cliente
 ?>

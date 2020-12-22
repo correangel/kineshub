@@ -848,6 +848,7 @@ border-color: #FF1730!important;
 			cache:false, //Para que el formulario no guarde cache
 			success: function(response){
 				console.log(response);
+				$("#archivos").val();
 			}
 		});
 	}
