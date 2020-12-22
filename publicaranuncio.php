@@ -799,6 +799,32 @@ border-color: #FF1730!important;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
 
 <script>
+	$(document).ready(function(){
+    // File upload via Ajax
+    $("#uploadForm").on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'upload_f.php',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            success: function(response){
+                if (response != 0) {
+                    $("#imagenes_cargadas").html(response);
+					 imagenes_totales = $("#imagenes_totales").val();
+					 imagenes = imagenes_totales + 1;
+					 $("#imagenes_totales").val(imagenes);
+					 $("#image").val();
+                } else {
+                    $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
+                }
+            }
+        });
+    });
+	});
+
 	function select_dep(){
 		var parametro = $("#dep").val();
 
@@ -1347,31 +1373,7 @@ border-color: #FF1730!important;
 	}
 
 
-	$(document).ready(function(){
-    // File upload via Ajax
-    $("#uploadForm").on('submit', function(e){
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'upload_f.php',
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData:false,
-            success: function(response){
-                if (response != 0) {
-                    $("#imagenes_cargadas").html(response);
-					 imagenes_totales = $("#imagenes_totales").val();
-					 imagenes = imagenes_totales + 1;
-					 $("#imagenes_totales").val(imagenes);
-					 $("#image").val();
-                } else {
-                    $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
-                }
-            }
-        });
-    });
-	});
+	
 </script>
 
  		<?php 
