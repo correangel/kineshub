@@ -164,6 +164,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
     }
 
     echo $sql;
+    echo $_POST['pais'];
 
     $num = mysqli_num_rows($result);
 
