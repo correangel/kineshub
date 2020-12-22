@@ -28,7 +28,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
     $valores = explode(",", $_POST['in_whatsapp']);
     if($valores[1] == 1){ $sql .=  " AND $valores[0] = '$valores[1]'"; }
 
-    if($_POST['pais'] != 0){  } else{ $sql .=  " AND pais = '". $_POST['pais'] ."'"; }
+    if($_POST['pais'] == 0){  } else{ $sql .=  " AND pais = '". $_POST['pais'] ."'"; }
 
     $valores = explode(",", $_POST['in_andina']);
     if($valores[1] == 1){ $sql .=  " AND etnia = '1'"; }
