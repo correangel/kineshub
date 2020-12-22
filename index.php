@@ -273,8 +273,8 @@ userdevdata = 1;
                           type:  'GET',
                           success:  function (response) 
                             { 
-                                $("#load_data").html("");
-                                $("#load_data").html(response);           
+                                $("#filtrar").html("");
+                                $("#filtrar").html(response);           
                             }
                                             
                       });
@@ -289,8 +289,8 @@ userdevdata = 1;
                             { 
                               $("#filtro").modal("hide");
                               $('.modal-backdrop').remove();
-                                $("#load_data").html("");
-                                $("#load_data").html(response);           
+                                $("#filtrar").html("");
+                                $("#filtrar").html(response);           
                             }
                                             
                       });
@@ -305,8 +305,8 @@ userdevdata = 1;
                           type:  'GET',
                           success:  function (response) 
                             { 
-                                $("#load_data").html("");
-                                $("#load_data").html(response);           
+                                $("#filtrar").html("");
+                                $("#filtrar").html(response);           
                             }
                                             
                       });
