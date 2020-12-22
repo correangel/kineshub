@@ -334,17 +334,13 @@ function agregar_favoritos(anuncio){
 
 $(document).ready(function(){
 
-  $(".buscador1").val("");
-  setInterval($(".buscador1").val(""),1000);
-    setInterval($(".buscador1").val(""),2000);
-    setInterval($(".buscador1").val(""),3000);
-    setInterval('limpiar()',4000);
-    setInterval('limpiar()',5000);
-    setInterval('limpiar()',6000);
-    setInterval('limpiar()',7000);
-    setInterval('limpiar()',8000);
-    setInterval('limpiar()',9000);
-    setInterval('limpiar()',10000);
+  function limpiar_buscasudjf(){
+    $(".buscador1").val("");
+  }
+  
+  setInterval('limpiar_buscasudjf()',1000);
+  setInterval('limpiar_buscasudjf()',2000);
+  setInterval('limpiar_buscasudjf()',3000);
  
  var limit = 30;
  var start = 31;
