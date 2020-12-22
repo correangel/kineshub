@@ -162,7 +162,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
     }
     $num = mysqli_num_rows($result);
 
-    
+
     if($num > 0){
         while($row_re = mysqli_fetch_array($result)){
             $id = $row_re['id_anuncio'];
@@ -173,27 +173,29 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
             $verificado = explode(",", $_POST['in_verificado']);
 
             if($verificado[1] == 1){
-                $sqlve = "SELECT * FROM anuncio WHERE id_anuncio = '$id' AND verificado = 1 AND estado = 1";
-                if($a1[1] == 0 && $baratas[1] == 0){
-                    if($max_precio > 0){ $sqlve .= "AND max_precio <= '$max_precio'"; }
-                    if($min_precio > 0){ $sqlve .= "AND min_precio >= '$min_precio'"; }
-                }
-                else{
-                    if($a1[1] > 0){ $sqlve .= "AND a1 = '1'"; }
-                    elseif($baratas[1] > 0) { $sqlve .= "AND barata = '1'"; }
-                }
+                $sqlve = "SELECT * FROM anuncio WHERE id = '$id' AND verificado = 1 AND estado = 1";
+                // if($a1[1] == 0 && $baratas[1] == 0){
+                //     if($max_precio > 0){ $sqlve .= "AND max_precio <= '$max_precio'"; }
+                //     if($min_precio > 0){ $sqlve .= "AND min_precio >= '$min_precio'"; }
+                // }
+                // else{
+                //     if($a1[1] > 0){ $sqlve .= "AND a1 = '1'"; }
+                //     elseif($baratas[1] > 0) { $sqlve .= "AND barata = '1'"; }
+                // }
 
-                if($joven[1]  == 0 && $madura[1] == 0){
-                    if($min_edad > 0){ $sqlve .= "AND edad >= '$min_edad'"; }
-                    if($max_edad > 0){ $sqlve .= "AND edad <= '$max_edad'"; }
-                }
-                else{
-                    if($joven[1] > 0){ $sqlve .= "AND edad <= '35'"; }
-                    else{ $sqlve .= "AND edad >= '35'"; }
-                }
+                // if($joven[1]  == 0 && $madura[1] == 0){
+                //     if($min_edad > 0){ $sqlve .= "AND edad >= '$min_edad'"; }
+                //     if($max_edad > 0){ $sqlve .= "AND edad <= '$max_edad'"; }
+                // }
+                // else{
+                //     if($joven[1] > 0){ $sqlve .= "AND edad <= '35'"; }
+                //     else{ $sqlve .= "AND edad >= '35'"; }
+                // }
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
+
+               
 
                 if($numve > 0){
                     $sqlfinal = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE anuncio.id = '$id'");
