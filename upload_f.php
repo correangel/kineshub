@@ -6,8 +6,9 @@ if(!empty($_FILES['images'])){
     
     $images_arr = array();
     foreach($_FILES['images']['name'] as $key=>$val){
+        $$rutaImagenOriginal = "";
 
-        $rutaImagenOriginal = $_FILES['images']['tmp_name'][$key];
+        $rutaImagenOriginal = $_FILES['images']['name'][$key];
         $rutaMarcaDeAgua = "marca_agua.png";
 
         $original = imagecreatefrompng($rutaImagenOriginal);
@@ -51,14 +52,14 @@ if(!empty($_FILES['images'])){
         $id_anuncio =  $_SESSION['id_anuncio'];
 
         $sqlb = mysqli_query($enlace, "SELECT count(*) as Conteo FROM imagenes WHERE imagen  = '".$newfilename."'");
-    $rooro = mysqli_fetch_array($sqlb);
-    $contador = $rooro['Conteo'];
-    if($contador > 0){
+        $rooro = mysqli_fetch_array($sqlb);
+        $contador = $rooro['Conteo'];
+        if($contador > 0){
 
-    }
-    else{
-        $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
-    }
+        }
+        else{
+            $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
+        }
 
 
            // $sql = mysqli_query($enlace, "INSERT INTO imagenes (id_anuncio, imagen) VALUES ('$id_anuncio', '". $newfilename ."')");
