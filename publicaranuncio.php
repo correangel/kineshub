@@ -823,7 +823,7 @@ border-color: #FF1730!important;
             }
         });
     });
-	});
+	})
 
 	function select_dep(){
 		var parametro = $("#dep").val();
