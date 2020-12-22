@@ -335,9 +335,9 @@ function agregar_favoritos(anuncio){
 $(document).ready(function(){
 
   $(".buscador1").val("");
-  setInterval('limpiar()',1000);
-    setInterval('limpiar()',2000);
-    setInterval('limpiar()',3000);
+  setInterval($(".buscador1").val(""),1000);
+    setInterval($(".buscador1").val(""),2000);
+    setInterval($(".buscador1").val(""),3000);
     setInterval('limpiar()',4000);
     setInterval('limpiar()',5000);
     setInterval('limpiar()',6000);
