@@ -166,6 +166,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
 
     if($num > 0){
+       echo " <div class='card-columns' style='height: 100%;' id='load_data'>";
         while($row_re = mysqli_fetch_array($result)){
             $id = $row_re['id_anuncio'];
 
@@ -209,21 +210,22 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
                     $rowp = mysqli_fetch_array($sqlp);
 
                     ?>
-                      <!-- Aqui -->
-       <div class="card">
-           <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $id ?>')">
+                   
+				<div class="card">
+           <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
         <div class="card-body">
           <div class="row ">
             <div class="col-8">
               <div class="row">
-  <div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+  <div class="col-12 " onclick="mostrar_modal('<?= $row['ID'] ?>')"><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
                 
               </div>
             </div>
             <div class="col-4">
 
                        <?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
-              $sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
+              $id = $row['ID'];
+              $sqlllll = mysqli_query($db, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
               $nummmmm = mysqli_num_rows($sqlllll);
               if($nummmmm > 0){
               ?>
@@ -244,7 +246,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
             </div>
           </div>
-       <div onclick="mostrar_modal('<?= $id ?>')">
+       <div onclick="mostrar_modal('<?= $row['ID'] ?>')">
           <span class="badge badge-pill badge-light"><?= $row['Distrito'] ?></span>
           <span class="badge badge-pill badge-light"><?= $row['Edad'] ?> años</span>
           <span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
@@ -252,7 +254,8 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
         </div>
         </div>
        </div>
-      <!-- fin de aqui  -->
+			
+		</div>
                     <?php
                 }
                 else{}
@@ -292,21 +295,21 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
                     $rowp = mysqli_fetch_array($sqlp);
 
                     ?>
-                       <!-- Aqui -->
-       <div class="card">
-           <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $id ?>')">
+                      <div class="card">
+           <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
         <div class="card-body">
           <div class="row ">
             <div class="col-8">
               <div class="row">
-  <div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+  <div class="col-12 " onclick="mostrar_modal('<?= $row['ID'] ?>')"><p><?= $row['Nombre'] ?> <?php if($row['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
                 
               </div>
             </div>
             <div class="col-4">
 
                        <?php if(isset($_SESSION['id']) && $_SESSION['tipo'] == 1){
-              $sqlllll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
+              $id = $row['ID'];
+              $sqlllll = mysqli_query($db, "SELECT id FROM favoritos WHERE id_anuncio = '$id' AND id_usuario = '". $_SESSION['id'] ."'");
               $nummmmm = mysqli_num_rows($sqlllll);
               if($nummmmm > 0){
               ?>
@@ -327,7 +330,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 
             </div>
           </div>
-       <div onclick="mostrar_modal('<?= $id ?>')">
+       <div onclick="mostrar_modal('<?= $row['ID'] ?>')">
           <span class="badge badge-pill badge-light"><?= $row['Distrito'] ?></span>
           <span class="badge badge-pill badge-light"><?= $row['Edad'] ?> años</span>
           <span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
@@ -335,13 +338,15 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
         </div>
         </div>
        </div>
-      <!-- fin de aqui  -->
+			
+		</div>
                     <?php
                 }
                 else{}
                 
             }
         }
+        echo "</div>";
     }
 
     else{
