@@ -348,6 +348,7 @@ $(document).ready(function(){
    cache:false,
    success:function(data)
    {
+    $(".buscador1").val("");
     $('#load_data').append(data);
     if(data == '')
     {
@@ -365,6 +366,7 @@ $(document).ready(function(){
 
  if(action == 'inactive')
  {
+  $(".buscador1").val("");
   action = 'active';
   load_country_data(limit, start);
  }
