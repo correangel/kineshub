@@ -127,10 +127,10 @@ else{
             <?php } }
             elseif(isset($_SESSION['id'])){
              ?>
-            <i class="fas fa-heart f2"></i>
+            <i class="far fa-heart f2"></i>
             <?php }
             else{?>
-              <i class="fas fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
+              <i class="far fa-heart f2" data-toggle="modal" data-target="#sesion"></i>
             <?php }
             ?>
 
