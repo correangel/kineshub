@@ -1,5 +1,7 @@
 <?php
 include "db.php";
+
+mysqli_set_charset($enlace,"utf8");
 $min_precio = $_POST['min_precio'];
 $max_precio = $_POST['max_precio'];
 
@@ -214,7 +216,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 					<div class="row ">
 						<div class="col-8">
 							<div class="row">
-	<div class="col-12 " onclick="mostrar_modal('<?= $rowfinal['ID'] ?>')"><p><?= $rowfinal['Nombre'] ?> <?php if($rowfinal['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
+	<div class="col-12 " onclick="mostrar_modal('<?= $id ?>')"><p><?= $rowfinal['Nombre'] ?> <?php if($rowfinal['Verificado'] == 1){  ?> <img src="img/Grupo 139.svg" alt="" class="ml-1"><?php } ?></p></div>
 								
 							</div>
 						</div>
