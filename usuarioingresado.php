@@ -38,7 +38,7 @@
 		<div class="col-lg-6">
 			<div class="row d-flex justify-content-start">
 				<div class="col-lg-4 ">
-					<button class="btn text-dark boton8 font-weight-bold px-4"><i class="fas fa-tag pr-3"></i> Promociones</button>
+					<a href="promociones.php" class="btn text-dark boton8 font-weight-bold px-4"><i class="fas fa-tag pr-3"></i> Promociones</a>
 				</div>
 				<div class="col-lg-4  ">
 					<button class="btn boton9 text-white  font-weight-bold px-4" data-toggle="modal" data-target="#ubicacion"><i class="fas fa-map-marker-alt mr-3"></i> Ubicación</button>
