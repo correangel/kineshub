@@ -389,13 +389,14 @@ border-color: #FF1730!important;
 								<div class="row">
 									<div class="col-lg-9 col-12 " style="margin-top: 5px;">
 										<div class="custom-file">
-										<form method="post" action="#" enctype="multipart/form-data">
-  <input type="file" class="custom-file-input"  name="image" id="image" lang="es">
+										<form id="uploadForm" enctype="multipart/form-data">
+  <input type="file" class="custom-file-input"  type="file" name="images[]" id="fileInput" multiple lang="es">
   <label class="custom-file-label" required for="subirfoto" class="pt-4"  style="font-size: 13px!important;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
 </div>
 									</div>
 									<div class="col-lg-3 col-12 text-center text-lg-right mt-2 mt-lg-0 ">
-									<input type="button" value="Cargar Foto" onclick='guardar_foto()' class="btn botonborrar1 btn-sm" >
+									<input type="submit" value="Cargar Foto" class="btn botonborrar1 btn-sm" >
+									<!-- <input type="submit" value="Cargar Foto" onclick='guardar_foto()' class="btn botonborrar1 btn-sm" > -->
 								
 										</form>
 									</div>
@@ -1024,29 +1025,55 @@ border-color: #FF1730!important;
         });
 	}
 
-	function guardar_foto(){
-		var formData = new FormData();
-        var files = $('#image')[0].files[0];
-        formData.append('file',files);
+	// function guardar_foto(){
+	// 	var formData = new FormData();
+    //     var files = $('#image')[0].files[0];
+    //     formData.append('file',files);
+    //     $.ajax({
+    //         url: 'upload.php',
+    //         type: 'post',
+    //         data: formData,
+    //         contentType: false,
+    //         processData: false,
+    //         success: function(response) {
+    //             if (response != 0) {
+    //                 $("#imagenes_cargadas").html(response);
+	// 				 imagenes_totales = $("#imagenes_totales").val();
+	// 				 imagenes = imagenes_totales + 1;
+	// 				 $("#imagenes_totales").val(imagenes);
+	// 				 $("#image").val();
+    //             } else {
+    //                 $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
+    //             }
+    //         }
+    //     });
+	// }
+
+
+	$(document).ready(function(){
+    // File upload via Ajax
+    $("#uploadForm").on('submit', function(e){
+        e.preventDefault();
         $.ajax({
-            url: 'upload.php',
-            type: 'post',
-            data: formData,
+            type: 'POST',
+            url: 'upload_f.php',
+            data: new FormData(this),
             contentType: false,
-            processData: false,
-            success: function(response) {
-                if (response != 0) {
-                    $("#imagenes_cargadas").html(response);
-					 imagenes_totales = $("#imagenes_totales").val();
-					 imagenes = imagenes_totales + 1;
-					 $("#imagenes_totales").val(imagenes);
-					 $("#image").val();
-                } else {
-                    $("#imagenes_cargadas").html("No se han cargado imagenes, o ha sucedido un error, intentelo nuevamente");
-                }
+            cache: false,
+            processData:false,
+            beforeSend: function(){
+                $('#uploadStatus').html('<img src="images/uploading.gif"/>');
+            },
+            error:function(){
+                $('#uploadStatus').html('<span style="color:#EA4335;">Images upload failed, please try again.<span>');
+            },
+            success: function(data){
+                $('#uploadForm')[0].reset();
+                $('#uploadStatus').html('<span style="color:#28A74B;">Images uploaded successfully.<span>');
+                $('.gallery').html(data);
             }
         });
-	}
+    });
 
 	function caracteristicas(dato){
 		
