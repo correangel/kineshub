@@ -41,16 +41,6 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
             $resultado = imagepng($original, "images/".$newfilename);
             imagedestroy($original);
             imagedestroy($marcaDeAgua);
-
-            $rutaImagenOriginal = "";
-            $rutaMarcaDeAgua = "";    
-
-            $original = "";
-            $marcaDeAgua = "";
-
-            $newfilename = ""; 
-            $resultado = "";
-	
 		}
 
 	if ($key['error']=='') //Si no existio ningun error, retornamos un mensaje por cada archivo subido
@@ -60,7 +50,16 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
 	if ($key['error']!='')//Si existio algún error retornamos un el error por cada archivo.
 		{
 			$mensage .= '-> No se pudo subir el archivo <b>'.$NombreOriginal.'</b> debido al siguiente Error: n'.$key['error']; 
-		}
+        }
+        
+        $rutaImagenOriginal = "";
+        $rutaMarcaDeAgua = "";    
+
+        $original = "";
+        $marcaDeAgua = "";
+
+        $newfilename = ""; 
+        $resultado = "";
 	
 }
 echo $mensage;// Regresamos los mensajes generados al cliente
