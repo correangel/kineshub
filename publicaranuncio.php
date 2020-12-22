@@ -1050,32 +1050,6 @@ border-color: #FF1730!important;
 	// }
 
 
-	$(document).ready(function(){
-    // File upload via Ajax
-    $("#uploadForm").on('submit', function(e){
-        e.preventDefault();
-        $.ajax({
-            type: 'POST',
-            url: 'upload_f.php',
-            data: new FormData(this),
-            contentType: false,
-            cache: false,
-            processData:false,
-            beforeSend: function(){
-                $('#uploadStatus').html('<img src="images/uploading.gif"/>');
-            },
-            error:function(){
-                $('#uploadStatus').html('<span style="color:#EA4335;">Images upload failed, please try again.<span>');
-            },
-            success: function(data){
-                $('#uploadForm')[0].reset();
-                $('#uploadStatus').html('<span style="color:#28A74B;">Images uploaded successfully.<span>');
-                $('.gallery').html(data);
-            }
-        });
-    });
-	}
-
 	function caracteristicas(dato){
 		
 		
@@ -1370,6 +1344,33 @@ border-color: #FF1730!important;
                               
                           });
 	}
+	}
+
+
+	$(document).ready(function(){
+    // File upload via Ajax
+    $("#uploadForm").on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'upload_f.php',
+            data: new FormData(this),
+            contentType: false,
+            cache: false,
+            processData:false,
+            beforeSend: function(){
+                $('#uploadStatus').html('<img src="images/uploading.gif"/>');
+            },
+            error:function(){
+                $('#uploadStatus').html('<span style="color:#EA4335;">Images upload failed, please try again.<span>');
+            },
+            success: function(data){
+                $('#uploadForm')[0].reset();
+                $('#uploadStatus').html('<span style="color:#28A74B;">Images uploaded successfully.<span>');
+                $('.gallery').html(data);
+            }
+        });
+    });
 	}
 </script>
 
