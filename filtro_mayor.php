@@ -248,7 +248,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 					</div>
 				<div onclick="mostrar_modal('<?= $id ?>')">
 					<span class="badge badge-pill badge-light"><?= $rowfinal['Distrito'] ?></span>
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Edad'] ?> a単os</span>
+					<span class="badge badge-pill badge-light"><?= $rowfinal['Edad'] ?> años</span>
 					<span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
 					<span class="badge badge-pill badge-light"><?= $rowfinal['Pais'] ?></span>
 				</div>
@@ -262,8 +262,8 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
                 
             }
             else{
-                echo "no verificado";
-                $sqlve = "SELECT * FROM anuncio WHERE id_anuncio = '$id' AND estado = 1";
+                
+                $sqlve = "SELECT * FROM anuncio WHERE id = '$id' AND estado = 1";
                 if($a1[1] == 0 && $baratas[1] == 0){
                     if($max_precio > 0){ $sqlve .= "AND max_precio <= '$max_precio'"; }
                     if($min_precio > 0){ $sqlve .= "AND min_precio >= '$min_precio'"; }
@@ -333,7 +333,7 @@ $sql = "SELECT id_anuncio FROM caracteristicas WHERE id > 0";
 					</div>
 				<div onclick="mostrar_modal('<?= $id ?>')">
 					<span class="badge badge-pill badge-light"><?= $rowfinal['Distrito'] ?></span>
-					<span class="badge badge-pill badge-light"><?= $rowfinal['Edad'] ?> a単os</span>
+					<span class="badge badge-pill badge-light"><?= $rowfinal['Edad'] ?> años</span>
 					<span class="badge badge-pill badge-light">S/ <?= $rowp['PrecioMinimo'] ?></span>
 					<span class="badge badge-pill badge-light"><?= $rowfinal['Pais'] ?></span>
 				</div>
