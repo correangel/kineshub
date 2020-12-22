@@ -335,6 +335,16 @@ function agregar_favoritos(anuncio){
 $(document).ready(function(){
 
   $(".buscador1").val("");
+  setInterval('limpiar()',1000);
+    setInterval('limpiar()',2000);
+    setInterval('limpiar()',3000);
+    setInterval('limpiar()',4000);
+    setInterval('limpiar()',5000);
+    setInterval('limpiar()',6000);
+    setInterval('limpiar()',7000);
+    setInterval('limpiar()',8000);
+    setInterval('limpiar()',9000);
+    setInterval('limpiar()',10000);
  
  var limit = 30;
  var start = 31;
