@@ -287,6 +287,8 @@ userdevdata = 1;
                           type:  'GET',
                           success:  function (response) 
                             { 
+                              $("#filtro").modal("hide");
+                              $('.modal-backdrop').remove();
                                 $("#filtrar").html("");
                                 $("#filtrar").html(response);           
                             }
