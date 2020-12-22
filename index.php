@@ -328,16 +328,11 @@ function agregar_favoritos(anuncio){
 
 
 
-
-
-
-
-$(document).ready(function(){
-
-  function limpiar_buscasudjf(){
+function limpiar_buscasudjf(){
     $(".buscador1").val("");
   }
-  
+
+$(document).ready(function(){
   setInterval('limpiar_buscasudjf()',1000);
  
  var limit = 30;
