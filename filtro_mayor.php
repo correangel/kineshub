@@ -171,7 +171,7 @@ include "consultas.php";
                     $sqlp = mysqli_query($enlace, "SELECT min(costo) AS PrecioMinimo FROM tarifas WHERE id_anuncio = '". $rowfinal['ID']."'");
                     $rowp = mysqli_fetch_array($sqlp);
 
-                    include 'anuncio_universal.php';
+                    include 'anuncio_univ.php';
                 }
                 //No Verificado
                 else{
@@ -218,7 +218,7 @@ include "consultas.php";
                     $sqlp = mysqli_query($enlace, "SELECT min(costo) AS PrecioMinimo FROM tarifas WHERE id_anuncio = '". $rowfinal['ID']."'");
                     $rowp = mysqli_fetch_array($sqlp);
 
-                    include "anuncio_universal.php";
+                    include "anuncio_univ.php";
                 }
                 else{ }
         }
