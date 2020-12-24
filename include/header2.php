@@ -157,16 +157,18 @@ require_once "api.php";
         </div>
         <?php if($_SESSION['tipo'] == 1){ ?>
           <div class="col-2 px-0 mx-0 mt-2">
-  				<div class="corazon1 px-1">
             <a href="favoritos.php">
+  				<div class="corazon1 px-1">
+
             <i class="fas fa-heart text-danger"></i> <?php
               $sqlll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_usuario = '". $_SESSION['id'] ."'");
               $nummm = mysqli_num_rows($sqlll);    
               
               echo $nummm;
             ?>
-          </a>
+          
   				</div>
+          </a>
   			</div>
     <?php } ?>
   		
