@@ -7,8 +7,23 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
 		{
             $rutaImagenOriginal = $key['tmp_name']; //Obtenemos la ruta Original del archivo
             $rutaMarcaDeAgua = "marca_agua.png";    
+            $filename = $key['name'];
+            $extension = pathinfo($filename, PATHINFO_EXTENSION);
 
-            $original = imagecreatefrompng($rutaImagenOriginal);
+            switch ($extension) { 
+            case 'jpg': 
+            case 'jpeg': 
+             $original = imagecreatefromjpeg($filename); 
+            break; 
+            case 'gif': 
+             $original = imagecreatefromgif($filename); 
+            break; 
+            case 'png': 
+             $original = imagecreatefrompng($filename); 
+            break; 
+        } 
+
+            /*$original = imagecreatefrompng($rutaImagenOriginal);*/
             $marcaDeAgua = imagecreatefrompng($rutaMarcaDeAgua);
 
             # Como vamos a centrar  necesitamos sacar antes las anchuras y alturas
@@ -37,7 +52,7 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
             # Guardar y liberar recursos
             # Segundo argumento de imagepng es la ruta de la imagen de salida
             $temp = explode(".", $key['name']); 
-            $newfilename = date("YmdHis").$key['name']."png";
+            $newfilename = date("YmdHis").$key['name'];
             $resultado = imagepng($original, "images/".$newfilename);
             imagedestroy($original);
             imagedestroy($marcaDeAgua);
