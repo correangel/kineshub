@@ -183,7 +183,7 @@ require_once "api.php";
         <a class="nav-link" href="user.php"><i class="fas fa-user-circle"></i> Panel de usuario </a>
       </li>
       <li class="nav-item ml-5">  
-      <a href="publicaranuncio.php" class="nav-link"><i class="fas fa-heart"></i> Favoritas</a>
+      <a href="favoritos.php" class="nav-link"><i class="fas fa-heart"></i> Favoritas</a>
        
       </li>
 
