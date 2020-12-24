@@ -391,7 +391,7 @@ border-color: #FF1730!important;
 										<div class="custom-file">
 										<form id="uploadForm" enctype="multipart/form-data">
   <input type="file" class="custom-file-input" required id="archivos" multiple="multiple" lang="es">
-  <label class="custom-file-label" required for="subirfoto" class="pt-4"  style="font-size: 13px!important;overflow: hidden; height: 31px;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
+  <label class="custom-file-label" required for="subirfoto" class="pt-4"  style="font-size: 13px!important;overflow: hidden; height: 30px;">	 <p><img src="img/Icon awesome-camera.svg" class="mr-2" alt="">Selecciona las imágenes </p></label>
 </div>
 									</div>
 									<div class="col-lg-3 col-12 text-center text-lg-right mt-2 mt-lg-0 ">
