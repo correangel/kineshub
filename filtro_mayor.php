@@ -123,9 +123,7 @@ include "consultas.php";
     }
     echo "</div>";
     }
-    else{
-        echo "esta entrando aqui";
-       
+    else{       
        echo " <div class='card-columns' style='height: 100%;' id='load_data2'>";
         while($row_re = mysqli_fetch_array($result)){
             $id = $row_re['id_anuncio'];
@@ -222,7 +220,7 @@ include "consultas.php";
                 }
                 else{ }
         }
-        echo "</div>";
+        
     }
-
+echo "</div>";
 }
