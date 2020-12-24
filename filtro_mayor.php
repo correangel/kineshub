@@ -139,8 +139,8 @@ echo " <div class='card-columns' style='height: 100%;' id='load_data'>";
       echo "error";
     }
     
-    include 'anuncio_univ.php';
-
+    echo "no se esta buscadno anda";
+    
     }
     echo "</div>";
 }
