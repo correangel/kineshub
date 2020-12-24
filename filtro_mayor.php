@@ -10,8 +10,6 @@ include "consultas.php";
                 echo "Aqui hay un error";
             }
             else{
-                echo $sql;
-                echo mysqli_num_rows($result);
             }
 
 
