@@ -157,7 +157,7 @@ require_once "api.php";
         </div>
         <?php if($_SESSION['tipo'] == 1){ ?>
           <div class="col-2 px-0 mx-0 mt-2" >
-  				<div class="corazon1 px-1" onclick="$(location).attr('href','favoritos.php');">
+  				<div class="corazon1 px-1" onclick="ir_favoritos()">
             <i class="fas fa-heart text-danger"></i> <?php
               $sqlll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_usuario = '". $_SESSION['id'] ."'");
               $nummm = mysqli_num_rows($sqlll);    
@@ -223,6 +223,10 @@ require_once "api.php";
   <script>
     function limpiar(){
       $("#buscar_texto").val();
+    }
+
+    function ir_favoritos(){
+      window.location.href = "favoritos.php";
     }
     
   </script>
