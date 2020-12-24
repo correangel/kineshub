@@ -156,8 +156,9 @@ require_once "api.php";
   		<p class="f5 font-weight-bolder pb-0 mb-0">LA MEJOR COMPAÑÍA A SOLO UN CLICK</p>
         </div>
         <?php if($_SESSION['tipo'] == 1){ ?>
+          <a href="favoritos.php">
           <div class="col-2 px-0 mx-0 mt-2">
-            <a href="favoritos.php">
+            
   				<div class="corazon1 px-1">
 
             <i class="fas fa-heart text-danger"></i> <?php
@@ -168,8 +169,9 @@ require_once "api.php";
             ?>
           
   				</div>
-          </a>
+          
   			</div>
+        </a>
     <?php } ?>
   		
   		</div>
