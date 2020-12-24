@@ -401,6 +401,11 @@ $(document).ready(function(){
  
 });
 
+function modal_login_btn(){
+  $("#sesion").modal("show");
+  $("#perfilkine").modal("hide");
+}
+
 
 
 </script>

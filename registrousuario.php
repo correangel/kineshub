@@ -21,22 +21,22 @@
 		<form id="frm_add_user">
 			<div class="row ">
 				<div class="col-12  ">
-					<input class="form-control campo1  w-100 f1" type="text" id="NombreU" name="usuario" placeholder="Nombre de Usuario">
+					<input class="form-control campo1  w-100 f1" style="color: black !important;" type="text" id="NombreU" name="usuario" placeholder="Nombre de Usuario">
 	 				<p style="color: red; font-size: 1em;" id="reg_usr_nombre"></p>
 				</div>
 
 				<div class="col-12   ">
-					<input class="form-control w-100 campo1  f1" type="text" id="CorreoE" name="correo" placeholder="Correo Electronico">
+					<input class="form-control w-100 campo1  f1" style="color: black !important;" type="text" id="CorreoE" name="correo" placeholder="Correo Electronico">
 					<p style="color: red; font-size: 1em;" id="reg_usr_correo"></p>
 				</div>
 				<div class="col-12   ">
 					
-					<input class="form-control w-100 f1 campo1" type="password" id="ContraseñaU" name="clave" placeholder="Contraseña">
+					<input class="form-control w-100 f1 campo1" style="color: black !important;" type="password" id="ContraseñaU" name="clave" placeholder="Contraseña">
 					<p style="color: red; font-size: 1em;" id="reg_usr_clave1"></p>
 				</div>
 				<div class="col-12   ">
 					
-					<input class="form-control w-100 f1 campo1" type="password" id="ConfirmarcontraseñaU" name="clave2" placeholder="Confirmar contraseña">
+					<input class="form-control w-100 f1 campo1" style="color: black !important;" type="password" id="ConfirmarcontraseñaU" name="clave2" placeholder="Confirmar contraseña">
 					<p style="color: red; font-size: 1em;" id="reg_usr_clave2"></p>
 					<input type="hidden" value="1" name="tipo" required>
 				</div>

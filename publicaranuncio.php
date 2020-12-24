@@ -1408,7 +1408,19 @@ border-color: #FF1730!important;
 	}
 	}
 
-
+ function eliminar_foto(imagen){
+                            $.ajax({
+                              url:   'include/eliminar_foto.php?imagen=' + imagen, 
+                              type:  'GET',
+                              success:  function (response){
+                                $("#imagenes_cargadas").html(response);
+								 imagenes_totales = $("#imagenes_totales").val();
+								 imagenes = imagenes_totales - 1;
+								 $("#imagenes_totales").val(imagenes);
+								 $("#image").val();
+                              }
+                            });
+}
 	
 </script>
 
