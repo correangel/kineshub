@@ -67,7 +67,7 @@ $sql2 = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $id
                     while($row = mysqli_fetch_array($sql2)){
                         $imagen = $row['imagen'];?>
                         <div class='col-lg-2 col-4'>
-                            <img src='images/$imagen' class='w-100 mt-2' alt=''>
+                            <img src='images/<?= $imagen ?>' class='w-100 mt-2' alt=''>
                             <a onclick="eliminar_foto('<?= $imagen ?>')"> Eliminar </a>
                         </div>
                         <?php
