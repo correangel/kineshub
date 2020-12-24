@@ -156,7 +156,7 @@ require_once "api.php";
         <a class="nav-link" href="iniciodesesion.php"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a>
       </li>
       <li class="nav-item ">
-      <a href="publicaranuncio.php" class="nav-link"class="nav-link"><i class="fas fa-tag"></i> Publicar Anuncio</a>
+      <a href="iniciodesesion.php" class="nav-link"class="nav-link"><i class="fas fa-tag"></i> Publicar Anuncio</a>
        
       </li>
       <li class="nav-item">
