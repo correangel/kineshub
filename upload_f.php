@@ -37,8 +37,8 @@ foreach ($_FILES as $key) //Iteramos el arreglo de archivos
             # Guardar y liberar recursos
             # Segundo argumento de imagepng es la ruta de la imagen de salida
             $temp = explode(".", $key['name']); 
-            $newfilename = date("YmdHis").$key['name'];
-            $resultado = imagepng($original, "images/".$newfilename.".png");
+            $newfilename = date("YmdHis").$key['name']."png";
+            $resultado = imagepng($original, "images/".$newfilename);
             imagedestroy($original);
             imagedestroy($marcaDeAgua);
 
