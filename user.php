@@ -74,7 +74,7 @@ else{
 <div class="container-fluid d-block d-md-none">
 	<div class="row mt-2">
 		<div class="col-12 ">
-			<a href="#"><img src="img/Grupo 5411.svg" class="w-100" alt=""></a>
+			<a href="favoritos.php"><img src="img/Grupo 5411.svg" class="w-100" alt=""></a>
 		</div>
 		
 		<div class="col-12 ">
