@@ -112,14 +112,14 @@
               <div class="col-6"><div class=" col-6">
                     <div class=" mt-2 pl-md-5 d-inline-block">
                   <h5 id="li_a1" onclick="cambiar_stados('a1')" class="d-block d-lg-none cuerpo text-center f8 font-weight-bolder px-4 py-2 marco1y filtro1">A1</h5>
-                  <input type="hidden" name="in_a1" id="in_a1" value="a1,0">
+                  <input type="hidden" name="in_a12" id="in_a12" value="a1,0">
                 </div>
                   </div></div>
               <div class="col-6">
                 <div class=" col-6">
                     <div class="pl-3 mt-2 pl-md-5 d-inline-block">
                   <h5 id="li_baratas" onclick="cambiar_stados('baratas')" class="d-block d-lg-none cuerpo text-center f8 font-weight-bolder px-4 py-2 marco1y filtro1 ">Baratas</h5>
-                  <input type="hidden" name="in_baratas" id="in_baratas" value="baratas,0">
+                  <input type="hidden" name="in_baratas2" id="in_baratas2" value="baratas,0">
                 </div>
                   </div>
               </div>
