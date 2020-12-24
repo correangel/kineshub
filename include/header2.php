@@ -139,7 +139,7 @@ require_once "api.php";
 
 
 		<!--menu movil-->
-<nav class="navbar navbar-light d-block d-md-none" >
+<nav class="navbar navbar-light d-flex d-block d-md-none" >
 
   <!-- Collapse button -->
   <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
@@ -148,30 +148,42 @@ require_once "api.php";
   </button>
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="index.php">
+  
   	<div class="text-center ">
-  		<div class="row d-flex align-items-start">
-  			<div class="col-10 pl-0 pr-3 mx-0">
+  		<div class="row d-flex align-items-center">
+
+  			<div class="col-9 pl-0 pr-3 mx-0">
+          <a class="navbar-brand" href="index.php">
   				<img src="img/logo.png" width="132" alt="">
   		<p class="f5 font-weight-bolder pb-0 mb-0">LA MEJOR COMPAÑÍA A SOLO UN CLICK</p>
+      </a>
         </div>
         <?php if($_SESSION['tipo'] == 1){ ?>
-          <div class="col-2 px-0 mx-0 mt-2" >
-  				<div class="corazon1 px-1" onclick="ir_favoritos()">
-            <i class="fas fa-heart text-danger"></i> <?php
+          <div class="col-3 pl-0 pr-2 mx-0 mt-2" >
+           <a href="favoritos.php" class="text-dark">
+              <div class="corazon1 px-1" onclick="ir_favoritos()">
+
+             <i class="fas fa-heart text-danger"></i> <?php
               $sqlll = mysqli_query($enlace, "SELECT id FROM favoritos WHERE id_usuario = '". $_SESSION['id'] ."'");
               $nummm = mysqli_num_rows($sqlll);    
               
               echo $nummm;
             ?>
-  				</div>
+           
+          </div>
+           </a>
+               
+           
+
+  			
+        
   			</div>
     <?php } ?>
   		
   		</div>
   		
   	</div>
-  	</a>
+  	
 
   <!-- Collapsible content -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent20">
