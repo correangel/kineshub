@@ -120,10 +120,11 @@ include "consultas.php";
                 }
                 else{ }
         }
-        echo "</div>";
     }
+    echo "</div>";
     }
     else{
+        echo "esta entrando aqui";
        
        echo " <div class='card-columns' style='height: 100%;' id='load_data2'>";
         while($row_re = mysqli_fetch_array($result)){
