@@ -827,18 +827,15 @@ border-color: #FF1730!important;
 	// })
 
 	function guardar_foto(){	
-		var archivos = document.getElementById("archivos");//Creamos un objeto con el elemento que contiene los archivos: el campo input file, que tiene el id = 'archivos'
-		var archivo = archivos.files; //Obtenemos los archivos seleccionados en el imput
-		//Creamos una instancia del Objeto FormDara.
+		var archivos = document.getElementById("archivos");
+		var archivo = archivos.files;
 		var archivos = new FormData();
-		/* Como son multiples archivos creamos un ciclo for que recorra la el arreglo de los archivos seleccionados en el input
-		Este y añadimos cada elemento al formulario FormData en forma de arreglo, utilizando la variable i (autoincremental) como 
-		indice para cada archivo, si no hacemos esto, los valores del arreglo se sobre escriben*/
 		for(i=0; i<archivo.length; i++){
-		archivos.append('archivo'+i,archivo[i]); //Añadimos cada archivo a el arreglo con un indice direfente
+		archivos.append('archivo'+i,archivo[i]); 
 		}
 
-		/*Ejecutamos la función ajax de jQuery*/		
+		$("#imagenes_cargadas").html("<div class='row'><div class='col-md-4'></div><div class='col-md-4'><img src='loader.gif' style='width: 100%;'></div><div class='col-md-4'></div></div>");
+
 		$.ajax({
 			url:'upload_f.php', //Url a donde la enviaremos
 			type:'POST', //Metodo que usaremos
