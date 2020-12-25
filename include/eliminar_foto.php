@@ -19,4 +19,6 @@ $sql2 = mysqli_query($enlace, "SELECT * FROM imagenes WHERE id_anuncio = '". $id
                         <?php
                     }
 
+                    unlink("images/".$imagen);
+
 ?>
