@@ -249,6 +249,8 @@ userdevdata = 1;
                               
                           });
     }
+
+    limpiar_buscasudjf();
   }
 
   function mostrar_modal(id_modal){
@@ -263,6 +265,8 @@ userdevdata = 1;
                                           }
                               
                           });
+
+    limpiar_buscasudjf();
   }
 
   function filtrar_busqueda(){
@@ -278,6 +282,8 @@ userdevdata = 1;
                             }
                                             
                       });
+
+                        limpiar_buscasudjf();
     }
 
     function limpiar_modal_mayor(){
@@ -294,6 +300,8 @@ userdevdata = 1;
                             }
                                             
                       });
+
+      limpiar_buscasudjf();
     }
 
 
@@ -310,6 +318,8 @@ userdevdata = 1;
                             }
                                             
                       });
+
+                        limpiar_buscasudjf();
     }
 
   function procesar_anuncio(){
@@ -328,6 +338,8 @@ userdevdata = 1;
                                             }
                                           }
                           });
+
+    limpiar_buscasudjf();
   }
 
 function agregar_favoritos(anuncio){
@@ -337,6 +349,8 @@ function agregar_favoritos(anuncio){
                               type:  'GET',
                               success:  function (response){}
                             });
+
+              limpiar_buscasudjf();
 }
 
 
@@ -379,6 +393,8 @@ $(document).ready(function(){
     }
    }
   });
+
+  limpiar_buscasudjf();
  }
 
  if(action == 'inactive')
@@ -386,6 +402,8 @@ $(document).ready(function(){
   $(".buscador1").val("");
   action = 'active';
   load_country_data(limit, start);
+
+  limpiar_buscasudjf();
  }
 
  $(window).scroll(function(){
@@ -397,6 +415,8 @@ $(document).ready(function(){
     load_country_data(limit, start);
    }, 1000);
   }
+
+  limpiar_buscasudjf();
  });
  
 });
@@ -404,6 +424,8 @@ $(document).ready(function(){
 function modal_login_btn(){
   $("#sesion").modal("show");
   $("#perfilkine").modal("hide");
+
+  limpiar_buscasudjf();
 }
 
 
