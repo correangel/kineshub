@@ -8,7 +8,7 @@ $i = 0;
 if ($handler = opendir($thefolder)) {
     while (false !== ($file = readdir($handler))) {
             echo "$file<br>";
-            $i++;
+            $i = $i++;
     }
     echo "<br>".$i;
     closedir($handler);
