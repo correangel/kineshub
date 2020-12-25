@@ -10,9 +10,10 @@ if ($handler = opendir($thefolder)) {
             echo "$file<br>";
             $i++;
     }
+    echo "<br>".$i;
     closedir($handler);
 
-    echo "<br>$i";
+
 }
 
 ?>
