@@ -287,14 +287,16 @@ userdevdata = 1;
     }
 
     function limpiar_modal_mayor(){
+      var limit = 30;
+ var start = 0;
 $.ajax({
    url:"cargar_anuncio2.php",
    method:"POST",
-   data:{limit:30, start:0},
+   data:{limit:limit, start:start},
    cache:false,
    success:function(data)
    {
-    $("#filtrar").html("<div class='card-columns' style='height: 100%;' id='load_data'> </div>");
+     $("#filtrar").html("<div class='card-columns' style='height: 100%;' id='load_data'> </div>");
     $(".buscador1").val("");
     $('#load_data').append(data);
     if(data == '')
