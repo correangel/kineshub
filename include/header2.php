@@ -222,7 +222,7 @@ require_once "api.php";
       </li>
 
        <li class="nav-item">
-        <a class="nav-link" href="termino.php"><i class="fas fa-address-book"></i> Terminos de Uso</a>
+        <a class="nav-link" href="terminos.php"><i class="fas fa-address-book"></i> Terminos de Uso</a>
       </li>
        
         
