@@ -100,11 +100,11 @@ Por la presente confirma que no ofrecerá ningún servicio contrario a la ley de
 <p>Atención</p>
 
 <ul>
-	<li> La inserción de material pedófilo conllevará la inminente denuncia a las autoridades competentes incluyendo todos los datos de acceso a la página con el fin de poder llegar hasta los responsables.
+	<li style="color: black; margin-left: 5px;"> La inserción de material pedófilo conllevará la inminente denuncia a las autoridades competentes incluyendo todos los datos de acceso a la página con el fin de poder llegar hasta los responsables.
 </li>
-<li>nsertando el anuncio en kineshub.com el usuario certifica que puede disponer con total derecho del contenido; además, declara que las imágenes, eventualmente agregadas, son de personas mayores de edad que han manifestado su consentimiento a la publicación de las imágenes en kineshub.com</li>
-<li>No está permitido insertar en los anuncios ningún tipo de link que se pueda pinchar o no.</li>
-<li>Tampoco está autorizado insertar textos o imágenes vulgares u ofensivos.</li>
+<li style="color: black; margin-left: 5px;">nsertando el anuncio en kineshub.com el usuario certifica que puede disponer con total derecho del contenido; además, declara que las imágenes, eventualmente agregadas, son de personas mayores de edad que han manifestado su consentimiento a la publicación de las imágenes en kineshub.com</li>
+<li style="color: black; margin-left: 5px;">No está permitido insertar en los anuncios ningún tipo de link que se pueda pinchar o no.</li>
+<li style="color: black; margin-left: 5px;">Tampoco está autorizado insertar textos o imágenes vulgares u ofensivos.</li>
 </ul>
 <p>ACEPTACIÓN DE LAS CONDICIONES DE USO</p>
 <p>El usuario, antes de gozar de ningún servicio, está obligado a informarse de las eventuales modificaciones y/o actualizaciones llevados a cabo en las condiciones de uso.
