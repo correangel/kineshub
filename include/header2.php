@@ -142,8 +142,7 @@ require_once "api.php";
 <nav class="navbar navbar-light d-flex d-block d-md-none" >
 
   <!-- Collapse button -->
-  <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
-    aria-controls="navbarSupportedContent20" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler first-button" type="button" id="boton_menu" onclick="abrir_menu()">
     <div class="animated-icon1"><span></span><span></span><span></span></div>
   </button>
 
@@ -240,5 +239,15 @@ require_once "api.php";
     function ir_favoritos(){
       window.location.href = "favoritos.php";
     }
-    
+  
+   function abrir_menu(){
+  $("#navbarSupportedContent20").addClass("show");
+  $("#boton_menu").attr("onclick","retirar_menu()");
+}
+
+function retirar_menu(){
+  $("#navbarSupportedContent20").removeClass("show");
+  $("#boton_menu").attr("onclick","abrir_menu()");
+}  
   </script>
+
