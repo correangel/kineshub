@@ -506,6 +506,8 @@ function agregar_favoritos(anuncio){
 
 function agregar_favoritos2(anuncio){
               $("#id_2"+anuncio).addClass("color3");
+              $("#id_2"+anuncio).removeClass("far");
+              $("#id_2"+anuncio).addClass("fas");
               $.ajax({
                               url:   'include/agregarfavoritos_.php?anuncio=' + anuncio, 
                               type:  'GET',
