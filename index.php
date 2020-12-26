@@ -292,7 +292,7 @@ userdevdata = 1;
                                 $("#filtro").modal("hide");
                                 $('.modal-backdrop').remove();
                                 $("#filtrar").html("");
-                                load_country_data(0, 30) 
+                                load_country_data(0, 30); 
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
 $("#in_baratas").val("baratas,0");
