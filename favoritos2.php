@@ -110,7 +110,11 @@ else{
 					<span class="badge badge-pill badge-light"><?= $row['Pais'] ?></span>
 				</div>
 				</div>
-				
+				<div>
+					<button type="button" class="close cerrar1" style="position: absolute;top: 0;right: 0;" >
+          <span aria-hidden="true">×</span>
+        </button>
+				</div>
 			</div>
 <?php } ?>
 		</div>
