@@ -57,7 +57,7 @@ include "consultas.php";
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
 
-                $sqlve .= "ORDER BY orden DESC";
+                $sqlve .= " ORDER BY orden DESC";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
@@ -105,7 +105,7 @@ include "consultas.php";
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
 
-                $sqlve .= "ORDER BY orden DESC";
+                $sqlve .= " ORDER BY orden DESC";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
@@ -162,12 +162,11 @@ include "consultas.php";
                     if($joven[1] > 0){ $sqlve .= " AND edad <= '35'"; }
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
-                $sqlve .= "ORDER BY orden DESC";
+                $sqlve .= " ORDER BY orden DESC";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
 
-                echo $sqlve;
 
                 if($numve > 0){
                     $sqlfinal = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE anuncio.id = '$id'");
@@ -209,7 +208,7 @@ include "consultas.php";
                     if($joven[1] > 0){ $sqlve .= " AND edad <= '35'"; }
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
-                $sqlve .= "ORDER BY orden DESC";
+                $sqlve .= " ORDER BY orden DESC";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
