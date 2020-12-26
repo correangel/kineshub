@@ -267,7 +267,7 @@ userdevdata = 1;
                           });
 
     limpiar_buscasudjf();
-  }
+  } 
 
   function filtrar_busqueda(){
         var parametro = $("#buscar_texto").val();
@@ -462,7 +462,7 @@ $("#li_squirting").removeClass("filtro1_activo");
                           success:  function (response) 
                             { 
                                 $("#filtrar").html("");
-                                $("#filtrar").html(response);           
+                                /*$("#filtrar").html(response);  */         
                             }
                                             
                       });
