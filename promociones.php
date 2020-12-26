@@ -6,7 +6,7 @@
  else{
 	 include "include/header.php";
  }
-
+include 'db.php';
  ?>
 
 <main>
@@ -68,42 +68,16 @@
  -->
 
  <div class="card-columns" style="height: 100%;" id="load_data">
+ 	<?php
+ 	$sql = mysqli_query($enlace, "SELECT * FROM promciones");
+ 	while ($row = mysqli_fetch_array($sql)) { 
+ 		$imagen = $row['imagen'];
+ 		$link = $row['link'];
+ 		?>
  	<div class="card">
-           <img src="https://tresolu.com/admin/images/1608009600.png" class="card-img-top" alt="">
+           <a href="<?= $link ?>"><img src="https://tresolu.com/admin/images/<?= $imagen ?>" class="card-img-top" alt=""></a>
     </div>
-
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608432162.jpeg" class="card-img-top" alt="">
-    </div>
-
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608009600.png" class="card-img-top" alt="">
-    </div>
-
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608432162.jpeg" class="card-img-top" alt="">
-    </div>
-
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608009600.png" class="card-img-top" alt="">
-    </div>
-
-   
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608009600.png" class="card-img-top" alt="">
-    </div>
-
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608432162.jpeg" class="card-img-top" alt="">
-    </div>
-
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608009600.png" class="card-img-top" alt="">
-    </div>
-
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608432162.jpeg" class="card-img-top" alt="">
-    </div>
+<?php } ?>
  </div>
 
 
