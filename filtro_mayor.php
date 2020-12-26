@@ -20,6 +20,8 @@ include "consultas.php";
     $ejexx = mysqli_query($enlace, $sqlxx);
     $numxx = mysqli_num_rows($ejexx);
 
+    echo $numxx."<br>";
+
     if($num != $numxx){
         echo "Entra aqui";
         echo " <div class='card-columns' style='height: 100%;' id='load_data2'>";
@@ -165,9 +167,10 @@ include "consultas.php";
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
 
-                echo $sqlve;
+                
 
                 if($numve > 0){
+                    echo "Esta validado";
                     $sqlfinal = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE anuncio.id = '$id'");
                     $rowfinal = mysqli_fetch_array($sqlfinal);
 
