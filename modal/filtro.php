@@ -866,7 +866,7 @@
 
       <div class="row d-flex justify-content-center my-5  mr-1 mr-md-0">
         <div class="col-lg-5 col-6">
-          <button onclick="limpiar_modal_mayor()" class="btn boton10 text-white">Borrar</button>
+          <a onclick="limpiar_modal_mayor()" class="btn boton10 text-white">Borrar</a>
         </div>
         <div class="col-lg-5 col-6">
            <button class="btn boton9 text-white">Buscar</button>
