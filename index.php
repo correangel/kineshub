@@ -493,6 +493,18 @@ function agregar_favoritos(anuncio){
 }
 
 
+function agregar_favoritos2(anuncio){
+              $("#id_2"+anuncio).addClass("color3");
+              $.ajax({
+                              url:   'include/agregarfavoritos_.php?anuncio=' + anuncio, 
+                              type:  'GET',
+                              success:  function (response){}
+                            });
+
+              limpiar_buscasudjf();
+}
+
+
 
 
 
