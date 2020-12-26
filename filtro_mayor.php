@@ -211,7 +211,6 @@ include "consultas.php";
                 
 
                 if($numve > 0){
-                    echo "Estamos entrabndo aqui";
                     $sqlfinal = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE anuncio.id = '$id'");
                     $rowfinal = mysqli_fetch_array($sqlfinal);
 
