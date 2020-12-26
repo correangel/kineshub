@@ -5,7 +5,7 @@ session_start();
 
 if(isset($_POST["limit"], $_POST["start"]))
 {
-	$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1 ORDER BY orden DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."");
+	$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1 ORDER BY orden ASC LIMIT ".$_POST["start"].", ".$_POST["limit"]."");
 	if(!$sql){echo "error".mysqli_error($enlace);}
 $num = mysqli_num_rows($sql);
 
