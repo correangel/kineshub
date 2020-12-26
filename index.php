@@ -463,7 +463,7 @@ $("#li_squirting").removeClass("filtro1_activo");
                             { 
                               console.log(parametro);
                                 $("#filtrar").html("");
-                                /*$("#filtrar").html(response);  */         
+                                $("#filtrar").html(response);           
                             }
                                             
                       });
