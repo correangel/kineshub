@@ -103,7 +103,7 @@ else{
     ?>
       <!-- Aqui -->
        <div class="card">
-           <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
+           <img class="b-lazy" style="width: 100%" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
         <div class="card-body">
           <div class="row ">
             <div class="col-8">
