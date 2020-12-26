@@ -543,7 +543,7 @@ function mostrar_modal_filtro(){
 
 </script>
 
-<script src="js/blazy.js"></script>
+<script src="js/blazy.min.js"></script>
 
 <script>
   ;(function() {
