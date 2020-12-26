@@ -911,7 +911,20 @@
 
 
   $("#filtro_mayor_frm").submit(function(e){
-
+/*$("#esta_webada_cierra").click(function(){console.log("esta haciendolo")});
+                                $("#filtro").modal("hide");*/
+                                $('.modal-backdrop').remove();
+                                $("#filtro").removeClass("show");
+                                /*$("#filtro").removeAttr( "role" );*/
+                                $("#filtro").removeAttr( "style" );
+                                $("#filtro").removeAttr( "aria-modal" );
+                                $("#filtro").attr("aria-hidden", "true");
+                                $("#filtro").css("display", "none");
+                                $("body").removeClass("modal-open");
+                                $("body").css("padding-right", "15px");
+                                $("#filtrar").html("");
+                                $("#in_verificado").val("verificado,0");
+                                $("#boton_cono").html("<button class='btn boton5 w-100 mx-0 pt-2' onclick='mostrar_modal_filtro()'>Filtros</button>")
   e.preventDefault();
 
   var parametros = $("#filtro_mayor_frm").serialize();
