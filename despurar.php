@@ -42,7 +42,7 @@ if ($handler = opendir($thefolder)) {
         	if($num > 0){echo "Archivo Existe";}
         	else{
         		unlink("images/".$file)?"":"Error";
-        		$eli++
+        		$eli++;
         	}
         }
     }
