@@ -10,7 +10,6 @@ else{
  ?>
 
 <main>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<div class="container-fluid">
 					<!-- movil  -->
 <!-- <div class="d-block d-md-none">

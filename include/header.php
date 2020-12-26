@@ -161,6 +161,14 @@ require_once "api.php";
       <li class="nav-item">
         <a class="nav-link" href="contacto.php"><i class="fas fa-address-book"></i> Contacto</a>
       </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="privacidad.php"><i class="fas fa-address-book"></i> Politica de Privacidad</a>
+      </li>
+
+       <li class="nav-item">
+        <a class="nav-link" href="termino.php"><i class="fas fa-address-book"></i> Terminos de Uso</a>
+      </li>
     </ul>
     <!-- Links -->
 
