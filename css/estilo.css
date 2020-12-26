@@ -887,7 +887,6 @@ transform: rotate(-135deg);
 }
 
 .card-columns .card {
-     /*display: block; */
-     /*a*/
+    
      break-inside: avoid; 
 }
