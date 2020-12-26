@@ -76,7 +76,7 @@ include 'db.php';
  		$link = $row['link'];
  		?>
  	<div class="card">
-           <a href="<?= $link ?>"><img src="https://tresolu.com/admin/images/<?= $imagen ?>" class="card-img-top" alt=""></a>
+           <a href="<?= $link ?>" target="__blank" ><img src="https://tresolu.com/admin/images/<?= $imagen ?>" class="card-img-top" alt=""></a>
     </div>
 <?php } ?>
  </div>
