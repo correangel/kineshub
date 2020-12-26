@@ -2,7 +2,7 @@
 
 require_once "db.php";
 mysqli_set_charset($enlace,"utf8");
-$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1 ORDER BY orden DESC LIMIT 0, 30");
+$sql = mysqli_query($enlace, "SELECT anuncio.id AS ID, anuncio.verificado AS Verificado, anuncio.nombre AS Nombre, anuncio.edad AS Edad, anuncio.distrito, anuncio.provincia, anuncio.departamento, distritos.distrito AS Distrito, anuncio.pais AS Pais FROM anuncio INNER JOIN distritos ON anuncio.distrito = distritos.id WHERE estado = 1 ORDER BY orden DESC");
   if(!$sql){echo "error".mysqli_error($enlace);}
 $sql2 = mysqli_query($enlace, "SELECT id FROM anuncio WHERE estado = 1");
 $num = mysqli_num_rows($sql2);
@@ -103,7 +103,7 @@ else{
     ?>
       <!-- Aqui -->
        <div class="card">
-           <img src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
+           <img class="b-lazy" style="width: 100%" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="  data-src="images/<?= $rowq['imagen'] ?>" class="card-img-top" alt="" onclick="mostrar_modal('<?= $row['ID'] ?>')">
         <div class="card-body">
           <div class="row ">
             <div class="col-8">
@@ -526,64 +526,6 @@ function limpiar_buscasudjf(){
     $(".buscador1").val("");
   }
 
-$(document).ready(function(){
-  setTimeout('limpiar_buscasudjf()',1000);
-  setTimeout('limpiar_buscasudjf()',2000);
-  setTimeout('limpiar_buscasudjf()',3000);
- 
- var limit = 30;
- var start = 31;
- var action = 'inactive';
- function load_country_data(limit, start)
- {
-  $.ajax({
-   url:"cargar_anuncio2.php",
-   method:"POST",
-   data:{limit:limit, start:start},
-   cache:false,
-   success:function(data)
-   {
-    $(".buscador1").val("");
-    $('#load_data').append(data);
-    if(data == '')
-    {
-     $('#load_data_message').html("<button type='button' class='btn btn-info'>No hay mas anuncios</button>");
-     action = 'active';
-    }
-    else
-    {
-     $('#load_data_message').html("<button type='button' class='btn btn-warning color3'>Espere Seguimos Cargando</button>");
-     action = "inactive";
-    }
-   }
-  });
-
-  limpiar_buscasudjf();
- }
-
- if(action == 'inactive')
- {
-  $(".buscador1").val("");
-  action = 'active';
-  load_country_data(limit, start);
-
-  limpiar_buscasudjf();
- }
-
- $(window).scroll(function(){
-  if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive')
-  {
-   action = 'active';
-   start = start + limit;
-   setTimeout(function(){
-    load_country_data(limit, start);
-   }, 1000);
-  }
-
-  limpiar_buscasudjf();
- });
- 
-});
 
 function modal_login_btn(){
   $("#sesion").modal("show");
@@ -597,6 +539,17 @@ function mostrar_modal_filtro(){
   $("#filtro").modal("show");
 }
 
+
+
+</script>
+
+<script src="js/blazy.min.js"></script>
+
+<script>
+  ;(function() {
+        // Initialize
+      var bLazy = new Blazy();
+    })();
 </script>
 <?php 
   include "modal/nube.php";
