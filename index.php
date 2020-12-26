@@ -461,7 +461,8 @@ $("#li_squirting").removeClass("filtro1_activo");
                           type:  'GET',
                           success:  function (response) 
                             { 
-                                $("#filtrar").html("");
+                              console.log(parametro);
+                                /*$("#filtrar").html("");*/
                                 /*$("#filtrar").html(response);  */         
                             }
                                             
