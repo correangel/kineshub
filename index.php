@@ -312,9 +312,10 @@ $.ajax({
    }
   });
 
-                                $("#esta_webada_cierra").click(function(){console.log("esta haciendolo")});
-                                /*$("#filtro").modal("hide");
-                                $('.modal-backdrop').remove();*/
+                                /*$("#esta_webada_cierra").click(function(){console.log("esta haciendolo")});
+                                $("#filtro").modal("hide");*/
+                                $('.modal-backdrop').remove();
+                                $("#filtro").removeClass("show");
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
