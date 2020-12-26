@@ -11,7 +11,7 @@
 
 <?php 
   include "api.php";
-  include "modal/filtro.php";
+  
   include "modal/fotoverificada.php";
   include "modal/iniciarsesion.php";
   include "modal/olvidecontraseña.php";

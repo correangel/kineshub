@@ -588,5 +588,5 @@ function modal_login_btn(){
   include "cookies.php";
   include "modal.php";
   include "include/footer.php";
-  
+  include "modal/filtro.php";
  ?>
