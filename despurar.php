@@ -15,12 +15,12 @@ if($sin_publicar > 0){
 	$imaganes_depuradas = 0;
 	while ($row = mysqli_fetch_array($sql)) {
 		$id = $row['id'];
-		//$sql_f = mysqli_query("DELETE FROM anuncio WHERE estado = 0 AND id = '$id'");
+		$sql_f = mysqli_query("DELETE FROM anuncio WHERE estado = 0 AND id = '$id'");
 		if(!$sql_f){}
 			else{ 
 				$eliminados = $i++;
-				//$sqli = mysqli_query($enlace, "DELETE FROM imagenes WHERE id_anuncio = '$id'");
-				//$imaganes_depuradas = $imaganes_depuradas + mysqli_affected_rows($enlace); 
+				$sqli = mysqli_query($enlace, "DELETE FROM imagenes WHERE id_anuncio = '$id'");
+				$imaganes_depuradas = $imaganes_depuradas + mysqli_affected_rows($enlace); 
 			 }
 	}
 }
@@ -32,6 +32,7 @@ echo "Imagenes Depuradas DB: $imaganes_depuradas<br>";
 
 $thefolder = "images/";
 if ($handler = opendir($thefolder)) {
+	$eli = 0;
     while (false !== ($file = readdir($handler))) {
         
         if($file != '.' OR $file != '..' OR $file != '...'){
@@ -40,12 +41,13 @@ if ($handler = opendir($thefolder)) {
 
         	if($num > 0){echo "Archivo Existe";}
         	else{
-        		echo "Archivo no existe";
-        		//unlink("images/".$file)?$eli++:"Error";
+        		unlink("images/".$file)?"":"Error";
+        		$eli++
         	}
         }
     }
     closedir($handler);
 }
 
+echo "Imagenes Depuradas: ".$eli;
 ?>
