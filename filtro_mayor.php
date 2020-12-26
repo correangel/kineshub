@@ -20,7 +20,6 @@ include "consultas.php";
     $ejexx = mysqli_query($enlace, $sqlxx);
     $numxx = mysqli_num_rows($ejexx);
 
-    echo $numxx."<br>";
 
     if($num != $numxx){
         echo "Entra aqui";
