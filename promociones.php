@@ -56,31 +56,27 @@
 		<h2 class="color5 f10 mt-4 f14 font-weight-bold mb-3 d-block d-md-none">PROMOCIONES ACTIVAS</h2>
 	</div>
 	
-<div class="container-fluid d-none d-md-block">
+<!-- <div class="container-fluid d-none d-md-block">
 	<div class="row d-flex justify-content-center text-center mt-2 mt-md-5">
 		
 		<div class="col-lg-3">
 			<a href="#"><img src="img/Grupo 91.png" class="w-100" alt=""></a>
 		</div>
-		<div class="col-lg-3">
-			<a href="#"><img src="img/Grupo 460.png" class="w-100" alt=""></a>
-			<a href="#"> <img src="img/Promociones-en-masajes-eróticos-para-empezar-el-año.png" class="w-100 mt-2" alt=""></a>	
-		</div>
-		<div class="col-lg-3">
-			<a href="#"><img src="img/Grupo 464.png" class="w-100" alt=""></a>	
-		</div>
-		<div class="col-lg-3">
-			<a href="#"><img src="img/Grupo 460.png" class="w-100" alt=""></a>
-			<a href="#"><img src="img/Promociones-en-masajes-eróticos-para-empezar-el-año.png" class="w-100 mt-2" alt=""></a>
-		</div>
+		
 	</div>
 </div>
+ -->
+
+ <div class="card-columns" style="height: 100%;" id="load_data">
+ 	<div class="card">
+           <img src="img/Grupo 91.png" class="card-img-top" alt="">
+    </div>
+ </div>
 
 
 
 
-
-<div class="container-fluid d-block d-md-none">
+<!-- <div class="container-fluid d-block d-md-none">
 	<div class="row mt-2">
 		<div class="col-12 ">
 			<a href="#">	<img src="img/Grupo 91.png" class="w-100" alt=""></a>
@@ -91,7 +87,7 @@
 		</div>
 	</div>
 </div>
-	
+	 -->
 	</div>
 	
 			<div class="mt-5 mb-4 text-center ">
