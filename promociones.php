@@ -70,6 +70,7 @@ include 'db.php';
  <div class="card-columns" style="height: 100%;" id="load_data">
  	<?php
  	$sql = mysqli_query($enlace, "SELECT * FROM promciones");
+ 	if(!$sql){echo "Error" .mysqli_error($enlace);}
  	while ($row = mysqli_fetch_array($sql)) { 
  		$imagen = $row['imagen'];
  		$link = $row['link'];
