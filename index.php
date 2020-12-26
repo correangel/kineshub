@@ -312,7 +312,7 @@ $.ajax({
    }
   });
 
-                                $(".esta_webada_cierra").click(function(){ });
+                                $("#esta_webada_cierra").click(function(){console.log("esta haciendolo")});
                                 /*$("#filtro").modal("hide");
                                 $('.modal-backdrop').remove();*/
                                 $("#filtrar").html("");

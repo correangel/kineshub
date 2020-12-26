@@ -4,7 +4,7 @@
   <div class="modal-dialog modal-dialog-centered  modal-xl" role="document">
     <div class="modal-content">
       <div class="text-left mr-5">
-         <button type="button" class="close cerrar1 esta_webada_cierra" data-dismiss="modal" aria-label="Close">
+         <button type="button" class="close cerrar1" id="esta_webada_cierra" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
