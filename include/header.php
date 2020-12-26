@@ -174,11 +174,11 @@ require_once "api.php";
   <script type="text/javascript">
     function abrir_menu(){
   $("#navbarSupportedContent20").addClass("show");
-  $("#id").attr("onclick","retirar_menu()");
+  $("#navbarSupportedContent20").attr("onclick","retirar_menu()");
 }
 
 function retirar_menu(){
   $("#navbarSupportedContent20").removeClass("show");
-  $("#id").attr("onclick","abrir_menu()");
+  $("#navbarSupportedContent20").attr("onclick","abrir_menu()");
 }
   </script>
