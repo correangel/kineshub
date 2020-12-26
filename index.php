@@ -321,6 +321,7 @@ $.ajax({
                                 $("#filtro").removeAttr( "aria-modal" );
                                 $("#filtro").attr("aria-hidden", "true");
                                 $("#filtro").css("display", "none");
+                                $("body").removeClass("modal-open");
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
