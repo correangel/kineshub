@@ -296,7 +296,7 @@ $.ajax({
    cache:false,
    success:function(data)
    {
-    $("#filtrar").html("<div class='card-columns' style='height: 100%;' id='load_data'> </div>");
+    $("#filtrar").html("<div class='row mx-1 mx-lg-2 w-100' id='filtrar'> <div class='card-columns' style='height: 100%;' id='load_data'> </div>");
     $(".buscador1").val("");
     $('#load_data').append(data);
     if(data == '')
@@ -322,9 +322,11 @@ $.ajax({
                                 $("#filtro").attr("aria-hidden", "true");
                                 $("#filtro").css("display", "none");
                                 $("body").removeClass("modal-open");
-                                $("body").css("padding-right", "45px");
+                                $("body").css("padding-right", "15px");
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
+
+
 $("#in_a1").val("a1,0");
 $("#in_baratas").val("baratas,0");
 $("#in_tarjeta").val("tarjeta,0");
