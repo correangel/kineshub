@@ -320,6 +320,7 @@ $.ajax({
                                 $("#filtro").removeAttr( "style" );
                                 $("#filtro").removeAttr( "aria-modal" );
                                 $("#filtro").attr("aria-hidden", "true");
+                                $("#filtro").css("display", "none");
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
