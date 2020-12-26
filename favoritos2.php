@@ -111,7 +111,7 @@ else{
 				</div>
 				</div>
 				<div>
-					<button type="button" onclick="quitar_favoritos()" class="close cerrar1" style="position: absolute;top: 0;right: 0;" >
+					<button type="button" onclick="quitar_favoritos('<?= $row['ID'] ?>')" class="close cerrar1" style="position: absolute;top: 0;right: 0;" >
           <span aria-hidden="true">×</span>
         </button>
 				</div>
@@ -125,8 +125,14 @@ else{
 </main>
 
 <script type="text/javascript">
-	function quitar_favoritos() {
-		alert("Eliminando");
+	function quitar_favoritos(anuncio) {
+		$.ajax({
+                              url:   'include/eliminar_favoritos.php?anuncio=' + anuncio, 
+                              type:  'GET',
+                              success:  function (response){
+                              	 location.reload();
+                              }
+                            });
 	}
 </script>
 
