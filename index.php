@@ -28,7 +28,7 @@ else{
   <div class="container ">
       <div class="input-group md-form form-sm form-1 pl-0">
  
-  <input class="form-control my-0 py-1 buscador1" onkeyup="filtrar_busqueda2()" id="filtrar_busqueda2" type="text"  autocomplete="nope" name="buscador_super_pro_idfjifj" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search" value="">
+  <input class="form-control my-0 py-1 buscador1" onkeypress="filtrar_busqueda2()" onkeyup="filtrar_busqueda2()" id="filtrar_busqueda2" type="text"  autocomplete="nope" name="buscador_super_pro_idfjifj" placeholder="Buscar <?= $num ?> Anuncios" aria-label="Search" value="">
    <div class="input-group-prepend">
     <span class="input-group-text text-dark" id="buscador" style="border-radius: 3px;"><i class="fas fa-search  pr-1"
         aria-hidden="true"></i> Buscar</span>
