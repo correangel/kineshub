@@ -1,12 +1,12 @@
 <?php
 include "db.php";
-/*$sql = mysqli_query($enlace, "SELECT * FROM anuncio");
+$sql = mysqli_query($enlace, "SELECT * FROM anuncio");
 $anuncios = mysqli_num_rows($sql);
 $sql = mysqli_query($enlace, "SELECT * FROM anuncio WHERE estado = 1");
 $publicados = mysqli_num_rows($sql);
 $sql = mysqli_query($enlace, "SELECT * FROM anuncio WHERE estado = 0");
 $sin_publicar = mysqli_num_rows($sql);
-$i = 0;*/
+$i = 0;
 
 
 //depurar Anuncios sin publicar
@@ -39,7 +39,7 @@ if ($handler = opendir($thefolder)) {
         	$sql = mysqli_query($enlace, "SELECT * FROM imagenes WHERE imagen = '$file'");
         	$num = mysqli_num_rows($sql);
 
-        	if($num > 0){echo "Archivo Existe";}
+        	if($num > 0){}
         	else{
         		unlink("images/".$file)?"":"Error";
         		$eli++;
