@@ -83,9 +83,8 @@ else{
 				<div class="card-body">
 					<div>
 						<h2 class="f6 color6 mb-4">CONTACTO</h2>
-					<p><strong>Email:</strong> Contactokineshub@kines.com</p>
-					<p><strong>Teléfono:</strong> 1234567890</p>
-					<p><strong>Horarios:</strong> Lunes a Viernes10 am a 06 pm</p>
+					<p><strong>Email:</strong> info@kineshub.com</p>
+					<p><strong>Horarios:</strong> Lunes a Viernes 10:00 am a 06:00 pm</p>
 					</div>
 					<div>
 						<h2 class="f6 color6 mt-4">Formulario de contacto</h2>
