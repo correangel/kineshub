@@ -124,7 +124,7 @@ require_once "api.php";
 <nav class="navbar navbar-light d-block d-md-none d-flex align-items-center" >
 
   <!-- Collapse button -->
-  <button class="navbar-toggler first-button" type="button" onclick="abrir_menu()">
+  <button class="navbar-toggler first-button" type="button" id="boton_menu" onclick="abrir_menu()">
     <div class="animated-icon1"><span></span><span></span><span></span></div>
   </button>
 
@@ -174,11 +174,11 @@ require_once "api.php";
   <script type="text/javascript">
     function abrir_menu(){
   $("#navbarSupportedContent20").addClass("show");
-  $("#navbarSupportedContent20").attr("onclick","retirar_menu()");
+  $("#boton_menu").attr("onclick","retirar_menu()");
 }
 
 function retirar_menu(){
   $("#navbarSupportedContent20").removeClass("show");
-  $("#navbarSupportedContent20").attr("onclick","abrir_menu()");
+  $("#boton_menu").attr("onclick","abrir_menu()");
 }
   </script>
