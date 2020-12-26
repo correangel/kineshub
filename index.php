@@ -287,12 +287,32 @@ userdevdata = 1;
     }
 
     function limpiar_modal_mayor(){
-      var parametro = "";
+$.ajax({
+   url:"cargar_anuncio2.php",
+   method:"POST",
+   data:{limit:30, start:0},
+   cache:false,
+   success:function(data)
+   {
+    $(".buscador1").val("");
+    $('#load_data').append(data);
+    if(data == '')
+    {
+     $('#load_data_message').html("<button type='button' class='btn btn-info'>No hay mas anuncios</button>");
+     action = 'active';
+    }
+    else
+    {
+     $('#load_data_message').html("<button type='button' class='btn btn-warning color3'>Espere Seguimos Cargando</button>");
+     action = "inactive";
+    }
+   }
+  });
+
 
                                 $("#filtro").modal("hide");
                                 $('.modal-backdrop').remove();
                                 $("#filtrar").html("");
-                                load_country_data(0, 30); 
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
 $("#in_baratas").val("baratas,0");
