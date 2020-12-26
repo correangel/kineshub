@@ -294,6 +294,7 @@ $.ajax({
    cache:false,
    success:function(data)
    {
+    $("#filtrar").html("<div class='card-columns' style='height: 100%;' id='load_data'> </div>");
     $(".buscador1").val("");
     $('#load_data').append(data);
     if(data == '')
