@@ -38,7 +38,7 @@ else{
     <div class="col-6 pl-2 pr-2">
       <button class="btn boton4 w-100 pt-2" data-toggle="modal" data-target="#ubicacion">Ubicación</button>
     </div>
-    <div class="col-6 pl-2">
+    <div class="col-6 pl-2" id="boton_cono">
       <button class="btn boton5 w-100 mx-0 pt-2" data-toggle="modal" data-target="#filtro">Filtros</button>
     </div>
   </div>
@@ -325,6 +325,7 @@ $.ajax({
                                 $("body").css("padding-right", "15px");
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
+                                $("#boton_cono").html("<button class='btn boton5 w-100 mx-0 pt-2' data-toggle='modal' data-target='#filtro'>Filtros</button>")
 
 
 $("#in_a1").val("a1,0");
