@@ -88,10 +88,7 @@
            <img src="https://tresolu.com/admin/images/1608009600.png" class="card-img-top" alt="">
     </div>
 
-    <div class="card">
-           <img src="https://tresolu.com/admin/images/1608432162.jpeg" class="card-img-top" alt="">
-    </div>
-
+   
     <div class="card">
            <img src="https://tresolu.com/admin/images/1608009600.png" class="card-img-top" alt="">
     </div>
