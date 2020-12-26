@@ -18,6 +18,7 @@ if($sin_publicar > 0){
 		$sql_f = mysqli_query("DELETE FROM anuncio WHERE estado = 0 AND id = '$id'");
 		if(!$sql_f){}
 			else{ 
+				echo "Procesadno";
 				$eliminados = $i++;
 				$sqli = mysqli_query($enlace, "DELETE FROM imagenes WHERE id_anuncio = '$id'");
 				$imaganes_depuradas = $imaganes_depuradas + mysqli_affected_rows($enlace); 
