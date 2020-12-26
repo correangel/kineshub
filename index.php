@@ -316,6 +316,7 @@ $.ajax({
                                 $("#filtro").modal("hide");*/
                                 $('.modal-backdrop').remove();
                                 $("#filtro").removeClass("show");
+                                $("#filtro").removeAttr( "role" );
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
