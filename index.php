@@ -312,9 +312,9 @@ $.ajax({
    }
   });
 
-
-                                $("#filtro").modal("hide");
-                                $('.modal-backdrop').remove();
+                                $(".esta_webada_cierra").click(function(){ });
+                                /*$("#filtro").modal("hide");
+                                $('.modal-backdrop').remove();*/
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
