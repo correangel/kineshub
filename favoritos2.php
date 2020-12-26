@@ -111,7 +111,7 @@ else{
 				</div>
 				</div>
 				<div>
-					<button type="button" class="close cerrar1" style="position: absolute;top: 0;right: 0;" >
+					<button type="button" onclick="quitar_favoritos()" class="close cerrar1" style="position: absolute;top: 0;right: 0;" >
           <span aria-hidden="true">×</span>
         </button>
 				</div>
@@ -123,6 +123,12 @@ else{
 	</div>
 
 </main>
+
+<script type="text/javascript">
+	function quitar_favoritos() {
+		alert("Eliminando");
+	}
+</script>
 
 
  		<?php 
