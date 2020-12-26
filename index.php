@@ -288,15 +288,11 @@ userdevdata = 1;
 
     function limpiar_modal_mayor(){
       var parametro = "";
-      $.ajax({ 
-                          url:   '<?= $url_api ?>public/json/filtrar_texto.php?q=' + parametro, 
-                          type:  'GET',
-                          success:  function (response) 
-                            { 
-                              $("#filtro").modal("hide");
-                              $('.modal-backdrop').remove();
+
+                                $("#filtro").modal("hide");
+                                $('.modal-backdrop').remove();
                                 $("#filtrar").html("");
-                                $("#filtrar").html(response);   
+                                load_country_data(0, 30) 
                                 $("#in_verificado").val("verificado,0");
 $("#in_a1").val("a1,0");
 $("#in_baratas").val("baratas,0");
@@ -420,10 +416,7 @@ $("#li_duro").removeClass("filtro1_activo");
 $("#li_dorada").removeClass("filtro1_activo");
 $("#li_strap").removeClass("filtro1_activo");
 $("#li_squirting").removeClass("filtro1_activo");        
-                            }
-                                            
-                      });
-
+                            
       limpiar_buscasudjf();
     }
 
