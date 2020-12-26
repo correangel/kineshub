@@ -29,16 +29,13 @@ require_once "api.php";
 <nav class="navbar navbar-expand-lg navbar-light menu1x  d-none d-md-block">
 <div class="container-fluid">
 	 <!-- Basic dropdown -->
-<!-- <button class="icomenu1 mr-4 px-3" type="button" data-toggle="dropdown"
+<button class="icomenu1 mr-4 px-3" type="button" data-toggle="dropdown"
   aria-haspopup="true" aria-expanded="false" id="menudropdown"><i class="fas fa-bars"></i></button>
 
 <div class="dropdown-menu" aria-labelledby="menudropdown">
-  <a class="dropdown-item" href="#">Action</a>
-  <a class="dropdown-item" href="#">Another action</a>
-  <a class="dropdown-item" href="#">Something else here</a>
-  <div class="dropdown-divider"></div>
-  <a class="dropdown-item" href="logout.php">Cerrar Sesion</a>
-</div> -->
+  <a class="dropdown-item" href="terminos.php">Terminos de uso</a>
+  <a class="dropdown-item" href="politicas.php">Politicas de Privacidad</a>
+</div>
 <!-- Basic dropdown -->
   <a class="navbar-brand" href="index.php"><img src="img/logo.png" width="180" alt=""></a>
 
