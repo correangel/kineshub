@@ -55,6 +55,8 @@ include "consultas.php";
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
 
+                $sqlve .= "ORDER BY orden DESC";
+
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
 
@@ -98,6 +100,8 @@ include "consultas.php";
                     if($joven[1] > 0){ $sqlve .= " AND edad <= '35'"; }
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
+
+                $sqlve .= "ORDER BY orden DESC";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
@@ -154,6 +158,7 @@ include "consultas.php";
                     if($joven[1] > 0){ $sqlve .= " AND edad <= '35'"; }
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
+                $sqlve .= "ORDER BY orden DESC";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
@@ -177,7 +182,7 @@ include "consultas.php";
             }
             //Cuando no esta verificado
             else{
-                $sqlve = "SELECT * FROM anuncio WHERE id = '$id' AND estado = 1";
+                $sqlve = "SELECT * FROM anuncio WHERE id = '$id' AND estado = 1 ";
 
                 if($baratas[1] == "1"){
                     $sqlve .= " AND barata = '1'";
@@ -198,6 +203,7 @@ include "consultas.php";
                     if($joven[1] > 0){ $sqlve .= " AND edad <= '35'"; }
                     else{ $sqlve .= " AND edad >= '35'"; }
                 }
+                $sqlve .= "ORDER BY orden DESC";
 
                 $resultve = mysqli_query($enlace, $sqlve);
                 $numve = mysqli_num_rows($resultve);
