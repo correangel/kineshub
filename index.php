@@ -325,7 +325,7 @@ $.ajax({
                                 $("body").css("padding-right", "15px");
                                 $("#filtrar").html("");
                                 $("#in_verificado").val("verificado,0");
-                                $("#boton_cono").html("<button class='btn boton5 w-100 mx-0 pt-2' data-toggle='modal' data-target='#filtro'>Filtros</button>")
+                                $("#boton_cono").html("<button class='btn boton5 w-100 mx-0 pt-2' onclick='mostrar_modal_filtro()'>Filtros</button>")
 
 
 $("#in_a1").val("a1,0");
@@ -591,7 +591,9 @@ function modal_login_btn(){
 }
 
 
-
+function mostrar_modal_filtro(){
+  $("#filtro").modal("show");
+}
 
 </script>
 <?php 
