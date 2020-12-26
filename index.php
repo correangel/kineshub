@@ -282,8 +282,6 @@ userdevdata = 1;
                             }
                                             
                       });
-
-                        limpiar_buscasudjf();
     }
 
     function limpiar_modal_mayor(){
@@ -468,8 +466,6 @@ $("#li_squirting").removeClass("filtro1_activo");
                             }
                                             
                       });
-
-                        limpiar_buscasudjf();
     }
 
   function procesar_anuncio(){
