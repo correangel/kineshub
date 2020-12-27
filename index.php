@@ -1,3 +1,14 @@
+<!-- 
+	Desarrollo{
+	"Nombre" => "Armando Benigno Campos Farreras",
+	"Email" => "armandocamposf@gmail.com",
+	"GitHub" => "armando19993",
+	"Telefono" => "935701981",
+	"Version" => "1.0",
+	"Tecnologias" => "PHP, JavaScript, HTML, CSS, Mysql"
+	}
+-->
+
 <?php 
 
 require_once "db.php";
