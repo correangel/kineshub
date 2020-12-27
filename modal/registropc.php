@@ -31,6 +31,10 @@
     <div class="my-5">
       <p class=" font-weight-bolder text-center  f1">¿Ya tienes una cuenta? <a  data-toggle="modal" data-target="#sesion" data-dismiss="modal" class=" color2 font-weight-bold ml-1">Inicia Sesión</a></p>
           </div>
+
+          <div class="my-5">
+      <a href="terminos.php" class=" color2 font-weight-bold ml-1"> Terminos de Uso</a> || <a href="privacidad.php" class=" color2 font-weight-bold ml-1">Politicas de Privacidad</a>
+          </div>
         </div>
 
      
