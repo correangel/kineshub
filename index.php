@@ -9,6 +9,30 @@
 	}
 -->
 
+<!-- COMMON TAGS -->
+<meta charset="utf-8">
+<title>KinesHub – Las mejores escorts y Kinesiólogas en Perú!</title>
+<!-- Search Engine -->
+<meta name="description" content="Publica anuncios y encuentra los mejores masajes,  en kineshub.com">
+<meta name="image" content="">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="KinesHub – Las mejores escorts y Kinesiólogas en Perú!">
+<meta itemprop="description" content="Publica anuncios y encuentra los mejores masajes,  en kineshub.com">
+<meta itemprop="image" content="">
+<!-- Open Graph general (Facebook, Pinterest & LinkedIn) -->
+<meta name="og:title" content="">
+<meta name="og:description" content="">
+<meta name="og:image" content="">
+<meta name="og:url" content="">
+<meta name="og:site_name" content="">
+<meta name="og:locale" content="">
+<meta name="og:type" content="website">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="">
+<meta name="twitter:description" content="">
+<meta name="twitter:image:src" content="">
+
 <?php 
 
 require_once "db.php";

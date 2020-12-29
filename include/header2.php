@@ -30,7 +30,7 @@ require_once "api.php";
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/estilo.css">
-	<title>KinesHub</title>
+
 </head>
 <body>
 	<header>
