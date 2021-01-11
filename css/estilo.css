@@ -890,3 +890,6 @@ transform: rotate(-135deg);
     
      break-inside: avoid; 
 }
+.card{
+	margin-top: 10px;
+}
